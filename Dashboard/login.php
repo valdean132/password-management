@@ -45,7 +45,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="title-page">Acessar Painel</title>
+    <title id="title-page">Faça Login</title>
     <!--===== Main CSS =====-->
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH_D; ?>styles/registration-and-login.css">
     <!--===== Material Icons =====-->

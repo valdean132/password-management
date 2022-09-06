@@ -118,10 +118,10 @@ $(function(){
         checkedBtnLabel.click(()=>{
             if(!checkedBtn.prop('checked')){
                 boxMain.addClass(active)
-                titleMain.text('Fazer Registro');
+                titleMain.text('Cadastre-se Agora');
             }else{
                 boxMain.removeClass(active);
-                titleMain.text('Acessar Painel');
+                titleMain.text('Faça Login');
             }
         })
         
