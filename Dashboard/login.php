@@ -21,6 +21,7 @@
                 $_SESSION['contato'] = $info['contato'];
                 $_SESSION['img'] = $info['photo_user'];
                 $_SESSION['nome_tabela'] = 'tb_sys_admin.user';
+                $_SESSION['database'] = $info['database'];
                 if(isset($_POST['lembrarConexao'])){
                     setcookie('lembrarConexao', true, time()+(12), '/');
                     setcookie('user', $user, time()+(12), '/');
@@ -44,9 +45,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title id="title-page">Acessar Painel</title>
     <!--===== Main CSS =====-->
-    <link rel="stylesheet" href="<?php echo INCLUDE_PATH_D; ?>styles/login.css">
+    <link rel="stylesheet" href="<?php echo INCLUDE_PATH_D; ?>styles/registration-and-login.css">
     <!--===== Material Icons =====-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
@@ -67,7 +68,7 @@
                 $userValue = $user;
                 $passwordValue = $password;
             }else{
-                $sql = MySql::conectar() -> prepare("SELECT * FROM `tb_sys_admin.user` WHERE login = ? AND password = ?");
+                $sql = MySql::conectar() -> prepare("SELECT * FROM `tb_sys_admin.user` WHERE email = ? AND password = ?");
                 $sql->execute(array($user, $password));
                 if($sql->rowCount() == 1){
                     $info = $sql->fetch();
@@ -114,11 +115,16 @@
                 <div class="box-main">
                     <div class="form">
                         <div class="text-center">
+                            <div class="selection-register-login">
+                                <h6><span>Entrar</span> <span>Cadastrar</span></h6>
+                                <input type="checkbox" class="checkbox" checked  id="reg-log">
+                                <label for="reg-log"></label>
+                            </div>
                             <div class="div-form-valid box-alert-container" style="height: <?php echo $height; ?>">
                                 <?php echo $boxAlert; ?>
                             </div><!-- Verificar Alerta-->
                             <div class="card-3d-wrap">
-                                <div class="card-3d-wrapper">
+                                <div class="card-3d-wrapper active">
                                     <form class="card-front" method="POST">
                                         <div class="center-wrap">
                                             <h4 class="heading">Acessar Painel</h4>
@@ -152,7 +158,35 @@
                                             <input type="submit" class="btn" name="acao" value="Entrar">
                                             <p class="text-center"><a href="#" class="link">Esqueceu a Senha?</a></p>
                                         </div>
-                                    </form>
+                                    </form><!-- Logar -->
+                                    <form class="card-back">
+                                        <div class="center-wrap">
+                                            <h4 class="heading">Faça Seu Registro</h4>
+                                            <div class="form-group">
+                                                <input type="text" class="form-style" placeholder="Seu Nome" autocomplete="off">
+                                                <i class="input-icon material-icons">perm_identity</i>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" class="form-style" placeholder="Seu E-mail" autocomplete="off">
+                                                <i class="input-icon material-icons">alternate_email</i>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" class="form-style" placeholder="Contato" autocomplete="off">
+                                                <i class="input-icon material-icons">call</i>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" value="<?php echo $passwordValue?>" class="form-style" id="password" name="password" placeholder="Defina Sua Senha" autocomplete="off">
+                                                <label for="password" class="input-icon material-icons">lock</label>
+                                                <div class="icon-showPassword material-icons"></div>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" value="<?php echo $passwordValue?>" class="form-style" id="password" name="password" placeholder="Confirme Sua Senha" autocomplete="off">
+                                                <label for="password" class="input-icon material-icons">lock</label>
+                                                <div class="icon-showPassword material-icons"></div>
+                                            </div>
+                                            <a href="#" class="btn">submit</a>
+                                        </div>
+                                    </form><!-- Registrar -->
                                 </div>
                             </div>
                         </div>
@@ -166,6 +200,6 @@
     <!--===== Scripts ======-->
     <script src="<?php echo INCLUDE_PATH_D; ?>js/jquery.min.js"></script><!-- Jquery -->
     <script src="<?php echo INCLUDE_PATH_D; ?>js/constants.js"></script><!-- Variaveis Constantes do Script -->
-    <script src="<?php echo INCLUDE_PATH_D; ?>js/login.js"></script><!-- Animações de Login e configurações -->
+    <script src="<?php echo INCLUDE_PATH_D; ?>js/registration-and-login.js"></script><!-- Animações de Login e registro e configurações -->
 </body>
 </html>

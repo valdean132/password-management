@@ -3,13 +3,6 @@ window.onload = function() {
     history.replaceState("", "", window.location.href);
 }
 
-// const scrollXFrame = new Sly(`frame`, {slidee: `slidee`, horizontal: true, mouseDragging: true, releaseSwing:  true, elasticBounds: true});
-
-
-// setInterval(()=>{
-//     scrollXFrame.reload();
-// }, 1000)
-
 /* LocalStorage */
 const updateLocalStorage = (key, value) => {
     localStorage.setItem(key, JSON.stringify(value));
@@ -848,46 +841,46 @@ const tagsInputs = (tagsInputs) => {
 
 tagsInputs($('[form] select'));
 const storedFiles = {};
-$(function () {
-    $("[file-upload]").each(function(){
-        $(this).aksFileUpload({
-            fileUpload: `#${$(this).attr('file-upload')}`, // With target [input]file or [type]json you can save the data of loaded items
-            input: `#${$(this).attr('name')}`,
-            // fileType: ["jpg", "jpeg", "png", "pdf", "svj"], // allowed file formats
-            dragDrop: true, // drag & drop upload
-            maxSize: "3 GB", // maximum uploaded file size
-            multiple: true, // multiple file upload
-            maxFile: 12, // maximum number of uploaded files
-            maxFileError: "O arquivo excede o limite de upload. - Limite máximo:", // error text
-            maxSizeError: "O arquivo excede o tamanho. - Limite máximo:", // error text
-            fileTypeError: "Formato de arquivo inválido. - ", // error text
-        });
-    });
+// $(function () {
+//     $("[file-upload]").each(function(){
+//         $(this).aksFileUpload({
+//             fileUpload: `#${$(this).attr('file-upload')}`, // With target [input]file or [type]json you can save the data of loaded items
+//             input: `#${$(this).attr('name')}`,
+//             // fileType: ["jpg", "jpeg", "png", "pdf", "svj"], // allowed file formats
+//             dragDrop: true, // drag & drop upload
+//             maxSize: "3 GB", // maximum uploaded file size
+//             multiple: true, // multiple file upload
+//             maxFile: 12, // maximum number of uploaded files
+//             maxFileError: "O arquivo excede o limite de upload. - Limite máximo:", // error text
+//             maxSizeError: "O arquivo excede o tamanho. - Limite máximo:", // error text
+//             fileTypeError: "Formato de arquivo inválido. - ", // error text
+//         });
+//     });
     
 
-    $('[type="submit"]').click(function(){
-        let data = {};
+//     $('[type="submit"]').click(function(){
+//         let data = {};
         
-        let formData = new FormData();
-        $('input[permission_alter="1"]').each(function(){
-            let nameInput = $(this).attr('name');
-            for(i = 0; i < storedFiles[nameInput].length; i++){
-                var formAppend = (data["file-" + storedFiles[nameInput][i].name] = storedFiles[nameInput][i])
+//         let formData = new FormData();
+//         $('input[permission_alter="1"]').each(function(){
+//             let nameInput = $(this).attr('name');
+//             for(i = 0; i < storedFiles[nameInput].length; i++){
+//                 var formAppend = (data["file-" + storedFiles[nameInput][i].name] = storedFiles[nameInput][i])
     
                 
-                formData.append(nameInput, formAppend);
-            }
-            // console.log(data);
-            console.log(formData.getAll(nameInput));
+//                 formData.append(nameInput, formAppend);
+//             }
+//             // console.log(data);
+//             console.log(formData.getAll(nameInput));
             
-            // formData.append('teste', storedFiles[0])
-            // console.log(this.files)
-            // console.log(formData.get('teste'))
-            // console.log(storedFiles)
-        })
+//             // formData.append('teste', storedFiles[0])
+//             // console.log(this.files)
+//             // console.log(formData.get('teste'))
+//             // console.log(storedFiles)
+//         })
 
 
-        return false
-    }); 
-});
+//         return false
+//     }); 
+// });
 // var sly = new sly().init();

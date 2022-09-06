@@ -24,7 +24,8 @@ CREATE TABLE `tb_sys_admin.user` ( -- Tabela Usuários Funcionarios
     `email` VARCHAR(100) NOT NULL,
     `contato` VARCHAR(15) NOT NULL,
     `photo_user` VARCHAR(30),
-    `status` VARCHAR(10) NOT NULL
+    `status` VARCHAR(10) NOT NULL,
+    `database` VARCHAR(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `tb_sys_admin.user` (`id`, `id_user`, `nome`, `data_nasc`, `login`, `password`, `email`, `contato`, `status`) 
