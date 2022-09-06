@@ -2,7 +2,7 @@
     include('./config.php');
 
     if(Diretorios::logado() === false){
-        include('login.php');
+        include('registration-and-login.php');
     }else{
         include('main.php');
     }

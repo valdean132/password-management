@@ -126,4 +126,22 @@ $(function(){
         })
         
     }
+
+    /* Mostrando e ocultando mensagens de erros */
+    viewsMSGInput();
+    function viewsMSGInput(){
+        let boxMainInput = $('.form-group');
+
+        boxMainInput.click(function(e){
+            let campoAviso = $(this).find('.icon-input-atention .aviso-input');
+            let iconAviso = $(this).find('.icon-input-atention .icones-aviso');
+            if(e.target.className == 'icon-input-atention' || e.target.className == 'icones-aviso material-icons'){
+                campoAviso.addClass('views');
+                iconAviso.addClass('views');
+            }else{
+                campoAviso.removeClass('views');
+                iconAviso.removeClass('views');
+            }
+        });
+    }
 });

@@ -123,13 +123,13 @@
                             <div class="div-form-valid box-alert-container" style="height: <?php echo $height; ?>">
                                 <?php echo $boxAlert; ?>
                             </div><!-- Verificar Alerta-->
-                            <div class="card-3d-wrap">
+                            <div class="card-3d-wrap" data-acao="login">
                                 <div class="card-3d-wrapper active">
                                     <form class="card-front" method="POST">
                                         <div class="center-wrap">
                                             <h4 class="heading">Acessar Painel</h4>
                                             <div class="form-group">
-                                                <input type="text" value="<?php echo $userValue?>" class="form-style" id="user" name="user" placeholder="Seu E-mail" autocomplete="off">
+                                                <input type="email" value="<?php echo $userValue?>" class="form-style" id="user" name="user" placeholder="Seu E-mail" autocomplete="off">
                                                 <label for="user" class="input-icon material-icons">alternate_email</label>
                                             </div>
                                             <div class="form-group">
@@ -155,36 +155,56 @@
                                                     <label for="lembrar-login" class="wrapper-lembrar-label">Lembrar Login</label>
                                                 </div><!-- Lembrar Login -->
                                             </div><!-- Box User -->
-                                            <input type="submit" class="btn" name="acao" value="Entrar">
+                                            <button type="submit" class="btn" name="acao">Entrar</button>
                                             <p class="text-center"><a href="#" class="link">Esqueceu a Senha?</a></p>
                                         </div>
                                     </form><!-- Logar -->
-                                    <form class="card-back">
+                                    <form class="card-back" method="POST" data-acao="register">
                                         <div class="center-wrap">
                                             <h4 class="heading">Faça Seu Registro</h4>
-                                            <div class="form-group">
-                                                <input type="text" class="form-style" placeholder="Seu Nome" autocomplete="off">
-                                                <i class="input-icon material-icons">perm_identity</i>
+                                            <div class="form-group error-input">
+                                                <input type="text" class="form-style" id="nome-reg" name="nome" placeholder="Seu Nome" autocomplete="off">
+                                                <label for="nome-reg" class="input-icon material-icons">perm_identity</label>
+                                                <div class="icon-input-atention">
+                                                    <i class="icones-aviso material-icons">warning</i>
+                                                    <div class="aviso-input">teste de mensagem</div>
+                                                </div>  
                                             </div>
                                             <div class="form-group">
-                                                <input type="email" class="form-style" placeholder="Seu E-mail" autocomplete="off">
-                                                <i class="input-icon material-icons">alternate_email</i>
+                                                <input type="email" id="email-reg" class="form-style" placeholder="Seu E-mail" autocomplete="off">
+                                                <label for="email-reg" class="input-icon material-icons">alternate_email</label>
+                                                <div class="icon-input-atention">
+                                                    <i class="icones-aviso material-icons">warning</i>
+                                                    <div class="aviso-input"></div>
+                                                </div>
                                             </div>
                                             <div class="form-group">
-                                                <input type="email" class="form-style" placeholder="Contato" autocomplete="off">
-                                                <i class="input-icon material-icons">call</i>
+                                                <input type="text" id="contato-reg" class="form-style" placeholder="Contato" autocomplete="off">
+                                                <label for="contato-reg" class="input-icon material-icons">call</label>
+                                                <div class="icon-input-atention">
+                                                    <i class="icones-aviso material-icons">warning</i>
+                                                    <div class="aviso-input"></div>
+                                                </div>
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" value="<?php echo $passwordValue?>" class="form-style" id="password" name="password" placeholder="Defina Sua Senha" autocomplete="off">
-                                                <label for="password" class="input-icon material-icons">lock</label>
+                                                <input type="password" class="form-style" id="password-reg" name="password" placeholder="Defina Sua Senha" autocomplete="off">
+                                                <label for="password-reg" class="input-icon material-icons">lock</label>
+                                                <div class="icon-input-atention">
+                                                    <i class="icones-aviso material-icons">warning</i>
+                                                    <div class="aviso-input"></div>
+                                                </div>
                                                 <div class="icon-showPassword material-icons"></div>
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" value="<?php echo $passwordValue?>" class="form-style" id="password" name="password" placeholder="Confirme Sua Senha" autocomplete="off">
-                                                <label for="password" class="input-icon material-icons">lock</label>
+                                                <input type="password" class="form-style" id="password-conf-reg" name="password-not" placeholder="Confirme Sua Senha" autocomplete="off">
+                                                <label for="password-conf-reg" class="input-icon material-icons">lock</label>
+                                                <div class="icon-input-atention">
+                                                    <i class="icones-aviso material-icons">warning</i>
+                                                    <div class="aviso-input"></div>
+                                                </div>
                                                 <div class="icon-showPassword material-icons"></div>
                                             </div>
-                                            <a href="#" class="btn">submit</a>
+                                            <button type="submit" class="btn" name="cadastrar">Registrar</button>
                                         </div>
                                     </form><!-- Registrar -->
                                 </div>

@@ -343,6 +343,8 @@ input[type="checkbox"]
     background-color: #242323;
     border: none;
     box-shadow: var(--shadow);
+
+    transition: .3s all ease;
 }
 .form-style:focus,
 .form-style:active
@@ -363,7 +365,64 @@ input[type="checkbox"]
     transition: all 200ms linear;
     cursor: text;
 }
- .icon-showPassword{
+.icon-input-atention{
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    scale: 0;
+
+    transition: .3s all ease;
+}
+.icon-input-atention i{
+    cursor: pointer;
+
+    display: block;
+
+    transition: .3s all ease;
+}
+.icon-input-atention .aviso-input{
+    position: absolute;
+    top: 50%;
+    left: -30%;
+    transform: translate(-100%, -50%);
+
+    pointer-events: none;
+
+    width: auto;
+    background-color: #f75353; /* Verificar depois */
+    white-space: nowrap;
+    line-height: .9rem;
+    font-size: .9rem;
+    border-radius: 4px;
+    color: var(--white);
+    font-weight: 300;
+    padding: 5px;
+
+    scale: 0;
+
+    transition: .3s all ease;
+}
+[data-acao="register"] .form-group.error-input .form-style{
+    width: 95%;
+
+    border: 1px solid #f75353;
+}
+[data-acao="register"] .form-group.error-input .icon-input-atention{
+    scale: 1;
+
+    color: #f75353;
+}
+.icon-input-atention .aviso-input.views{
+    scale: 1;
+}
+.icon-input-atention i.views{
+    scale: 1.3;
+}
+
+.icon-showPassword{
     position: absolute;
     width: 25px;
     height: 25px;
@@ -375,17 +434,17 @@ input[type="checkbox"]
     justify-content: center;
     align-items: center;
 }
- .icon-showPassword::before{
-     content: '\e8f4';
-     color: var(--mainColor);
-     font-weight: 300;
-     font-size: 20px;
-     transition: font-size .5s, content .5s;
+.icon-showPassword::before{
+    content: '\e8f4';
+    color: var(--mainColor);
+    font-weight: 300;
+    font-size: 20px;
+    transition: font-size .5s, content .5s;
 }
 .icon-showPassword.activePassword::before{
-     content: '\e8f5';
+    content: '\e8f5';
 }
- .icon-showPassword:hover::before{
+.icon-showPassword:hover::before{
     font-size: 25px;
 }
 .form-group input::placeholder
@@ -452,6 +511,9 @@ input[type="checkbox"]
     /* display: block; */
     border-right-width: 3px;
     border-bottom-width: 3px;
+}
+[data-acao="register"] .form-group{
+    text-align: left;
 }
 /*Home End*/
 /*Responsive*/
