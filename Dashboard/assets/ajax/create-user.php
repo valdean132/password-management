@@ -65,22 +65,51 @@
 
 
                     if(Painel::insert($_POST)){
-                        echo json_encode('Usuário cadastrado com sucesso');
-                        exit;
+                        $values = [ // Criando Array para enviar para o Corpo de da mensagem
+                            'nome' => $_POST['nome'],
+                            'email' => $_POST['email'],
+                            'password' => $newId_User,
+                        ];
+
+                        $info = array( // Array com Assunto e corpo do e-mail retornado
+                            'assunto' => 'Confirmação de Cadastro...',
+                            'corpo' => BaseHtml::emailConfiRegister($values)
+                        );
+                        $mail = new Email( // Chamando função para envio de e-mail
+                            'smtp.titan.email',
+                            'sac@pwm.valdeansouza.com',
+                            'valdean123',
+                            'Sac PWM'
+                        );
+
+                        $mail->addAdress($_POST['email'], explode(' ', $_POST['nome'])[0]); // Pegando nome do usuário e e-mail para fazer envio
+                        $mail->formatarEmail($info); // Formatando corpo para envio de formulário
+                
+                        if($mail->enviarEmail()){ // Fazendo envio de e-mail e verificando se e-mail existe
+                            echo json_encode('Usuário cadastrado com sucesso');
+                            exit;
+                        }else{ // Se o E-mail não existir joga essa mensagem.
+                            $resultConf = [
+                                'type' => 'error',
+                                'msg' => 'E-mail informado é inválido ',
+                                'span' => 'Informe um e-mail válido e tente novamente...'
+                            ];
+                            Painel::deletar($_POST['nome_tabela-not'], 'id_user', $_POST['id_user']);
+                            Painel::createAndDropDB($database, 'drop');
+                            echo json_encode($result);
+                            exit;
+                        }
+
                     }else{
                         $resultConf = [
                             'type' => 'error',
-                            'msg' => 'arece que ocorreu um erro inesperado. ',
+                            'msg' => 'Parece que ocorreu um erro inesperado. ',
                             'span' => 'Tente novamente, se persistir clique nessa mensagem...'
                         ];
+                        Painel::createAndDropDB($database, 'drop');
                         echo json_encode($result);
                         exit;
                     }
-                    // if(!Painel::createAndDropDB("pwm_user_$database", 'drop')){
-                    //     $result = "Criamos e deletamos esse banco de dados: pwm_user_$database";
-                    //     echo json_encode($result);
-                    //     exit;
-                    // }
                 }else{ // Caso Aja erro ao criar banco de dados
                     $result = [
                         'type' => 'error',
@@ -92,8 +121,6 @@
                 }
             }
         }
-
-
         echo json_encode($_POST);
     }
 
