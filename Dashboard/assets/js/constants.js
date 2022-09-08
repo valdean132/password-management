@@ -289,6 +289,8 @@ const loadingBox = (boxLoading, display) => {
 const showPassword = (thisInput, boxInputThis) => {
     let showPasswordThis = boxInputThis.find('.show-password');
 
+    // console.log(boxInputThis)
+
     // implementando botão para mostrar senha e evento
     setInterval(()=>{ // Evento para mostrar ou ocultra o botão de visualização da senha
         if(thisInput.val() !== ''){
@@ -296,7 +298,7 @@ const showPassword = (thisInput, boxInputThis) => {
         }else{
             showPasswordThis.css('display', 'none');
         }
-    });
+    }, 1000);
 
     showPasswordThis.click(()=>{ // Evento para mostrar e ocultar a senha
         const passwordType = thisInput.attr('type');

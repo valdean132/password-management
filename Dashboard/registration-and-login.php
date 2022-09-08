@@ -46,14 +46,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="title-page">Faça Login</title>
-    <!--===== Main CSS =====-->
-    <link rel="stylesheet" href="<?php echo INCLUDE_PATH_D; ?>styles/registration-and-login.css">
     <!--===== Material Icons =====-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="<?php echo INCLUDE_PATH_D; ?>styles/toastify.min.css"> <!-- CSS notification -->
+    <!--===== Main CSS =====-->
+    <link rel="stylesheet" href="<?php echo INCLUDE_PATH_D; ?>styles/registration-and-login.css">
 
     <link rel="sortcut icon" href="<?php echo INCLUDE_PATH; ?>logo_icon.ico" type="image/x-icon">
 </head>
 <body>
+    <base base="<?php echo INCLUDE_PATH; ?>">
+
     <?php
         $height = '';
         $boxAlert = '';
@@ -135,7 +138,7 @@
                                             <div class="form-group">
                                                 <input type="password" value="<?php echo $passwordValue?>" class="form-style" id="password" name="password" placeholder="Sua Senha" autocomplete="off">
                                                 <label for="password" class="input-icon material-icons">lock</label>
-                                                <div class="icon-showPassword material-icons"></div>
+                                                <div class="show-password material-icons"></div>
                                             </div>
 
                                             <div class="box-lembre">
@@ -155,15 +158,17 @@
                                                     <label for="lembrar-login" class="wrapper-lembrar-label">Lembrar Login</label>
                                                 </div><!-- Lembrar Login -->
                                             </div><!-- Box User -->
-                                            <button type="submit" class="btn" name="acao">Entrar</button>
+                                            <button type="submit" class="btn" name="acao">
+                                                <span>Entrar</span>
+                                            </button>
                                             <p class="text-center"><a href="#" class="link">Esqueceu a Senha?</a></p>
                                         </div>
                                     </form><!-- Logar -->
                                     <form class="card-back" method="POST" data-acao="register">
                                         <div class="center-wrap">
                                             <h4 class="heading">Faça Seu Registro</h4>
-                                            <div class="form-group error-input">
-                                                <input type="text" class="form-style" id="nome-reg" name="nome" placeholder="Seu Nome" autocomplete="off">
+                                            <div class="form-group">
+                                                <input type="text" not-null valid-name="nome" permission_alter="1" class="form-style" id="nome-reg" name="nome" placeholder="Seu Nome" autocomplete="off">
                                                 <label for="nome-reg" class="input-icon material-icons">perm_identity</label>
                                                 <div class="icon-input-atention">
                                                     <i class="icones-aviso material-icons">warning</i>
@@ -171,7 +176,7 @@
                                                 </div>  
                                             </div>
                                             <div class="form-group">
-                                                <input type="email" id="email-reg" class="form-style" placeholder="Seu E-mail" autocomplete="off">
+                                                <input type="email" not-null valid-contato="email" permission_alter="1" id="email-reg" class="form-style" placeholder="Seu E-mail" autocomplete="off" name="email">
                                                 <label for="email-reg" class="input-icon material-icons">alternate_email</label>
                                                 <div class="icon-input-atention">
                                                     <i class="icones-aviso material-icons">warning</i>
@@ -179,32 +184,16 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" id="contato-reg" class="form-style" placeholder="Contato" autocomplete="off">
+                                                <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" not-null valid-contato="celular" mask_number="celular" permission_alter="1" id="contato-reg" class="form-style" placeholder="Contato" name="contato" autocomplete="off">
                                                 <label for="contato-reg" class="input-icon material-icons">call</label>
                                                 <div class="icon-input-atention">
                                                     <i class="icones-aviso material-icons">warning</i>
                                                     <div class="aviso-input"></div>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <input type="password" class="form-style" id="password-reg" name="password" placeholder="Defina Sua Senha" autocomplete="off">
-                                                <label for="password-reg" class="input-icon material-icons">lock</label>
-                                                <div class="icon-input-atention">
-                                                    <i class="icones-aviso material-icons">warning</i>
-                                                    <div class="aviso-input"></div>
-                                                </div>
-                                                <div class="icon-showPassword material-icons"></div>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" class="form-style" id="password-conf-reg" name="password-not" placeholder="Confirme Sua Senha" autocomplete="off">
-                                                <label for="password-conf-reg" class="input-icon material-icons">lock</label>
-                                                <div class="icon-input-atention">
-                                                    <i class="icones-aviso material-icons">warning</i>
-                                                    <div class="aviso-input"></div>
-                                                </div>
-                                                <div class="icon-showPassword material-icons"></div>
-                                            </div>
-                                            <button type="submit" class="btn" name="cadastrar">Registrar</button>
+                                            <button type="submit" disabled permission_alter="1" class="btn" name="cadastrar-not">
+                                                <span>Registrar</span>
+                                            </button>
                                         </div>
                                     </form><!-- Registrar -->
                                 </div>
@@ -219,6 +208,8 @@
 
     <!--===== Scripts ======-->
     <script src="<?php echo INCLUDE_PATH_D; ?>js/jquery.min.js"></script><!-- Jquery -->
+    <script src="<?php echo INCLUDE_PATH_D ?>js/toastify.min.js"></script> <!-- Notification -->
+    <script src="<?php echo INCLUDE_PATH_D ?>js/jquery.mask.min.js"></script> <!-- Mask Jquery -->
     <script src="<?php echo INCLUDE_PATH_D; ?>js/constants.js"></script><!-- Variaveis Constantes do Script -->
     <script src="<?php echo INCLUDE_PATH_D; ?>js/registration-and-login.js"></script><!-- Animações de Login e registro e configurações -->
 </body>

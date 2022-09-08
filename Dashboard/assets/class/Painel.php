@@ -7,6 +7,28 @@
             return '<div class="box-alert '.$type.'"><p>'.$msg.' <span>'.$span.'</span></p></div>';
         }
 
+        // Gerando Senha Aleatória
+        public static function geraSenha($tamanho = 8, $maiusculas = true, $numeros = true, $simbolos = false){
+            $lmin = 'abcdefghijklmnopqrstuvwxyz';
+            $lmai = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $num = '1234567890';
+            $simb = '!@#$%*()_+^&{}}:;?.';
+            $retorno = '';
+            $caracteres = '';
+    
+            $caracteres .= $lmin;
+            if ($maiusculas) $caracteres .= $lmai;
+            if ($numeros) $caracteres .= $num;
+            if ($simbolos) $caracteres .= $simb;
+    
+            $len = strlen($caracteres);
+            for ($n = 1; $n <= $tamanho; $n++) {
+                $rand = mt_rand(1, $len);
+                $retorno .= $caracteres[$rand-1];
+            }
+            return $retorno;
+        }
+
         // Salvando Arquivos
         public static function uploadFile($file){
             $formatoArquivo = explode('.',$file['name']);
@@ -39,6 +61,12 @@
             }else{ // Caso seja documentos
                 @unlink(BASE_DIR.'/assets/uploads/document/'.$file);
             }
+        }
+
+        // Criando banco de dados de forma dinamica
+        public static function createAndDropDB($newDB, $acao){ // $newDB: Nome do banco de dados <=> $acao: Ação a ser atribuida => "CREATE" or "DROP"
+            $sql = MySql::conectar()->prepare("$acao DATABASE $newDB");
+            $sql->execute();
         }
 
         // Inserindo depoimento no banco de dados

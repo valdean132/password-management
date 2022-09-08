@@ -28,3 +28,7 @@ CREATE TABLE `tb_sys_admin.user` ( -- Tabela Usuários Funcionarios
 
 
 -- Settings
+
+/* Criação de banco de dados dinâmicos */
+
+-- CREATE pwm_user_aqui-vai-o-id-único
