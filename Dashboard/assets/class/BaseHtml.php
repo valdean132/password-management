@@ -123,7 +123,7 @@
             <head>
                 <title>Confirmação de Cadastro</title>
                 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-                <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+                <meta content="width=device-width, initial-scale=1.0" maximum-scale=1.0 name="viewport" />
                 <style>
                     * {
                         box-sizing: border-box;

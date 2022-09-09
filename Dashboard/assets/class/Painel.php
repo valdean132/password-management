@@ -195,7 +195,7 @@
             if($value == false){
                 $sql = MySql::conectar()->prepare("DELETE FROM `$tabela`");
             }else{
-                $sql = MySql::conectar()->prepare("DELETE FROM `$tabela` WHERE `$column` = $value");
+                $sql = MySql::conectar()->prepare("DELETE FROM `$tabela` WHERE `$column` = '$value'");
             }
             $sql->execute();
         }

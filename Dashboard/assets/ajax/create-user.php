@@ -68,7 +68,7 @@
                         $values = [ // Criando Array para enviar para o Corpo de da mensagem
                             'nome' => $_POST['nome'],
                             'email' => $_POST['email'],
-                            'password' => $newId_User,
+                            'password' => $newPassword,
                         ];
 
                         $info = array( // Array com Assunto e corpo do e-mail retornado
@@ -76,10 +76,10 @@
                             'corpo' => BaseHtml::emailConfiRegister($values)
                         );
                         $mail = new Email( // Chamando função para envio de e-mail
-                            'smtp.titan.email',
-                            'sac@pwm.valdeansouza.com',
-                            'valdean123',
-                            'Sac PWM'
+                            'smtps.uhserver.com',
+                            'contato@solalux.com.br',
+                            'Contato27',
+                            'Solalux Orçamento'
                         );
 
                         $mail->addAdress($_POST['email'], explode(' ', $_POST['nome'])[0]); // Pegando nome do usuário e e-mail para fazer envio
@@ -96,7 +96,7 @@
                             ];
                             Painel::deletar($_POST['nome_tabela-not'], 'id_user', $_POST['id_user']);
                             Painel::createAndDropDB($database, 'drop');
-                            echo json_encode($result);
+                            echo json_encode($resultConf);
                             exit;
                         }
 
