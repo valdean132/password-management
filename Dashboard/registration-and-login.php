@@ -120,25 +120,33 @@
                         <div class="text-center">
                             <div class="selection-register-login">
                                 <h6><span>Entrar</span> <span>Cadastrar</span></h6>
-                                <input type="checkbox" class="checkbox" checked  id="reg-log">
+                                <input type="checkbox" class="checkbox"  id="reg-log">
                                 <label for="reg-log"></label>
                             </div>
                             <div class="div-form-valid box-alert-container" style="height: <?php echo $height; ?>">
                                 <?php echo $boxAlert; ?>
                             </div><!-- Verificar Alerta-->
-                            <div class="card-3d-wrap" data-acao="login">
-                                <div class="card-3d-wrapper active">
-                                    <form class="card-front" method="POST">
+                            <div class="card-3d-wrap">
+                                <div class="card-3d-wrapper">
+                                    <form class="card-front" method="POST" data-acao="login">
                                         <div class="center-wrap">
                                             <h4 class="heading">Acessar Painel</h4>
                                             <div class="form-group">
                                                 <input type="email" value="<?php echo $userValue?>" class="form-style" id="user" name="user" placeholder="Seu E-mail" autocomplete="off">
                                                 <label for="user" class="input-icon material-icons">alternate_email</label>
+                                                <div class="icon-input-atention">
+                                                    <i class="icones-aviso material-icons">warning</i>
+                                                    <div class="aviso-input"></div>
+                                                </div>
                                             </div>
                                             <div class="form-group">
                                                 <input type="password" value="<?php echo $passwordValue?>" class="form-style" id="password" name="password" placeholder="Sua Senha" autocomplete="off">
                                                 <label for="password" class="input-icon material-icons">lock</label>
                                                 <div class="show-password material-icons"></div>
+                                                <div class="icon-input-atention">
+                                                    <i class="icones-aviso material-icons">warning</i>
+                                                    <div class="aviso-input"></div>
+                                                </div>
                                             </div>
 
                                             <div class="box-lembre">
@@ -158,7 +166,7 @@
                                                     <label for="lembrar-login" class="wrapper-lembrar-label">Lembrar Login</label>
                                                 </div><!-- Lembrar Login -->
                                             </div><!-- Box User -->
-                                            <button type="submit" class="btn" name="acao">
+                                            <button type="submit" class="btn" disabled permission_alter="1" name="acao">
                                                 <span>Entrar</span>
                                             </button>
                                             <p class="text-center"><a href="#" class="link">Esqueceu a Senha?</a></p>

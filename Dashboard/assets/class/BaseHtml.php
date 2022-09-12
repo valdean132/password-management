@@ -302,14 +302,6 @@
                                                                                                     style="display: block; height: auto; border: 0;"
                                                                                                     title="Valdean Souza"
                                                                                                     width="32" /></a></td>
-                                                                                        <td style="padding:0 0 0 10px;"><a
-                                                                                                href=""
-                                                                                                target="_blank"><img alt="Web Site"
-                                                                                                    height="32"
-                                                                                                    src="images/website2x.png"
-                                                                                                    style="display: block; height: auto; border: 0;"
-                                                                                                    title="Valdean Souza"
-                                                                                                    width="32" /></a></td>
                                                                                     </tr>
                                                                                 </table>
                                                                             </div>

@@ -186,7 +186,7 @@ ul {
 .btn:disabled:hover {
     background-color: #82879b;
 
-    color: var(--blackSmoke);
+    color: var(--white);
     font-weight: 500;
 
     cursor: no-drop;
@@ -435,17 +435,25 @@ input[type="checkbox"] {
     transition: .3s all ease;
 }
 
-[data-acao="register"] .form-group.success .form-style {
+.form-group.disabled .form-style{
+    border: 1px solid #82879b;
+
+    background: #afb1b967;
+
+    cursor: no-drop;
+}
+.form-group.success .form-style {
     border: 1px solid #41a044;
 }
 
-[data-acao="register"] .form-group.error .form-style {
+
+.form-group.error .form-style {
     width: 95%;
 
     border: 1px solid #f75353;
 }
 
-[data-acao="register"] .form-group.error .icon-input-atention {
+.form-group.error .icon-input-atention {
     scale: 1;
 
     color: #f75353;
@@ -560,7 +568,7 @@ input[type="checkbox"] {
     border-bottom-width: 3px;
 }
 
-[data-acao="register"] .form-group {
+.form-group {
     text-align: left;
 }
 

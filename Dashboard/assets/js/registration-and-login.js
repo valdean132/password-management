@@ -13,6 +13,11 @@ $(function(){
             beforeSend: function(){
                 boxAvisos('attention', msg, '', false);
 
+                infoTag.inputs.each(function(){
+                    $(this).attr('disabled', true);
+                    $(this).parents('form .form-group').addClass('disabled');
+                });
+
                 inputAcao.attr('disabled', true);
                 inputAcao.find('span').html(iconLoad);
             },
@@ -32,12 +37,18 @@ $(function(){
                                 if($(this).attr('name') == campoError.name){
                                     avisoInputs(true, $(this).parents('form .form-group'), 'error', campoError.msgInput);
                                 }
+
+                                $(this).attr('disabled', false);
+                                $(this).parents('form .form-group').removeClass('disabled');
                             });
                         }
                     }else if(data.type == 'success'){
                         infoTag.inputs.each(function(index){
                             $(this).val('');
-                            $(this).parents('form .form-group').removeClass('success')
+                            $(this).parents('form .form-group').removeClass('success');
+
+                            $(this).attr('disabled', false);
+                            $(this).parents('form .form-group').removeClass('disabled');
                             if($(this).attr('not-null') == '')
                                 verificInputNull[index] = true;
 
@@ -46,9 +57,6 @@ $(function(){
                     inputAcao.attr('disabled', true);
                     inputAcao.find('span').html('Registrar')
                 }
-
-
-
             }
         });
     }
