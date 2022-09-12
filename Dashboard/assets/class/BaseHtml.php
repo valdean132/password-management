@@ -303,7 +303,7 @@
                                                                                                     title="Valdean Souza"
                                                                                                     width="32" /></a></td>
                                                                                         <td style="padding:0 0 0 10px;"><a
-                                                                                                href="https://valdeansouza.com/"
+                                                                                                href=""
                                                                                                 target="_blank"><img alt="Web Site"
                                                                                                     height="32"
                                                                                                     src="images/website2x.png"

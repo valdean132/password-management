@@ -37,7 +37,8 @@
             $result = [
                 'type' => 'error',
                 'msg' => 'Campos vazios não são permitidos.',
-                'span' => ''
+                'span' => '',
+                'suport' => false
             ];
             echo json_encode($result);
             exit;
@@ -46,8 +47,13 @@
             if(Painel::userExists($_POST['email'], 'tb_sys_admin.user', 'email', $newId_User)){
                 $result = [
                     'type' => 'error',
-                    'msg' => 'Erro ao Cadastrar usuário. ',
-                    'span' => 'E-mail escolhido já se encontra cadastrado.'
+                    'msg' => 'E-mail escolhido já se encontra cadastrado. ',
+                    'span' => 'Informe outro e tente novamente...',
+                    'suport' => false,
+                    'inputError' => [
+                        'name' => 'email',
+                        'msgInput' => 'E-mail já existe, informe outro.'
+                    ]
                 ];
                 echo json_encode($result);
                 exit;
@@ -76,35 +82,46 @@
                             'corpo' => BaseHtml::emailConfiRegister($values)
                         );
                         $mail = new Email( // Chamando função para envio de e-mail
-                            'smtps.uhserver.com',
-                            'contato@solalux.com.br',
-                            'Contato27',
-                            'Solalux Orçamento'
+                            'smtp.titan.email',
+                            'desenvolvedor@valdeansouza.com',
+                            'dev2022',
+                            'Sac PWA'
                         );
 
                         $mail->addAdress($_POST['email'], explode(' ', $_POST['nome'])[0]); // Pegando nome do usuário e e-mail para fazer envio
                         $mail->formatarEmail($info); // Formatando corpo para envio de formulário
                 
                         if($mail->enviarEmail()){ // Fazendo envio de e-mail e verificando se e-mail existe
-                            echo json_encode('Usuário cadastrado com sucesso');
+                            $resultConf = [
+                                'type' => 'success',
+                                'msg' => 'Cadastro realizado com sucesso... ',
+                                'span' => 'Acesse sua caixa de e-mail para confirmar o cadastro.',
+                                'suport' => false
+                            ];
+                            echo json_encode($resultConf);
                             exit;
                         }else{ // Se o E-mail não existir joga essa mensagem.
                             $resultConf = [
                                 'type' => 'error',
-                                'msg' => 'E-mail informado é inválido ',
-                                'span' => 'Informe um e-mail válido e tente novamente...'
+                                'msg' => 'E-mail informado é inválido! ',
+                                'span' => 'Informe um e-mail valido e tente novamente...',
+                                'suport' => false,
+                                'inputError' => [
+                                    'name' => 'email',
+                                    'msgInput' => 'Informe um E-mail valido.'
+                                ]
                             ];
                             Painel::deletar($_POST['nome_tabela-not'], 'id_user', $_POST['id_user']);
                             Painel::createAndDropDB($database, 'drop');
                             echo json_encode($resultConf);
                             exit;
                         }
-
                     }else{
                         $resultConf = [
                             'type' => 'error',
                             'msg' => 'Parece que ocorreu um erro inesperado. ',
-                            'span' => 'Tente novamente, se persistir clique nessa mensagem...'
+                            'span' => 'Tente novamente, se persistir clique nessa mensagem...',
+                            'suport' => true
                         ];
                         Painel::createAndDropDB($database, 'drop');
                         echo json_encode($result);
@@ -114,7 +131,8 @@
                     $result = [
                         'type' => 'error',
                         'msg' => 'Parece que ocorreu um erro inesperado. ',
-                        'span' => 'Tente novamente, se persistir clique nessa mensagem...'
+                        'span' => 'Tente novamente, se persistir clique nessa mensagem...',
+                        'suport' => true
                     ];
                     echo json_encode($result);
                     exit;
