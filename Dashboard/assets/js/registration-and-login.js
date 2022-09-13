@@ -26,6 +26,40 @@ $(function(){
                 console.error(data.responseText);
             },
             success: function(data){
+                if(page == 'login-user'){
+                    boxAvisos(data.type, data.msg, data.span, true, data.suport ? suport : '');
+
+                    if(data.type == 'error'){ // Tratando mensagens de erros
+                        if(data.inputError != undefined){ // Verificando se existe esse campo no retorno
+                            let campoError = data.inputError;
+    
+                            infoTag.inputs.each(function(){
+                                if($(this).attr('name') == campoError.name){
+                                    avisoInputs(true, $(this).parents('form .form-group'), 'error', campoError.msgInput);
+                                }
+
+                                $(this).attr('disabled', false);
+                                $(this).parents('form .form-group').removeClass('disabled');
+                            });
+                        }else{
+                            infoTag.inputs.each(function(){
+                                $(this).attr('disabled', false);
+                                $(this).parents('form .form-group').removeClass('disabled');
+                            });
+
+                        }
+                    }else if(data.type == 'success'){
+                        location.reload();
+                    }
+                    infoTag.inputs.each(function(){
+                        $(this).attr('disabled', false);
+                        $(this).parents('form .form-group').removeClass('disabled');
+                    });
+
+                    inputAcao.attr('disabled', true);
+                    inputAcao.find('span').html('Entrar');
+
+                }
                 if(page == 'create-user'){
                     boxAvisos(data.type, data.msg, data.span, true, data.suport ? suport : '');
 
@@ -55,7 +89,7 @@ $(function(){
                         });
                     }
                     inputAcao.attr('disabled', true);
-                    inputAcao.find('span').html('Registrar')
+                    inputAcao.find('span').html('Registrar');
                 }
             }
         });
@@ -81,14 +115,14 @@ $(function(){
         // Consts
         let rememberUser = {};
         
-        let boxLembrar = $('.wrapper-lembrar-label');
-        let inputAcao = $('input[name="acao"]');
-        let inputLembrarLogin = $('#lembrar-login');
-        let inputName = $('input[name="user"]');
-        let inputPassword = $('input[name="password"]');
+        let boxLembrar = $('form[data-acao="login"] .wrapper-lembrar-label');
+        let inputAcao = $('form[data-acao="login"] button[name="acao"]');
+        let inputLembrarLogin = $('form[data-acao="login"] #lembrar-login');
+        let inputName = $('form[data-acao="login"] input[name="email"]');
+        let inputPassword = $('form[data-acao="login"] input[name="password"]');
         
     
-        let rememberUserStorege = localStorage.getItem('dashboardSystemStoreLogin');
+        let rememberUserStorege = localStorage.getItem('PwMLogin');
         let rememberUserJson = JSON.parse(rememberUserStorege);
     
         // console.log(JSON.parse(rememberUserStorege))
@@ -96,8 +130,11 @@ $(function(){
         if(rememberUserJson !== null){
             if(rememberUserJson.checkedRemember === true){
                 inputLembrarLogin.prop('checked', rememberUserJson.checkedRemember);
-                inputName.val(rememberUserJson.user);
+                inputName.val(rememberUserJson.email);
                 inputPassword.val(Descripta(rememberUserJson.password));
+
+                inputName.parents('form .form-group').addClass('success');
+                inputPassword.parents('form .form-group').addClass('success');
             }
         }
     
@@ -122,29 +159,29 @@ $(function(){
         function waitUser(){
             if(inputName.val() !== '' || inputPassword.val() !== ''){
                 rememberUser = {
-                    user: inputName.val(),
+                    email: inputName.val(),
                     password: Encripta(inputPassword.val()),
                     checkedRemember: true
                 };
             }else{
                 rememberUser = {
-                    user: '',
+                    email: '',
                     password: '',
                     checkedRemember: false
                 };
             }
     
-            updateLocalStorage('dashboardSystemStoreLogin', rememberUser);
+            updateLocalStorage('PwMLogin', rememberUser);
                 
         }
         function removeUser(){
             rememberUser = {
-                user: '',
+                email: '',
                 password: '',
                 checkedRemember: false
             };
     
-            updateLocalStorage('dashboardSystemStoreLogin', rememberUser);
+            updateLocalStorage('PwMLogin', rememberUser);
         }
     
         /* ** */
@@ -189,6 +226,81 @@ $(function(){
         });
     }
 
+    /* Login para entrar na rede */
+    validLogin();
+    function validLogin(){
+        // Variaveis Locais
+        let boxInputs = $('form[data-acao="login"] .form-group');
+        let btnSubmitEnv = $('form[data-acao="login"] button[type="submit"]');
+        let inputs = $('form[data-acao="login"] [permission_alter="1"]');
+
+        let verificINull = [];
+
+        for(var i = 0; i < $('form[data-acao="login"] [not-null]').length; i++){
+            verificINull[i] = true;
+        }
+
+        let verificInputTrue = () => { // Função para abilitar ou desabilitar botão de envio
+            if(verificINull.indexOf(true) == -1){  
+                btnSubmitEnv.attr('disabled', false);
+            }else{
+                btnSubmitEnv.attr('disabled', true);
+            }
+        }
+
+
+        $('form[data-acao="login"] [not-null]').each(function(index){
+            let boxInputThis = $(this).parents('form .form-group');
+
+            // Evento para adcionar ou tirar aviso aviso quando estiver vazio...
+            if($(this).val() != ''){
+                verificINull[index] = false;
+
+                verificInputTrue();
+            }
+
+            $(this).on({
+                blur: function(){
+                    // Input dentro dessa função de evento
+                    let valueInput = $(this).val();
+    
+                    verificINull[index] = validateInput($(this), boxInputThis, valueInput);
+
+                    verificInputTrue();
+                }
+            });
+    
+            $(this).keyup(function(){
+                // Input dentro dessa função de evento
+                let valueInput = $(this).val();
+    
+                verificINull[index] = validateInput($(this), boxInputThis, valueInput);
+
+                verificInputTrue();
+            });
+        });
+
+        
+        btnSubmitEnv.click(function(){ // botão para enviar o formulário
+
+            inputs.each(function(){
+                if($(this).attr('name') == 'lembrarConexao'){
+                    let lembrarConexao = $('form[data-acao="login"] [name="lembrarConexaoCheckbox"]').prop('checked');
+                    !lembrarConexao ? $(this).val(null) : $(this).val('on');
+                }
+            });
+
+            let infoTag = {
+                boxInputs: boxInputs,
+                inputs: $('form[data-acao="login"] [permission_alter="1"]')
+            }
+
+            ajaxConection('login-user', 'POST', infoTag, 'Enviando Dados... Aguarde!!!', $(this));
+
+            return false;
+        });
+    }
+
     /* Validação de Campos de registro e enviando fazendo cadastro */
     validFormRegister();
     function validFormRegister(){
@@ -197,10 +309,16 @@ $(function(){
         let btnSubmitEnv = $('form[data-acao="register"] button[type="submit"]');
         let inputs = $('form[data-acao="register"] [permission_alter="1"]');
 
-        // verificInputNull = [];
-
         for(var i = 0; i < $('form[data-acao="register"] [not-null]').length; i++){
             verificInputNull[i] = true;
+        }
+
+        let verificInputTrue = () => { // Função para abilitar ou desabilitar botão de envio
+            if(verificInputNull.indexOf(true) == -1){  
+                btnSubmitEnv.attr('disabled', false);
+            }else{
+                btnSubmitEnv.attr('disabled', true);
+            }
         }
 
         $('form[data-acao="register"] [not-null]').each(function(index){
@@ -228,17 +346,7 @@ $(function(){
             });
         });
 
-        let verificInputTrue = () =>{
-            if(verificInputNull.indexOf(true) == -1){  
-                btnSubmitEnv.attr('disabled', false);
-            }else{
-                btnSubmitEnv.attr('disabled', true);
-            }
-        }
-
-
-
-        btnSubmitEnv.click(function(){
+        btnSubmitEnv.click(function(){ // botão para enviar o formulário
 
             let infoTag = {
                 boxInputs: boxInputs,

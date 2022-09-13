@@ -1,30 +1,33 @@
 <?php
+    $height = 'auto';
+    $boxAlert = '';
+    $userValue = '';
+    $passwordValue = '';
     if(isset($_COOKIE['lembrarConexao'])){
         $user = $_COOKIE['user'];
         $password = $_COOKIE['password'];
 
-        $sql = MySql::conectar()->prepare("SELECT * FROM `tb_sys_admin.user` WHERE user = ? AND password = ?");
-        $sql->execute(array($user, $password));
+        $sql = MySql::conectar()->prepare("SELECT * FROM `tb_sys_admin.user` WHERE email = ? AND password = ?");
+        $sql->execute(array($email, $password));
 
         if($sql->rowCount() == 1){
             $info = $sql->fetch();
 
-            if($info['status'] == 'Ativo'){
+            if($info['status'] == 1){
                 $_SESSION['login'] = true;
-                $_SESSION['user'] = $user;
+                $_SESSION['email'] = $email;
                 $_SESSION['password'] = $password;
-                $_SESSION['id'] = $info['id'];
-                $_SESSION['cargo'] = $info['cargo']; 
+                $_SESSION['id_user'] = $info['id_user'];
                 $_SESSION['nome'] = $info['nome'];
-                $_SESSION['data_nasc'] = $info['data_nasc'];
-                $_SESSION['email'] = $info['email'];
                 $_SESSION['contato'] = $info['contato'];
                 $_SESSION['img'] = $info['photo_user'];
+                $_SESSION['status'] = $info['status'];
                 $_SESSION['nome_tabela'] = 'tb_sys_admin.user';
                 $_SESSION['database'] = $info['database'];
-                if(isset($_POST['lembrarConexao'])){
+
+                if($_POST['lembrarConexao'] == 'on'){
                     setcookie('lembrarConexao', true, time()+(12), '/');
-                    setcookie('user', $user, time()+(12), '/');
+                    setcookie('email', $email, time()+(12), '/');
                     setcookie('password', $password, time()+(12), '/');
                 }
                 header('Location: '.INCLUDE_PATH_ATUAL);
@@ -35,7 +38,7 @@
                 $userValue = $user;
                 $passwordValue = '';
             }
-
+            
         }
     }
 ?>
@@ -56,61 +59,6 @@
 </head>
 <body>
     <base base="<?php echo INCLUDE_PATH; ?>">
-
-    <?php
-        $height = '';
-        $boxAlert = '';
-        $userValue = '';
-        $passwordValue = '';
-        if(isset($_POST['acao'])){
-            $user = $_POST['user'];
-            $password = md5($_POST['password']);
-            if($user === '' && $password === ''){
-                $height = 'auto';
-                $boxAlert = Painel::boxMsg('error', 'Todos os campos devem ser preenchidos!!!');
-                $userValue = $user;
-                $passwordValue = $password;
-            }else{
-                $sql = MySql::conectar() -> prepare("SELECT * FROM `tb_sys_admin.user` WHERE email = ? AND password = ?");
-                $sql->execute(array($user, $password));
-                if($sql->rowCount() == 1){
-                    $info = $sql->fetch();
-
-                    if($info['status'] == 'Ativo'){
-                        $_SESSION['login'] = true;
-                        $_SESSION['user'] = $user;
-                        $_SESSION['password'] = $password;
-                        $_SESSION['id_user'] = $info['id_user'];
-                        $_SESSION['nome'] = $info['nome'];
-                        $_SESSION['data_nasc'] = $info['data_nasc'];
-                        $_SESSION['email'] = $info['email'];
-                        $_SESSION['contato'] = $info['contato'];
-                        $_SESSION['img'] = $info['photo_user'];
-                        $_SESSION['nome_tabela'] = 'tb_sys_admin.user';
-                        $_SESSION['database'] = $info['database'];
-                        if(isset($_POST['lembrarConexao'])){
-                            setcookie('lembrarConexao', true, time()+(12), '/');
-                            setcookie('user', $user, time()+(12), '/');
-                            setcookie('password', $password, time()+(12), '/');
-                        }
-                        header('Location: '.INCLUDE_PATH_ATUAL);
-                        die();
-                    }else{
-                        $height = 'auto';
-                        $boxAlert = Painel::boxMsg('error', 'Sua Conta Está Desativada!!!', '</br>Contate o Administrador para mais informações');
-                        $userValue = $user;
-                        $passwordValue = '';
-                    }
-                    
-                }else{
-                    $height = 'auto';
-                    $boxAlert = Painel::boxMsg('error', 'Usuário ou Senha Incorretos!!!', '</br>Tente novamente');
-                    $userValue = $user;
-                    $passwordValue = '';
-                }
-            }
-        }
-    ?>
     <!--===== Home Start ======-->
     <section>
         <div class="container">
@@ -132,7 +80,7 @@
                                         <div class="center-wrap">
                                             <h4 class="heading">Acessar Painel</h4>
                                             <div class="form-group">
-                                                <input type="email" value="<?php echo $userValue?>" class="form-style" id="user" name="user" placeholder="Seu E-mail" autocomplete="off">
+                                                <input type="email" permission_alter="1" not-null value="<?php echo $userValue?>" class="form-style" id="user" name="email" placeholder="Seu E-mail" autocomplete="off">
                                                 <label for="user" class="input-icon material-icons">alternate_email</label>
                                                 <div class="icon-input-atention">
                                                     <i class="icones-aviso material-icons">warning</i>
@@ -140,7 +88,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" value="<?php echo $passwordValue?>" class="form-style" id="password" name="password" placeholder="Sua Senha" autocomplete="off">
+                                                <input type="password" permission_alter="1" not-null value="<?php echo $passwordValue?>" class="form-style" id="password" name="password" placeholder="Sua Senha" autocomplete="off">
                                                 <label for="password" class="input-icon material-icons">lock</label>
                                                 <div class="show-password material-icons"></div>
                                                 <div class="icon-input-atention">
@@ -151,12 +99,13 @@
 
                                             <div class="box-lembre">
                                                 <div class="wrapper-lembre lembrar-user">
-                                                    <input type="checkbox" name="lembrarConexao" id="lembrar-user">
-
+                                                    <input type="checkbox" name="lembrarConexaoCheckbox" id="lembrar-user">
+                                                    
                                                     <label for="lembrar-user" class="caixinha-box-input">
                                                         <div class="after-lembrete"></div>
                                                     </label>
                                                     <label for="lembrar-user">Manter conectado</label>
+                                                    <input type="hidden" permission_alter="1" name="lembrarConexao">
                                                 </div><!-- Lembrar Usuário -->
                                                 <div class="wrapper-lembre lembrar-login">
                                                     <input type="checkbox" id="lembrar-login">
@@ -166,12 +115,13 @@
                                                     <label for="lembrar-login" class="wrapper-lembrar-label">Lembrar Login</label>
                                                 </div><!-- Lembrar Login -->
                                             </div><!-- Box User -->
-                                            <button type="submit" class="btn" disabled permission_alter="1" name="acao">
+                                            <button type="submit" disabled class="btn"  permission_alter="1" name="acao">
                                                 <span>Entrar</span>
                                             </button>
                                             <p class="text-center"><a href="#" class="link">Esqueceu a Senha?</a></p>
                                         </div>
                                     </form><!-- Logar -->
+
                                     <form class="card-back" method="POST" data-acao="register">
                                         <div class="center-wrap">
                                             <h4 class="heading">Faça Seu Registro</h4>

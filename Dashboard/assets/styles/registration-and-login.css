@@ -452,7 +452,9 @@ input[type="checkbox"] {
 
     border: 1px solid #f75353;
 }
-
+.form-group.error .show-password{
+    right: 30px;
+}
 .form-group.error .icon-input-atention {
     scale: 1;
 
@@ -478,6 +480,7 @@ input[type="checkbox"] {
     display: none;
     justify-content: center;
     align-items: center;
+    transition: all .5s ease;
 }
 
 .show-password::before {
