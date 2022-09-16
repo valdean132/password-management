@@ -49,6 +49,10 @@ body, html{
 }
 body{
     background: var(--bg-black-900);
+    background-image: url('../images/background-main.png');
+    background-repeat: no-repeat;
+    background-size: 130%;
+    background-position: top;
 }
 /*! Scroll !*/
 ::-webkit-scrollbar{
