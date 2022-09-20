@@ -41,7 +41,7 @@
                 <img src="./logo_icon.ico" class="transition" alt="">
             </a>
         </div><!-- Logo da Empresa -->
-        <div class="main-nav display-flex flex-column w100 bg-02 shadow-01">
+        <div class="main-nav display-flex flex-column w100 bg-04 shadow-01">
             <ul class="nav-ul w100 position-relative">
                 <li class="<?php echo Diretorios::selecionadoMenu('home'); ?>">
                     <a href="<?php echo INCLUDE_PATH; ?>" class="menu-nav display-center position-relative padd-15 transition w100 h100">
@@ -67,7 +67,7 @@
             </div><!-- Link para sair do sistema -->
         </div><!-- Navegação principal -->
     </nav><!-- Navegação Lateral -->
-    <header class="header-main bg-01 position-fixed display-flex space-between">
+    <header class="header-main bg-04 position-fixed display-flex space-between">
         <div class="title-header h100 padd-15 display-flex align-items-center">
             <h1 class="text-capitalize cursor-pointer">
                 <i class="bi bi-<?php echo Diretorios::titlePage()[0]; ?>"></i> <?php echo Diretorios::titlePage()[1]; ?>
@@ -85,7 +85,7 @@
                     <h3 class="name-user marg-10 text-capitalize"><?php echo explode(' ', $_SESSION['nome'])[0]; ?> <?php $nome = explode(' ', $_SESSION['nome']); echo $nome[count($nome) -1]; ?></h3>
                     <i class="bi bi-caret-down row-user transition"></i>
                 </div><!-- Info user -->
-                <nav class="menu-user position-absolute shadow-02 transition">
+                <nav class="menu-user position-absolute shadow-02 border-r-10 transition">
                     <ul class="w100 h100 border-01 bg-02 border-r-10">
                         <li class="<?php echo Diretorios::selecionadoMenu('profile'); ?>">
                             <a href="profile" class="display-flex align-items-center w100 position-relative transition">

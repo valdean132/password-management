@@ -23,25 +23,6 @@ section.home .home-main .wecome-user .msg-wecome-user{
     line-height: 20px;
 }
 
-section.home .home-main .wecome-user .info-wecome-user .info-wecome-wrapper{
-    font-size: 1.5rem;
-    color: var(--text-black-100);
-}
-section.home .home-main .wecome-user .info-wecome-user .info-wecome-wrapper i{
-    margin-left: 20px;
-}
-section.home .home-main .wecome-user .info-wecome-user .title-info-wecome h6{
-    font-size: 1rem;
-    color: var(--text-black-900);
-}
-section.home .home-main .wecome-user .info-wecome-user .title-info-wecome p{
-    font-size: .85rem;
-    color: var(--text-black-700);
-    font-weight: 300;
-}
-
-
-
 /*! Campo importante !*/
 /*? Home Secondary ?*/ 
 section.home .home-secondary{

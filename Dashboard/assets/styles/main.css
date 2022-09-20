@@ -143,9 +143,13 @@ nav.nav-lateral .main-nav .btn-exit a:hover{
 /*! Header Main !*/
 header.header-main{
     height: 100px;
-    width: calc(100vw - 120px);
+    width: calc(100vw - 150px);
 
-    padding-left: 30px;
+    /* padding-left: 30px; */
+
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    border-bottom-left-radius: 20px;
 
     right: 0;
     top: 0;

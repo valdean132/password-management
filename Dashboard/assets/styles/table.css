@@ -24,7 +24,7 @@
 
 /*! Modelo de Tabela 01 !*/
 .m-table-01{
-    min-width: 835px;
+    min-width: 900px;
 }
 
 .m-table-01 .col-1{ width: 35%; }
@@ -44,7 +44,7 @@
 }
 .m-table-01 .tbody .td{
     color: var(--text-black-900);
-    font-size: .9rem;
+    font-size: .8rem;
 }
 .m-table-01 .tbody .td .inicial-nome{
     width: 40px;

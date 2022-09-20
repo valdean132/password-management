@@ -1,24 +1,15 @@
 <section class="home w100 h100 display-flex space-between">
     <div class="home-main h100 display-flex flex-column overflow-y-auto">
-        <div class="wecome-user w100 bg-02 shadow-02 border-01 border-r-20 padd-2p marg-b-30">
+        <div class="wecome-user w100 bg-04 shadow-02 border-01 border-r-20 padd-2p marg-b-30">
             <div class="title-wecome-user marg-b-10">
                 <h2>Olá Valdean!</h2>
             </div><!-- Titulo -->
             <div class="msg-wecome-user marg-b-30 w50">
-                <p class="user-select-none">Bem vindo a página Inicial! Que tal vermos as novas solicitações?!</p>
+                <p class="user-select-none">Bem vindo a página Inicial! Que tal vermos a segurança de suas senhas?!</p>
             </div><!-- Mensagem de saudação -->
-            <div class="info-wecome-user">
-                <div class="info-wecome-wrapper user-select-none display-flex align-items-center">
-                    25 <i class="bi bi-chat-left-text"></i>
-                </div><!-- informaão -->
-                <div class="title-info-wecome">
-                    <h6 class="text-capitalize">Novas Solicitações</h6>
-                    <p class="user-select-none">Verifique elas!</p>
-                </div><!-- Titulos de informação -->
-            </div><!-- Campo de informações necessarias -->
         </div><!-- Saudações ao usuário -->
 
-        <div class="tabela-resumo-info marg-b-30 w100 bg-02 border-r-20 border-01 shadow-02 padd-2p marg-b-30">
+        <div class="tabela-resumo-info marg-b-30 w100 bg-04 border-r-20 border-01 shadow-02 padd-2p marg-b-30">
             <div class="title-box text-capitalize w-auto">
                 <h3>Solicitações Recentes</h3>
             </div><!-- Titulo -->
@@ -26,26 +17,26 @@
                 <div class="table-single m-table-01 w100 user-select-none">
                     <div class="thead w100 bg-01 border-01 marg-b-10 padd-1p border-r-10">
                         <div class="tr w100 display-flex space-between">
-                            <div class="th col-1">Nome</div>
-                            <div class="th col-3">Telefone</div>
-                            <div class="th col-4">Conta</div>
-                            <div class="th col-3">Dia/Hora</div>
+                            <div class="th col-2">Site/Sistema</div>
+                            <div class="th col-2">Login</div>
+                            <div class="th col-4">Senha</div>
+                            <div class="th col-3">Última Alteração</div>
                             <div class="th col-4">Opções</div>
                         </div>
                     </div><!-- Cabeça -->
                     <div class="tbody w100 bg-03 padd-1p border-r-10 border-01">
                         <div class="tr w100 display-flex space-between">
-                            <div class="td padd-1p col-1 display-flex align-items-center">
+                            <div class="td padd-1p col-2 display-flex align-items-center">
                                 <div class="inicial-nome display-center">
-                                    V
+                                    1
                                 </div>
                                 <div class="nome">
-                                    <p>Valdean Souza</p>
-                                    <p>contato@valdeansouza.com</p>
+                                    <p>Facebook</p>
+                                    <p>facebook.com</p>
                                 </div>
                             </div>
-                            <div class="td padd-1p col-3 display-flex align-items-center">(92) 99296-1661</div>
-                            <div class="td padd-1p col-4 display-flex align-items-center">R$ 1.200,00</div>
+                            <div class="td padd-1p col-2 display-flex align-items-center">valdeanpds@gmail.com</div>
+                            <div class="td padd-1p col-4 display-flex align-items-center">*************</div>
                             <div class="td padd-1p col-3 display-flex align-items-center">28/06/2022 - 09:04</div>
                             <div class="td padd-1p col-4 display-flex align-items-center">
                                 <a href="#" class="btn-action-table copy shadow-01 border-r-10 display-center transition" title="Copiar"><i class="bi bi-bookmarks"></i></a>
@@ -53,17 +44,17 @@
                             </div>
                         </div>
                         <div class="tr w100 display-flex space-between">
-                            <div class="td padd-1p col-1 display-flex align-items-center">
+                            <div class="td padd-1p col-2 display-flex align-items-center">
                                 <div class="inicial-nome display-center">
-                                    V
+                                    9+
                                 </div>
                                 <div class="nome">
-                                    <p>Valdean Souza</p>
-                                    <p>contato@valdeansouza.com</p>
+                                    <p>Titan E-mail</p>
+                                    <p>titan.hostgator.com.br</p>
                                 </div>
                             </div>
-                            <div class="td padd-1p col-3 display-flex align-items-center">(92) 99296-1661</div>
-                            <div class="td padd-1p col-4 display-flex align-items-center">R$ 1.200,00</div>
+                            <div class="td padd-1p col-2 display-flex align-items-center">Mais de um</div>
+                            <div class="td padd-1p col-4 display-flex align-items-center">Mais de uma</div>
                             <div class="td padd-1p col-3 display-flex align-items-center">28/06/2022 - 09:04</div>
                             <div class="td padd-1p col-4 display-flex align-items-center">
                                 <a href="#" class="btn-action-table copy shadow-01 border-r-10 display-center transition" title="Copiar"><i class="bi bi-bookmarks"></i></a>
@@ -71,53 +62,17 @@
                             </div>
                         </div>
                         <div class="tr w100 display-flex space-between">
-                            <div class="td padd-1p col-1 display-flex align-items-center">
+                            <div class="td padd-1p col-2 display-flex align-items-center">
                                 <div class="inicial-nome display-center">
-                                    V
+                                    5
                                 </div>
                                 <div class="nome">
-                                    <p>Valdean Souza</p>
-                                    <p>contato@valdeansouza.com</p>
+                                    <p>Titan E-mail</p>
+                                    <p>titan.hostgator.com.br</p>
                                 </div>
                             </div>
-                            <div class="td padd-1p col-3 display-flex align-items-center">(92) 99296-1661</div>
-                            <div class="td padd-1p col-4 display-flex align-items-center">R$ 1.200,00</div>
-                            <div class="td padd-1p col-3 display-flex align-items-center">28/06/2022 - 09:04</div>
-                            <div class="td padd-1p col-4 display-flex align-items-center">
-                                <a href="#" class="btn-action-table copy shadow-01 border-r-10 display-center transition" title="Copiar"><i class="bi bi-bookmarks"></i></a>
-                                <a href="#" class="btn-action-table remove shadow-01 border-r-10 display-center transition" title="Remover"><i class="bi bi-folder-x"></i></a>
-                            </div>
-                        </div>
-                        <div class="tr w100 display-flex space-between">
-                            <div class="td padd-1p col-1 display-flex align-items-center">
-                                <div class="inicial-nome display-center">
-                                    V
-                                </div>
-                                <div class="nome">
-                                    <p>Valdean Souza</p>
-                                    <p>contato@valdeansouza.com</p>
-                                </div>
-                            </div>
-                            <div class="td padd-1p col-3 display-flex align-items-center">(92) 99296-1661</div>
-                            <div class="td padd-1p col-4 display-flex align-items-center">R$ 1.200,00</div>
-                            <div class="td padd-1p col-3 display-flex align-items-center">28/06/2022 - 09:04</div>
-                            <div class="td padd-1p col-4 display-flex align-items-center">
-                                <a href="#" class="btn-action-table copy shadow-01 border-r-10 display-center transition" title="Copiar"><i class="bi bi-bookmarks"></i></a>
-                                <a href="#" class="btn-action-table remove shadow-01 border-r-10 display-center transition" title="Remover"><i class="bi bi-folder-x"></i></a>
-                            </div>
-                        </div>
-                        <div class="tr w100 display-flex space-between">
-                            <div class="td padd-1p col-1 display-flex align-items-center">
-                                <div class="inicial-nome display-center">
-                                    V
-                                </div>
-                                <div class="nome">
-                                    <p>Valdean Souza</p>
-                                    <p>contato@valdeansouza.com</p>
-                                </div>
-                            </div>
-                            <div class="td padd-1p col-3 display-flex align-items-center">(92) 99296-1661</div>
-                            <div class="td padd-1p col-4 display-flex align-items-center">R$ 1.200,00</div>
+                            <div class="td padd-1p col-2 display-flex align-items-center">Mais de um</div>
+                            <div class="td padd-1p col-4 display-flex align-items-center">Mais de uma</div>
                             <div class="td padd-1p col-3 display-flex align-items-center">28/06/2022 - 09:04</div>
                             <div class="td padd-1p col-4 display-flex align-items-center">
                                 <a href="#" class="btn-action-table copy shadow-01 border-r-10 display-center transition" title="Copiar"><i class="bi bi-bookmarks"></i></a>
@@ -133,7 +88,7 @@
         </div><!-- Solicitações recentes -->
     </div><!-- Área Principal do Home -->
 
-    <div class="home-secondary h100 display-flex flex-culumn padd-30 bg-03 shadow-02 overflow-y-auto">
+    <div class="home-secondary h100 display-flex flex-culumn padd-30 bg-04 shadow-02 overflow-y-auto">
         <div class="box-resumo w100">
             <div class="title-box text-capitalize w-auto">
                 <h3>resumo</h3>

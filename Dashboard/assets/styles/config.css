@@ -49,7 +49,7 @@ body, html{
 }
 body{
     background: var(--bg-black-900);
-    background-image: url('../images/background-main.png');
+    /* background-image: url('../images/background-main.png'); */
     background-repeat: no-repeat;
     background-size: 130%;
     background-position: top;
@@ -235,6 +235,15 @@ body{
 .bg-01{ background-color: var(--bg-black-900); }
 .bg-02{ background-color: var(--bg-black-100); }
 .bg-03{ background-color: var(--bg-black-50); }
+.bg-04{
+    /* From https://css.glass */
+    background: rgba(103, 234, 195, 0.05);
+    /* border-radius: 16px; */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-color: rgba(103, 234, 195, .5) !important;
+}
 
 /*! Cursores !*/
 .cursor-pointer { cursor: pointer; }
