@@ -12,7 +12,7 @@
     font-size: 1.4rem;
 }
 .btn-action-table.copy{ background-color: var(--alert-01); }
-.btn-action-table.remove{ background-color: var(--alert-03); }
+.btn-action-table.views{ background-color: var(--alert-04); }
 
 .btn-action-table:not(:last-child){
     margin-right: 10px;
@@ -53,7 +53,7 @@
     background-color: var(--skin-color);
     border-radius: 50%;
 
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--bg-black-50);
     font-weight: 600;
 

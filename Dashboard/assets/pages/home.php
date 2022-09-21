@@ -39,8 +39,8 @@
                             <div class="td padd-1p col-4 display-flex align-items-center">*************</div>
                             <div class="td padd-1p col-3 display-flex align-items-center">28/06/2022 - 09:04</div>
                             <div class="td padd-1p col-4 display-flex align-items-center">
-                                <a href="#" class="btn-action-table copy shadow-01 border-r-10 display-center transition" title="Copiar"><i class="bi bi-bookmarks"></i></a>
-                                <a href="#" class="btn-action-table remove shadow-01 border-r-10 display-center transition" title="Remover"><i class="bi bi-folder-x"></i></a>
+                                <a href="#" class="btn-action-table views shadow-01 border-r-10 display-center transition" title="Visualizar"><i class="bi bi-eye"></i></a>
+                                <a href="#" class="btn-action-table copy shadow-01 border-r-10 display-center transition" title="Editar"><i class="bi bi-pencil-square"></i></a>
                             </div>
                         </div>
                         <div class="tr w100 display-flex space-between">
@@ -57,8 +57,8 @@
                             <div class="td padd-1p col-4 display-flex align-items-center">Mais de uma</div>
                             <div class="td padd-1p col-3 display-flex align-items-center">28/06/2022 - 09:04</div>
                             <div class="td padd-1p col-4 display-flex align-items-center">
-                                <a href="#" class="btn-action-table copy shadow-01 border-r-10 display-center transition" title="Copiar"><i class="bi bi-bookmarks"></i></a>
-                                <a href="#" class="btn-action-table remove shadow-01 border-r-10 display-center transition" title="Remover"><i class="bi bi-folder-x"></i></a>
+                                <a href="#" class="btn-action-table views shadow-01 border-r-10 display-center transition" title="Visualizar"><i class="bi bi-eye"></i></a>
+                                <a href="#" class="btn-action-table copy shadow-01 border-r-10 display-center transition" title="Editar"><i class="bi bi-pencil-square"></i></a>
                             </div>
                         </div>
                         <div class="tr w100 display-flex space-between">
@@ -74,9 +74,9 @@
                             <div class="td padd-1p col-2 display-flex align-items-center">Mais de um</div>
                             <div class="td padd-1p col-4 display-flex align-items-center">Mais de uma</div>
                             <div class="td padd-1p col-3 display-flex align-items-center">28/06/2022 - 09:04</div>
-                            <div class="td padd-1p col-4 display-flex align-items-center">
-                                <a href="#" class="btn-action-table copy shadow-01 border-r-10 display-center transition" title="Copiar"><i class="bi bi-bookmarks"></i></a>
-                                <a href="#" class="btn-action-table remove shadow-01 border-r-10 display-center transition" title="Remover"><i class="bi bi-folder-x"></i></a>
+                            <div class="td padd-1p col-4 display-flex align-items-center"> 
+                                <a href="#" class="btn-action-table views shadow-01 border-r-10 display-center transition" title="Visualizar"><i class="bi bi-eye"></i></a>
+                                <a href="#" class="btn-action-table copy shadow-01 border-r-10 display-center transition" title="Editar"><i class="bi bi-pencil-square"></i></a>
                             </div>
                         </div>
                     </div><!-- Corpo -->

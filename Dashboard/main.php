@@ -34,6 +34,9 @@
 <body>
     <base base="<?php echo INCLUDE_PATH; ?>">
 
+    <div class="pop-up active">
+    
+    </div><!-- Popup -->
     
     <nav class="nav-lateral position-fixed h100-vh display-flex flex-column">
         <div class="logo-empresa display-center w100">
