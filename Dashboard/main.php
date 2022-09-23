@@ -34,8 +34,18 @@
 <body>
     <base base="<?php echo INCLUDE_PATH; ?>">
 
-    <div class="pop-up active">
-    
+    <div class="pop-up transition display-center active">
+        <div class="contain-popup shadow-03 padd-1p border-r-10">
+            <div class="header-popup display-flex space-between">
+                <div class="title-popup"><h3>Login Facebook</h3></div><!-- Titulo -->
+                <div class="close-popup cursor-pointer"><i class="bi bi-x-lg"></i></div><!-- Close -->
+            </div><!-- Header Popup -->
+            <div class="body-popup marg-t-10">
+                <form action="">
+                    
+                </form>
+            </div><!-- Body Popup -->
+        </div><!-- Container -->
     </div><!-- Popup -->
     
     <nav class="nav-lateral position-fixed h100-vh display-flex flex-column">
