@@ -42,8 +42,21 @@
             </div><!-- Header Popup -->
             <div class="body-popup marg-t-10">
                 <form action="">
-                    
-                </form>
+                    <div class="box-form-uniq position-relative display-flex flex-column fw-100 marg-b-10">
+                        <label for="nome" class="text-capitalize user-select-none marg-b-10">Link: <span>*</span></label>
+                        <input 
+                            type="email" 
+                            placeholder="seu@email.com" 
+                            class="bg-02 border-01 transition w100 padd-15"
+                            required
+                            name="email"
+                        >
+                        <div class="icon-input-atention display-none w100 h100 position-relative padd-15">
+                            <i class="bi position-absolute"></i>
+                            <div class="aviso-input user-select-none"></div>
+                        </div>
+                    </div>
+                </form><!-- Formulário -->
             </div><!-- Body Popup -->
         </div><!-- Container -->
     </div><!-- Popup -->

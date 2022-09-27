@@ -20,7 +20,7 @@
 
     // Conexão com o banco de dados
     define('HOST', 'localhost');
-    define('USER', 'root');
-    define('USERNAME','15987');
+    define('USER', 'spark');
+    define('USERNAME','9!!mQ33L');
     define('DATABASE', 'password_management_db_main');
 ?>
