@@ -171,11 +171,12 @@
 
         // Puxando do banco de dados
         public static function selectAll($tabela, $order, $start = null, $end = null){
-            if($start == null && $end == null)
-                $sql = MySql::conectar()->prepare("SELECT * FROM `$tabela` ORDER BY $order ");
-            else
+            if($start == null && $end == null){
+                $sql = MySql::conectar()->prepare("SELECT nome FROM `$tabela` ORDER BY $order ");
+            }else{
                 $sql = MySql::conectar()->prepare("SELECT * FROM `$tabela` ORDER BY $order LIMIT $start, $end");
-            
+            }
+            echo $order;
             $sql->execute();
 
             return $sql->fetchAll();
@@ -198,6 +199,11 @@
                 $sql = MySql::conectar()->prepare("DELETE FROM `$tabela` WHERE `$column` = '$value'");
             }
             $sql->execute();
+        }
+
+        // Teste de classe
+        public static function teste(){
+            return 'Você chegou aqui!';
         }
     }
 

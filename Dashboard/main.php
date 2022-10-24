@@ -42,6 +42,23 @@
             </div><!-- Header Popup -->
             <div class="body-popup marg-t-10">
                 <form action="">
+                    <?php
+
+                        $sql = MySql::conectar()->prepare("SELECT nome FROM `tb_sys_admin.user`");
+                            
+                        $sql->execute();
+                        
+                        foreach($sql->fetchAll() as $row) {
+                            echo "<li>" . $row['nome'] . "</li>";
+                        }
+                        echo Painel::teste();
+                        $result = Painel::selectAll('tb_sys_admin.user', 'asc');
+
+                        foreach($result as $row) {
+                            echo "<li>" . $row['nome'] . "</li>";
+                        }
+
+                    ?>
                     <div class="box-form-uniq position-relative display-flex flex-column fw-100 marg-b-10">
                         <label for="nome" class="text-capitalize user-select-none marg-b-10">Link: <span>*</span></label>
                         <input 

@@ -5,7 +5,8 @@
         /* Função para verificar se logado */
         public static function logado(){
             // Pós criação de banco de dados e base de usuário adicionar:
-            return isset($_SESSION['login']) ? true : false;
+            // return isset($_SESSION['login']) ? true : false;
+            return true;
         }
         
         // Sair da Sessão
