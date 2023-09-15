@@ -12,8 +12,8 @@
     z-index: 2;
     padding: 8px 12px 2px 12px;
     border-radius: 7px;
-    background-color: var(--bg-black-100);
-    border: 1px solid #55586470;
+    background-color: var(--color-black-one);
+    border: 1px solid var(--color-grey-p-2);
     font-size: 1rem;
     min-height: 45px;
     transition: all .3s ease;
@@ -52,8 +52,8 @@
 }
 
 .selectMultiple>div span {
-    color: var(--text-black-700);
-    font-size: .85rem;
+    color: var(--color-grey);
+    font-size: .875rem;
     font-weight: 300;
 
     opacity: .7;
@@ -79,7 +79,7 @@
     position: relative;
     padding: 0 26px 4px 8px;
     line-height: 28px;
-    color: var(--text-black-100);
+    color: var(--color-white-one);
     display: inline-block;
     vertical-align: top;
     margin: 0 6px 0 0;
@@ -100,9 +100,12 @@
     width: 100%;
     position: absolute;
     display: block;
-    background: var(--text-black-700);
+    background: var(--color-black-two);
     z-index: -1;
     border-radius: 6px;
+
+    -webkit-box-shadow: 0px 5px 10px rgba(0,0,0,0.35); 
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.35);
 }
 
 .selectMultiple>div a i {
@@ -124,7 +127,7 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    background: var(--text-black-900);
+    background: var(--color-white-one);
     border-radius: 2px;
     transition: all .2s ease;
     -webkit-transition: all .2s ease;
@@ -140,7 +143,7 @@
 
 .selectMultiple>div a:hover i:before,
 .selectMultiple>div a:hover i:after{
-    background-color: var(--alert-03);
+    background-color: var(--alert-03-error);
 }
 
 .selectMultiple>div a.notShown {
@@ -218,8 +221,8 @@
     visibility: hidden;
     opacity: 0;
     border-radius: 7px;
-    border: 1px solid #55586470;
-    background: var(--bg-black-100);
+    border: 1px solid var(--color-grey-p-2);
+    background: var(--color-black-two);
     transform: translate(0, 20px) scale(0.8);
     transform-origin: 0 0;
     filter: drop-shadow(0 12px 20px rgba(22, 42, 90, 0.08));
@@ -230,19 +233,19 @@
 
     border-radius: 7px;
 
-    background-color: var(--bg-black-100);
+    background-color: var(--color-black-one);
 }
 .selectMultiple>ul::-webkit-scrollbar-thumb{
     background-color: transparent;
 }
 .selectMultiple>ul:hover::-webkit-scrollbar-thumb{
-    background-color: var(--skin-color);
+    background-color: var(--color-blue-one);
 }
 
 .selectMultiple>ul li ,
 .selectMultiple>ul div {
-    background: var(--bg-black-100);
-    color: var(--text-black-900);
+    background: var(--color-black-one);
+    color: var(--color-grey);
     user-select: none;
     padding: 12px 16px;
     cursor: pointer;
@@ -255,7 +258,7 @@
 }
 .selectMultiple>ul div a{
     display: block;
-    color: var(--text-black-900);
+    color: var(--color-grey);
     font-weight: 500;
     padding: 12px 16px;
     width: 100%;
@@ -265,7 +268,7 @@
     -webkit-transition: all .2s ease;
 }
 .selectMultiple>ul div a:hover{
-    color: var(--bg-black-50);
+    color: var(--color-white-two);
 }
 
 .selectMultiple>ul li:first-child ,
@@ -290,8 +293,8 @@
 
 .selectMultiple>ul li:hover ,
 .selectMultiple>ul div:hover {
-    background: var(--skin-color);
-    color: var(--bg-black-50);
+    background: var(--color-blue-one);
+    color: var(--color-white-two);
 }
 
 .selectMultiple>ul li:after {
@@ -350,7 +353,7 @@
 }
 
 .selectMultiple.open>div {
-    border-color: var(--alert-01);
+    border-color: var(--alert-01-primary);
 }
 
 .selectMultiple.open>div .arrow div:before {
@@ -362,7 +365,7 @@
 }
 
 .selectMultiple.open>ul {
-    transform: translate(0, 12px) scale(1);
+    transform: translate(0, 5px) scale(1);
     opacity: 1;
     visibility: visible;
 }

@@ -1,413 +1,662 @@
-/*! Navegação Lateral !*/
-nav.nav-lateral{
-    width: 120px;
+/*? Container popup Move Css Style ?*/
+section.popup-move{
+    min-width: 250px;
+    height: auto;
 
-    left: 0;
-    z-index: 3;
-}
+    position: fixed;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    z-index: 9;
 
-/*? Logo ?*/
-nav.nav-lateral .logo-empresa{
-    height: 100px;
-}
-nav.nav-lateral .logo-empresa img{
-    width: 50%;
-    border-radius: 50%;
-}
-nav.nav-lateral .logo-empresa a:hover img{
-    transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-}
-
-/*? Navegação principal ?*/
-nav.nav-lateral .main-nav{
-    height: calc(100% - 120px);
-
-    margin-top: 20px;
-
-    border-top-right-radius: 20px;
-    border-top: 1px solid #55586470;
-    border-right: 1px solid #55586470;
-}
-
-/*** Navegação principal links ***/
-nav.nav-lateral .main-nav .nav-ul{
-    height: 85%;
-
-    padding-top: 40px;
-}
-nav.nav-lateral .main-nav .nav-ul li{
-    height: 62px;
-
-    padding: 2px 0;
-}
-nav.nav-lateral .main-nav .nav-ul li a{
-    color: var(--text-black-700);
-    font-size: 1.3rem;
-}
-nav.nav-lateral .main-nav .nav-ul li.active a,
-nav.nav-lateral .main-nav .nav-ul li a:hover{
-    color: var(--text-black-900);
-    font-size: 1.4rem;
-}
-nav.nav-lateral .main-nav .nav-ul li a::before{
-    content: '';
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    height: 0;
-    width: 4px;
+    padding: 5px 10px;
     
-    background-color: var(--skin-color);
-    
-    transition: all .3s ease;
-    -webkit-transition: all .3s ease;
+    border-radius: 15px;
+    border: 1px solid var(--color-grey-p-2);
+
+    background: rgba(12, 15, 23, .5);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+
+    -webkit-box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, .5); 
+    box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, .5);
+
+    transition: transform .3s ease;
+    -webkit-transition: transform .3s ease;
 }
-nav.nav-lateral .main-nav .nav-ul li.active a::before,
-nav.nav-lateral .main-nav .nav-ul li a:hover::before{
+section.popup-move.show-dropdown{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+}
+section.popup-move header.header-popup{
+    width: 100%;
+    height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section.popup-move header.header-popup .area-move{
+    width: 90%;
     height: 100%;
+
+    padding-left: 10%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: all-scroll;
+
+    color: var(--color-grey);
 }
-nav.nav-lateral .main-nav .nav-ul li a span{
-    border-radius: 10px;
+section.popup-move header.header-popup .btn-close{
+    width: 10%;
+    height: 100%;
 
-    background-color: var(--skin-color);
-
-    color: var(--text-black-100);
-    font-size: .9rem;
-    font-weight: 300;
-
-    left: 100px;
-
-    opacity: 0;
-}
-nav.nav-lateral .main-nav .nav-ul li a span::before{
-    content: "";
-
-    position: absolute;
-    top: 50%;
-    left: 6px;
-    transform: translateY(-50%) rotate(45deg);
-    -webkit-transform: translateY(-50%) rotate(45deg);
-
-    width: 12px;
-    height: 12px;
-
-    border: 6px solid transparent;
-    border-left-color: var(--skin-color);
-    border-bottom-color: var(--skin-color);
-
-    opacity: 0;
-
-    transition: all .3s ease;
-    -webkit-transition: all .3s ease;
-}
-nav.nav-lateral .main-nav .nav-ul li a:hover span,
-nav.nav-lateral .main-nav .nav-ul li a:hover span::before{
-    opacity: 1;
-}
-nav.nav-lateral .main-nav .nav-ul li a:hover span::before{
-    left: -5px;
-}
-
-
-/*** Navegação link para sair do sistema ***/
-nav.nav-lateral .main-nav .btn-exit{
-    height: 15%;
-}
-nav.nav-lateral .main-nav .btn-exit a{
-    width: 50px;
-    height: 50px;
-
-    border-radius: 10px;
+    cursor: pointer;
 
     background-color: transparent;
+    color: var(--color-white-two);
 
-    font-size: 1.5rem;
-    color: var(--skin-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-nav.nav-lateral .main-nav .btn-exit a:hover{
-    border-radius: 50%;
-
-    transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-
-    background-color: var(--skin-color);
-    color: var(--text-black-100);
-
-    box-shadow: 5px -5px 26px #0f0e19,
-                -5px 5px 26px #0f0e19;
-}
-
-/*! Header Main !*/
-header.header-main{
-    height: 100px;
-    width: calc(100vw - 150px);
-
-    /* padding-left: 30px; */
-
-    border-left: 1px solid;
-    border-bottom: 1px solid;
-    border-bottom-left-radius: 20px;
-
-    right: 0;
-    top: 0;
-    z-index: 3;
-}
-/*? Title Header ?*/
-header.header-main .title-header{
-    width: 66%;
-}
-header.header-main .title-header h1{
-    color: var(--text-black-100);
-    font-weight: 400;
-    font-size: 1.5rem;
-}
-header.header-main .title-header h1 i{
-    color: var(--skin-color);
-}
-
-/*? Botões do Header ?*/
-header.header-main .btns-user-header{
-    width: 32%;
-}
-
-/*** Botões primario  ***/
-header.header-main .btns-user-header .btns-wrapper a{
-    width: 40px;
-    height: 40px;
-
-    font-size: 1.4rem;
-    color: var(--text-black-900);
-
-    border: 1px solid #55586470;
-    border-radius: 20%;
-}
-header.header-main .btns-user-header .btns-wrapper a:hover{
+section.popup-move header.header-popup .btn-close:hover{
     transform: scale(1.1);
     -webkit-transform: scale(1.1);
 }
-/*** Área do Usuário ***/
-header.header-main .btns-user-header .nav-user .box-user-btn .img-user{
-    width: 30px;
-    height: 30px;
 
-    border-radius: 8px;
+/* Main Section Popup */
+section.popup-move main.main-popup-move{
+    width: 100%;
 }
-header.header-main .btns-user-header .nav-user .box-user-btn .avatar-usuario{
-    background-image: url('../images/avatar-01.svg');
-}
-header.header-main .btns-user-header .nav-user .box-user-btn i{
-    color: var(--text-black-900);
-    font-size: 1.3rem;
-}
-header.header-main .btns-user-header .nav-user .box-user-btn h3{
-    color: var(--text-black-100);
-    font-size: 1rem;
-    font-weight: 400;
-}
-header.header-main .btns-user-header .nav-user .box-user-btn.active .row-user{
-    transform: rotate(-180deg);
-    -webkit-transform: rotate(-180deg);
-}
-/*** Menu do Usuário ***/
-header.header-main .btns-user-header .nav-user .menu-user{
-    top: 80px;
+section.popup-move main.main-popup-move header{
+    width: 100%;
 
-    width: 200px;
-    max-height: 0;
-
-    overflow: hidden;
-}
-header.header-main .btns-user-header .nav-user .menu-user.active{
-    max-height: 200px;
-}
-header.header-main .btns-user-header .nav-user .menu-user ul{
-    padding: 4%;
-}
-header.header-main .btns-user-header .nav-user .menu-user li a{
-    height: 30px;
-
-    color: var(--text-black-700);
-    font-size: .9rem;
-}
-header.header-main .btns-user-header .nav-user .menu-user li a::before{
-    content: '';
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    height: 0;
-    width: 2px;
-    
-    background-color: var(--skin-color);
-    
-    transition: all .3s ease;
-    -webkit-transition: all .3s ease;
-}
-header.header-main .btns-user-header .nav-user .menu-user li.active a,
-header.header-main .btns-user-header .nav-user .menu-user li a:hover{
-    color: var(--text-black-900);
-}
-header.header-main .btns-user-header .nav-user .menu-user li.active a::before,
-header.header-main .btns-user-header .nav-user .menu-user li a:hover::before{
-    height: 100%;
-}
-
-header.header-main .btns-user-header .nav-user .menu-user li a i{
-    font-size: 1.1rem;
-}
-
-/*! Campo Principal !*/
-main.principal{
-    width: calc(100vw - 120px);
-    height: calc(100vh - 120px);
-
-    right: 0;
-    bottom: 0;
-
-    padding-left: 30px;
-}
-
-section:not(.home){
-    padding-right: 30px;
-    padding-bottom: 50px;
-}
-
-/*? Title Box ?*/
-.title-box{
-    display: inline-block;
+    border-bottom: 1px solid var(--color-grey-p-2);
 
     margin-bottom: 15px;
 }
-.title-box h3{
-    font-size: 1.1rem;
-    color: var(--text-black-700);
-    font-weight: 300;
+section.popup-move main.main-popup-move header h3{
+    font-size: var(--font-title-02);
+    font-weight: 700;
+    color: var(--color-white-two);
+
+    display: flex;
+    align-items: center;
 }
 
-/*? Menu das Sessões ?*/
-.nav-sections .title-menu-section{
-    height: 70px;
-    
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: var(--text-black-700);
-}
-.nav-sections li{
-    height: 70px;
-}
-.nav-sections li:not(:last-child){
-    margin-bottom: 5px;
-}
-.nav-sections li a{
-    color: var(--text-black-900);
-    font-size: 1.2rem;
-}
-.nav-sections li a::before,
-.nav-sections li a::after{
-    content: '';
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    pointer-events: none;
-
-    transition: all .3s ease;
-}
-.nav-sections li a::before{
-    width: 5px;
-    height: 0;
-
-    z-index: 2;
-
-    background-color: var(--skin-color);
-
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-.nav-sections li a::after{
-    width: 0;
-    height: 100%;
-
-    background-color: var(--bg-black-50);
-}
-.nav-sections li.active a::before,
-.nav-sections li:hover a::before{
-    height: 100%;
-}
-.nav-sections li.active a::after,
-.nav-sections li:hover a::after{
-    width: 100%;
-}
-
-
-.nav-sections li a i,
-.nav-sections li a span{
-    z-index: 2;
-}
-.nav-sections li a i{
-    color: var(--text-black-700);
-}
-.nav-sections li.active a i,
-.nav-sections li:hover a i{
-    color: var(--text-black-900);
-}
-
-/*? Eventos para mostrar os Containers dentro da classe conforme a navegação ?*/
-.show-containers{
-    transform: translateY(100px);
-    -webkit-transform: translateY(100px);
-
-    opacity: 0;
-}
-.show-containers.active{
-    transform: translateY(0);
-    -webkit-transform: translateY(0);
-
-    opacity: 1;
-}
-
-/*? Pop-Up ?*/
-.pop-up{
+/*? Container principal Main ?*/
+/* Setting the width and height of the app to 100% of the viewport. It is also setting the position to
+fixed, the z-index to 2, the top to 50%, the left to 50%, and the transform to translate(-50%,
+-50%). It is also setting the display to flex, the justify-content to space-between, the align-items
+to center, the background to rgba(12, 15, 23, .5), the backdrop-filter to blur(  90px ), and the
+-webkit-backdrop-filter to blur( 90px ). */
+#app{
     width: 100vw;
     height: 100vh;
 
+    max-width: 1400px;
+
+    /* padding-right: 2%; */
+
     position: fixed;
-    z-index: 2000000000000000;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-    scale: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    background: rgba(0, 0, 0, .25);
-    border-radius: 24pc;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(12, 15, 23, .5);
+    backdrop-filter: blur(  90px );
+    -webkit-backdrop-filter: blur( 90px );
 }
 
-.pop-up.active{
-    scale: 1;
-    border-radius: 0;
+@media screen and (min-width: 1400px) {
+    #app{
+        height: calc(100% - 38px);
 
+        border-radius: 10px;
+
+        border: 1px solid var(--color-grey-p-2);
+    }
+}
+
+/*! Barra Lateral !*/
+.sidebar-app{ /*** Creating the sidebar on the left side of the screen. ***/
+    height: 100%;
+    width: 90px;
+
+    border-right: 1px solid var(--color-grey-p-2);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilizando a Logo do Sitema na Barra lateral */
+.sidebar-app header.header-siderbar-app{
+    width: 100%;
+    height: 80px;
+}
+.sidebar-app header.header-siderbar-app a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sidebar-app header.header-siderbar-app a img{
+    width: 30px;
+}
+.sidebar-app header.header-siderbar-app a:hover img{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+/* Estilizando menu de navegação na Barra Lateral */
+.sidebar-app nav.navagation-app{
+    width: 100%;
+    height: calc(100% - 160px);
+}
+.sidebar-app nav.navagation-app ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sidebar-app nav.navagation-app li{
+    width: 100%;
+    height: auto;
+}
+.sidebar-app nav.navagation-app a.link-nav-app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    width: 100%;
+    height: 60px;
+
+    font-size: var(--font-title-02);
+    color: var(--color-grey);
+}
+.sidebar-app nav.navagation-app a.link-nav-app:hover,
+.sidebar-app nav.navagation-app a.link-nav-app.active{
+    color: var(--color-white-one);
+}
+.sidebar-app nav.navagation-app a.link-nav-app.active i,
+.sidebar-app nav.navagation-app a.link-nav-app:hover i{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+.sidebar-app nav.navagation-app a.link-nav-app .before-info{
+    height: 80%;
+    width: 5px;
+
+    border-radius: 8px;
+
+    background-color: transparent;
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: 3;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    transition: .2s all ease;
+    -webkit-transition: .2s all ease;
+}
+.sidebar-app nav.navagation-app a.link-nav-app:hover .before-info,
+.sidebar-app nav.navagation-app a.link-nav-app.active .before-info{
+    left: 86.5px;
+
+    background-color: var(--color-blue-one);
+}
+.sidebar-app nav.navagation-app a.link-nav-app .before-info span{
+    font-size: var(--font-subject-01);
+    text-transform: capitalize;
+    line-height: var(--font-subject-01);
+
+    transition: .1s opacity ease;
+    -webkit-transition: .1s opacity ease;
+
+    opacity: 0;
+}
+.sidebar-app nav.navagation-app a.link-nav-app:hover .before-info span{
+    opacity: 1;
+}
+.sidebar-app nav.navagation-app a.link-nav-app:hover .before-info{
+    width: auto;
+    
+    padding: 0 15px;
+
+    -webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, .5); 
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, .5);
+}
+
+/* Estilizando Botão de Saida do sistema */
+.sidebar-app footer.footer-siderbar-app{
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    justify-content: center;
+}
+.sidebar-app footer.footer-siderbar-app a{
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: var(--font-title-01);
+    color: var(--color-grey);
+
+    margin: 0 5px;
+
+    border-top: 1px solid var(--color-grey-p-2);
+
+    transition: .3s all ease, .1s color ease;
+}
+.sidebar-app footer.footer-siderbar-app a:hover{
+    background-color: var(--color-blue-one);
+    border-color: transparent;
+    color: var(--color-white-one);
+
+    -webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, .5); 
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, .5);
+
+    border-radius: 20px;
+}
+.sidebar-app footer.footer-siderbar-app a:hover i{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+/*! *** !*/
+/*! Campo Principal !*/
+.container-main{ /*** Creating the main container of the app. ***/
+    height: 100%;
+    width: calc(100% - 90px);
+}
+
+/* Estilizando o Header do container Principal */
+.container-main header.header-main-app{
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 4%;
+}
+.container-main header.header-main-app h2{
+    font-size: var(--font-emphasis);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-grey-p-2);
+}
+.container-main header.header-main-app nav.navegation-container-app,
+.container-main header.header-main-app nav.navegation-container-app ul{
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-main header.header-main-app nav.navegation-container-app li{
+    width: auto;
+    height: 100%;
+
+    position: relative;
+}
+.container-main header.header-main-app nav.navegation-container-app a.dropdown{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    min-width: 60px;
+    height: 100%;
+
+    font-size: var(--font-title-01);
+    color: var(--color-white-two);
+}
+.container-main header.header-main-app nav.navegation-container-app a.dropdown:not(.tag-perfil):hover i,
+.container-main header.header-main-app nav.navegation-container-app a.dropdown:not(.tag-perfil):hover div,
+.container-main header.header-main-app nav.navegation-container-app li.show-dropdown a.dropdown i,
+.container-main header.header-main-app nav.navegation-container-app li.show-dropdown a.dropdown div{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+.container-main header.header-main-app nav.navegation-container-app a.tag-perfil{
+    margin: 0 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container-main header.header-main-app nav.navegation-container-app a.tag-perfil span{
+    width: 40px;
+    height: 40px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    border: 2px solid var(--color-grey);
+    border-radius: 50%;
+}
+.container-main header.header-main-app nav.navegation-container-app a.tag-perfil span img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+}
+.container-main header.header-main-app nav.navegation-container-app a.tag-perfil p{
+    margin: 0 10px;
+
+    font-size: var(--font-text-normal);
+    font-weight: 500;
+    color: var(--color-white-two);
+}
+.container-main header.header-main-app nav.navegation-container-app a.tag-perfil i{
+    font-size: var(--font-text-normal);
+    font-weight: 500;
+    color: var(--color-white-two);
+}
+.container-main header.header-main-app nav.navegation-container-app li.show-dropdown a.tag-perfil i{
+    transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+}
+
+/* ** Configurando Notificações ** */
+.container-main header.header-main-app nav.navegation-container-app a.dropdown .info-number-qtd{
+    position: absolute;
+    top: 15px;
+    right: 10px;
+
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 6px;
+
+    background-color: var(--color-blue-two);
+}
+.container-main header.header-main-app nav.navegation-container-app a.dropdown .info-number-qtd span{
+    font-size: var(--font-subject-01);
+}
+
+/* ** Configurando menu dos links do Header ** */
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all{
+    display: block;
+    width: 0;
+    height: auto;
+    max-height: 0;
+    
+    position: absolute;
+    top: 70px;
+    right: 0px;
+    z-index: 5;
+
+    border: 1px solid var(--color-grey-p-2);
+    border-radius: 8px;
+
+    padding: 10px 0;
+
+    transform: scale(0);
+    -webkit-transform: scale(0);
+
+    background: rgba(12, 15, 23, .7);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+}
+.container-main header.header-main-app nav.navegation-container-app li.show-dropdown ul.dropdown-menu-all{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+
+    max-height: 550px;
+    width: 350px;
+}
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all > div{
+    width: 100%;
+    max-height: 400px;
+}
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all::after{
+    content: "";
+
+    width: 13px;
+    height: 13px;
+
+    background: transparent;
+
+    position: absolute;
+    top: -7px;
+    right: 20px;
+
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    
+    border-top: 13px solid transparent;
+    border-left: 13px solid var(--color-grey-p-2);
+}
+
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all li{
+    width: 100%;
+
+    padding: 10px 15px;
+
+    border-bottom: 1px solid var(--color-grey-p-2);
+}
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all li:last-child{
     border: 0;
 }
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all li a{
+    width: 100%;
 
-.pop-up .contain-popup{
-    min-width: 360px;
-    height: auto;
-
-    background-color: var(--text-black-700);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.pop-up .contain-popup .header-popup{
-    border-bottom: 1px solid var(--text-black-900);
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all li a:hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.05);
+}
 
-    padding-bottom: 5px;
+/* Header dos dropdown menu */
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all li.dropdown-header{
+    display: flex;
+    justify-content: space-between;
+}
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all li.dropdown-header p{
+    font-size: var(--font-subject-01);
+    color: var(--color-grey);
 
-    color: var(--text-black-900);
+    display: flex;
+    align-items: center;
+}
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all li.dropdown-header a{
+    width: auto;
+
+    font-size: var(--font-subject-01);
+    color: var(--color-white-two);
+    font-weight: 700;
+
+    background-color: var(--color-blue-two);
+    
+    border-radius: 8px;
+
+    padding: 5px;
+}
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all li.dropdown-header a:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.05);
+}
+/* Configurando Notificações */
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all li.notification-item a:hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.05);
+}
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all li.notification-item i{
+    margin: 0 20px 0 0;
+    font-size: var(--font-title-01);
+}
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all li.notification-item .info-notification{
+    width: 85%;
+}
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all li.notification-item .info-notification h3{
+    font-size: var(--font-title-02);
+    font-weight: 600;
+    color: var(--color-white-one);
+}
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all li.notification-item .info-notification p{
+    font-size: var(--font-subject-01);
+    font-weight: 300;
+    color: var(--color-grey);
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all li.notification-item .info-notification span{
+    font-size: var(--font-subject-02);
+    font-weight: 300;
+    color: var(--color-grey);
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* Configurando Menu Profile */
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all.menu-profile{
+    width: 230px;
+
+    padding: 0;
+}
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all li.menu-profile-app a{
+    justify-content: start;
+
+    font-size: var(--font-title-02);
     font-weight: 500;
-    font-size: 1.2rem;
+    color: var(--color-grey);
 }
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all li.menu-profile-app a:hover,
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all li.menu-profile-app a.active{
+    color: var(--color-white-one);
+
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+}
+.container-main header.header-main-app nav.navegation-container-app li ul.dropdown-menu-all li.menu-profile-app a i{
+    margin-right: 10px;
+}
+
+/* Estilizando o Mian do container Principal */
+.container-main main.main-app{
+    width: 100%;
+    min-height: calc(100% - 80px);
+    max-height: calc(100% - 80px);
+
+    padding: 0 4%;
+}
+.container-main main.main-app section.section{
+    width: 100%;
+}
+
+.container-main main.main-app section.section header.navegate-section{
+    width: 100%;
+    height: 50px;
+}
+.container-main main.main-app section.section header.navegate-section nav{
+    width: 100%;
+    height: 100%;
+
+    border-radius: 10px;
+    border: 1px solid var(--color-grey-p-2);
+
+    background: rgba(25, 118, 247, .1);
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
+
+    padding: 0 2%;
+
+}
+.container-main main.main-app section.section header.navegate-section nav ul{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+}
+.container-main main.main-app section.section header.navegate-section nav ul li{
+    height: 100%;
+
+    margin-right: 5px;
+}
+.container-main main.main-app section.section header.navegate-section nav ul a{
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    font-size: var(--font-title-02);
+    font-weight: 500;
+    color: var(--color-grey);
+
+    padding: 0 10px;
+
+    position: relative;
+}
+.container-main main.main-app section.section header.navegate-section nav ul a.active,
+.container-main main.main-app section.section header.navegate-section nav ul a:hover{
+    color: var(--color-white-two);
+
+    transform: translateY(-2px);
+}
+.container-main main.main-app section.section header.navegate-section nav ul a::before{
+    content: '';
+
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+
+    height: 5px;
+    width: 0;
+
+    border-radius: 5px;
+
+    background-color: var(--color-green);
+
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+
+.container-main main.main-app section.section header.navegate-section nav ul a.active::before,
+.container-main main.main-app section.section header.navegate-section nav ul a:hover::before{
+    width: 100%;
+
+    bottom: -5px;
+}
+
+/*! *** !*/

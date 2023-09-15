@@ -1,0 +1,649 @@
+/*! Section Home !*/
+section.section-home{
+    display: flex;
+    justify-content: space-between;
+}
+section.section-home header h2{
+    height: 45px;
+
+    font-size: var(--font-title-02);
+    font-weight: 700;
+    color: var(--color-white-two);
+
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+
+}
+
+/*? Conteudo Principal ?*/
+section.section-home .main-home-app{
+    width: 65%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 20px;
+    padding-bottom: 30px;
+    /* margin-bottom: 50px; */
+}
+
+/*** Receitas e Despesas ***/
+section.section-home .main-home-app .income-expenses-home{
+    width: 50%;
+}
+/* Header */
+section.section-home .main-home-app .income-expenses-home header.title-income-expenses{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+section.section-home .main-home-app .income-expenses-home header.title-income-expenses .selectMultiple{
+    width: 35%;
+}
+section.section-home .main-home-app .income-expenses-home header.title-income-expenses .selectMultiple > div{
+    height: 45px;
+    overflow-y: hidden;
+}
+section.section-home .main-home-app .income-expenses-home header.title-income-expenses select{
+    padding: 5px 10px;
+
+    font-weight: 300;
+
+    border-radius: 8px;
+
+    background-color: var(--color-black-two);
+    color: var(--color-white-two);
+
+    cursor: pointer;
+}
+/* Main */
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses{
+    width: 100%;
+}
+/* *** */
+/* The css for the section of expenses and income. */
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .value-outcome-income{
+    width: 100%;
+
+    position: relative;
+
+    height: 300px;
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .value-outcome-income div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .value-outcome-income .frame-bg{
+    width: 250px;
+    height: 250px;
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .value-outcome-income .frame-bg-01{
+
+    transform: rotate(260deg);
+    transform-origin: 0px 115px;
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .value-outcome-income .frame-bg-02{
+
+    transform: rotate(310deg);
+    transform-origin: -80px 180px;
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .value-outcome-income .value-outcome-income-single{
+    width: 150px;
+    height: 150px;
+
+    background-color: var(--color-black-two);
+    border: 10px solid var(--color-black-one);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .value-outcome-income .value-outcome-income-single h3{
+    font-size: var(--font-text-normal);
+    font-weight: 600;
+    color: var(--color-white-two);
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .value-outcome-income .value-outcome-income-single p{
+    margin-top: 5px;
+    
+    font-size: var(--font-subject-02);
+    font-weight: 500;
+    color: var(--color-green);
+}
+/* *** */
+
+/* *** */
+/*** O css para a seção de despesas e receitas. ***/
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .expenses-income-home{
+    width: 100%;
+
+    margin-top: 10px;
+
+    display: flex;
+    justify-content: space-between;
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .expenses-income-home > div{
+    width: 48%;
+    
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--color-grey-p-2);
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .expenses-income-home > div:hover{
+    transform: scale(1.05) translateY(-20px);
+    -webkit-transform: scale(1.05) translateY(-20px);
+
+    background-color: var(--color-grey-p-2);
+
+    -webkit-box-shadow: 0px 15px 20px 5px rgba(0,0,0,0.35); 
+    box-shadow: 0px 15px 20px 5px rgba(0,0,0,0.35);
+}
+
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .expenses-income-home > div .icon-info{
+    margin-right: 10px;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    margin-right: 20px;
+
+    position: relative;
+
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+
+    border: 5px solid var(--color-grey-p-2);
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .expenses-income-home > div .icon-info i{
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+
+    color: var(--color-white-one);
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .expenses-income-home > div:hover .icon-info{
+    border-color: var(--color-black-one);
+}
+
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .expenses-income-home > div .icon-info .after{
+    content: "";
+
+    position: absolute;
+    z-index: 2;
+    
+    width: 50px;
+    height: 50px;
+    
+    border: 5px solid transparent;
+    
+    border-radius: 50%;
+
+    background-color: transparent;
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .expenses-income-home > div .icon-info .after::before,
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .expenses-income-home > div .icon-info .after::after{
+    content: "";
+    width: 5px;
+    height: 5px;
+
+    position: absolute;
+    
+    z-index: 3;
+
+    border-radius: 50%;
+
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .expenses-income-home > div.income-single-home .icon-info .after{
+    border-color: var(--color-green);
+    border-left-color: transparent;
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .expenses-income-home > div.income-single-home .icon-info .after::before{
+    left: 1px;
+    top: 2px;
+
+    background-color: var(--color-green);
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .expenses-income-home > div.income-single-home .icon-info .after::after{
+    left: 1px;
+    top: 33px;
+
+    background-color: var(--color-green);
+}
+
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .expenses-income-home > div.expenses-single-home .icon-info .after{
+    border-color: transparent;
+    border-top-color: var(--color-blue-one);
+    
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .expenses-income-home > div.expenses-single-home .icon-info .after::before{
+    left: 1px;
+    top: 2px;
+
+    background-color: var(--color-blue-one);
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .expenses-income-home > div.expenses-single-home .icon-info .after::after{
+    left: 34px;
+    top: 2px;
+
+    background-color: var(--color-blue-one);
+}
+
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .expenses-income-home > div .text-info h2{
+    font-size: var(--font-subject-02);
+    color: var(--color-grey);
+}
+
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .expenses-income-home > div .text-info h3{
+    font-size: var(--font-subject-01);
+    font-weight: 700;
+    color: var(--color-white-one);
+}
+/* *** */
+/* *** */
+/* Criando uma tabela com um cabeçalho e um corpo. */
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .recent-activity-tables{
+    width: 100%;
+
+    margin-top: 30px;
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .recent-activity-tables .trasactions-recent-wrapper{
+    width: 100%;
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .recent-activity-tables .trasactions-recent-wrapper .line-transaction-single{
+    padding: 10px 0;
+
+    display: flex;
+
+    border-bottom: 1px solid var(--color-grey-p-2);
+
+    font-size: var(--font-subject-02);
+    font-weight: 600;
+    color: var(--color-grey);
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .recent-activity-tables .trasactions-recent-wrapper .line-transaction-single .col{
+    width: 27%;
+    
+    display: flex;
+    align-items: center;
+
+    text-transform: capitalize;
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .recent-activity-tables .trasactions-recent-wrapper .line-transaction-single .col-01{
+    width: 36px;
+    height: 30px;
+    
+    font-size: var(--font-text-normal);
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .recent-activity-tables .trasactions-recent-wrapper .line-transaction-single .col-02{
+    width: 40%;
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .recent-activity-tables .trasactions-recent-wrapper .line-transaction-single .col-04{
+    display: block;
+    text-align: right;
+
+    color: var(--color-white-two);
+}
+
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .recent-activity-tables .btn-views-more{
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: 15px;
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .recent-activity-tables .btn-views-more a.btn{
+    padding: 5px 20px;
+
+    background-color: var(--color-blue-two);
+
+    font-size: var(--font-subject-01);
+    color: var(--color-white-two);
+
+    border-radius: 20px;
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .recent-activity-tables .btn-views-more a.btn i{
+    display: inline-flex;
+    
+    vertical-align: middle;
+}
+section.section-home .main-home-app .income-expenses-home main.main-content-income-expenses .recent-activity-tables .btn-views-more a.btn:hover{
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+
+    -webkit-box-shadow: 0px 0px 20px rgb(0 0 0 / 35%); 
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 35%);
+}
+/* *** */
+
+/*** Investimentos ***/
+section.section-home .main-home-app .investment-home{
+    width: 43%;
+}
+
+/* Main */
+section.section-home .main-home-app .investment-home main.main-content-investment{
+    width: 100%;
+}
+/* *** */
+/* Criando uma caixa com uma sombra. */
+section.section-home .main-home-app .investment-home main.main-content-investment .investment-currency-values{
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 30px;
+}
+section.section-home .main-home-app .investment-home main.main-content-investment .investment-currency-values .investment-single{
+    width: 45%;
+    height: 200px;
+
+    padding: 20px 15px 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: var(--color-black-two);
+
+    border-radius: 20px;
+}
+section.section-home .main-home-app .investment-home main.main-content-investment .investment-currency-values .investment-single:hover{
+    transform: scale(1.05) translateY(-20px);
+    -webkit-transform: scale(1.05) translateY(-20px);
+
+    -webkit-box-shadow: 0px 15px 20px 5px rgba(0,0,0,0.35); 
+    box-shadow: 0px 15px 20px 5px rgba(0,0,0,0.35);
+}
+section.section-home .main-home-app .investment-home main.main-content-investment .investment-currency-values .investment-single.bloco-01:hover{
+    -webkit-box-shadow: 10px 30px 20px 5px rgb(0 0 0 / 35%); 
+    box-shadow: 10px 30px 20px 5px rgb(0 0 0 / 35%);
+}
+section.section-home .main-home-app .investment-home main.main-content-investment .investment-currency-values .investment-single.bloco-02:hover{
+    -webkit-box-shadow: -10px 30px 20px 5px rgb(0 0 0 / 35%); 
+    box-shadow: -10px 30px 20px 5px rgb(0 0 0 / 35%);
+}
+
+section.section-home .main-home-app .investment-home main.main-content-investment .investment-currency-values .investment-single h5{
+    font-size: var(--font-subject-01);
+    color: var(--color-grey);
+}
+section.section-home .main-home-app .investment-home main.main-content-investment .investment-currency-values .investment-single .conteudo-investment i{
+    font-size: var(--font-title-02);
+}
+section.section-home .main-home-app .investment-home main.main-content-investment .investment-currency-values .investment-single .conteudo-investment p{
+    color: var(--color-white-one);
+    font-weight: 600;
+    font-size: var(--font-text-normal);
+
+    margin-top: 8px;
+}
+/* *** */
+/*? *** ?*/
+/*? Conteudo Secundario ?*/
+section.section-home .secundary-home-app{
+    width: 32%;
+    height: 100%;
+
+    background-color: var(--color-black-two);
+
+    border-radius: 30px;
+
+    padding: 30px;
+    padding-top: 20px;
+    margin-bottom: 50px;
+}
+
+/* Main */
+section.section-home .secundary-home-app .registered-cards{
+    width: 100%;
+}
+
+/* *** */
+/* Creating a card with a background that is a circle. */
+section.section-home .secundary-home-app .registered-cards .main-registered-cards{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 20px;
+}
+
+section.section-home .secundary-home-app .registered-cards .main-registered-cards .cards-whapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+}
+section.section-home .secundary-home-app .registered-cards .main-registered-cards .cards-whapper .btn-directions{
+    border-radius: 50%;
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+section.section-home .secundary-home-app .registered-cards .main-registered-cards .cards-whapper .btn-directions i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: var(--font-title-02);
+    color: var(--color-white-one);
+}
+section.section-home .secundary-home-app .registered-cards .main-registered-cards .cards-whapper .btn-directions:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+
+    -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, .5); 
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .5);
+}
+
+section.section-home .secundary-home-app .registered-cards .main-registered-cards .cards-whapper .cards-singles{
+    width: 60%;
+    height: 250px;
+
+    position: relative;
+
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
+section.section-home .secundary-home-app .registered-cards .main-registered-cards .cards-whapper .cards-singles .single-card-info{
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    border: 1px solid var(--color-grey-p-2);
+}
+section.section-home .secundary-home-app .registered-cards .main-registered-cards .cards-whapper .cards-singles .single-card-info.view-no{
+    z-index: 1;
+
+    width: 85%;
+    
+    transform: translate(-50%, 10px);
+}
+section.section-home .secundary-home-app .registered-cards .main-registered-cards .cards-whapper .cards-singles .single-card-info.view-no-2{
+    z-index: 0;
+
+    width: 70%;
+
+    transform: translate(-50%, 20px);
+}
+section.section-home .secundary-home-app .registered-cards .main-registered-cards .cards-whapper .cards-singles .single-card-info .background-cards{
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+}
+section.section-home .secundary-home-app .registered-cards .main-registered-cards .cards-whapper .cards-singles .single-card-info .background-cards .bloco{
+    border-radius: 50%;
+
+    position: absolute;
+
+    background-color: transparent;
+    
+    border: 50px solid var(--color-blue-two);
+}
+section.section-home .secundary-home-app .registered-cards .main-registered-cards .cards-whapper .cards-singles .single-card-info.view-no .background-cards{    
+    background-color: var(--color-black-two);
+    border: 0;
+}
+section.section-home .secundary-home-app .registered-cards .main-registered-cards .cards-whapper .cards-singles .single-card-info.view-no-2 .background-cards{    
+    background-color: var(--color-black-one);
+    border: 0;
+}
+section.section-home .secundary-home-app .registered-cards .main-registered-cards .cards-whapper .cards-singles .single-card-info .background-cards .bloco.bloco-01{
+    top: -40px;
+    left: -40px;
+}
+section.section-home .secundary-home-app .registered-cards .main-registered-cards .cards-whapper .cards-singles .single-card-info .background-cards .bloco.bloco-02{
+    bottom: -40px;
+    right: -40px;
+}
+
+section.section-home .secundary-home-app .registered-cards .main-registered-cards .cards-whapper .cards-singles .single-card-info .container{
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+
+    padding: 20px;
+    
+    background: rgba(12, 15, 23, .2);
+    backdrop-filter: blur(60px) saturate(130%);
+    -webkit-backdrop-filter: blur(60px) saturate(130%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+section.section-home .secundary-home-app .registered-cards .main-registered-cards .cards-whapper .cards-singles .single-card-info .container h5{
+    font-size: var(--font-text-normal);
+    font-weight: 100;
+    color: var(--color-white-one);
+}
+section.section-home .secundary-home-app .registered-cards .main-registered-cards .cards-whapper .cards-singles .single-card-info .container h5:first-child{
+    font-size: var(--font-title-02);
+    font-weight: 400;
+}
+section.section-home .secundary-home-app .registered-cards .main-registered-cards .cards-whapper .cards-singles .single-card-info .container p{
+    font-size: var(--font-subject-02);
+    font-weight: 100;
+    color: var(--color-white-two);
+
+    margin-top: 5px;
+}
+
+section.section-home .secundary-home-app .registered-cards .main-registered-cards .values-cards{
+    margin-top: 50px;
+}
+section.section-home .secundary-home-app .registered-cards .main-registered-cards .values-cards h6{
+    font-size: var(--font-title-01);
+    font-weight: 100;
+    color: var(--color-white-one);
+    
+
+}
+/* *** */
+/* *** */
+/* The CSS code for the recent activities section. */
+section.section-home .secundary-home-app .recent-activities{
+    width: 100%;
+
+    margin-top: 30px;
+}
+section.section-home .secundary-home-app .recent-activities main.main-recent-activities,
+section.section-home .secundary-home-app .recent-activities main.main-recent-activities .wrapper-recent-activities{
+    width: 100%;
+
+    margin-top: 15px;
+}
+section.section-home .secundary-home-app .recent-activities main.main-recent-activities .wrapper-recent-activities .single-recent-activities{
+    width: 100%;
+    height: 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+section.section-home .secundary-home-app .recent-activities main.main-recent-activities .wrapper-recent-activities .single-recent-activities .info-activities{
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+section.section-home .secundary-home-app .recent-activities main.main-recent-activities .wrapper-recent-activities .single-recent-activities .info-activities .icon-activities{
+    width: 40px;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--alert-04-success);
+
+    font-size: var(--font-title-01);
+    font-weight: 700;
+    color: var(--color-black-two);
+
+    margin-right: 10px;
+
+    border-radius: 10px;
+}
+section.section-home .secundary-home-app .recent-activities main.main-recent-activities .wrapper-recent-activities .single-recent-activities .info-activities .name-activities h6{
+    font-size: var(--font-subject-02);
+    color: var(--color-white-two);
+}
+section.section-home .secundary-home-app .recent-activities main.main-recent-activities .wrapper-recent-activities .single-recent-activities .info-activities .name-activities p{
+    font-size: var(--font-subject-02);
+    color: var(--color-grey);
+}
+
+section.section-home .secundary-home-app .recent-activities main.main-recent-activities .wrapper-recent-activities .single-recent-activities .value-activities{
+    font-size: var(--font-subject-02);
+    font-weight: 700;
+    color: var(--color-white-two);
+}
+/* *** */

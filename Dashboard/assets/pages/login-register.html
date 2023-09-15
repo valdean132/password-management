@@ -1,0 +1,114 @@
+<div class="container-load transition" data-load="load-main">
+    <img src="assets/images/LOGO/logo-MFC.png" alt="Logo - MFC">
+    <h3 class="typing" data="My Finance Controls"></h3>
+</div><!-- Container de Load -->
+<!--===== Home Start ======-->
+<section class="section section-login-register">
+    <div class="bg-login-register transition">
+        <img src="assets/images/LOGO/logo-MFC.png" alt="Logo - MFC">
+        <h3 class="typing" data="My Finance Controls"></h3>
+    </div><!-- Container de Load -->
+
+    <div class="container">
+        <div class="row full-screen align-items-center">
+            <div class="box-main">
+                <div class="form">
+                    <div class="text-center">
+                        <div class="selection-register-login">
+                            <h6><span>Entrar</span> <span>Cadastrar</span></h6>
+                            <input type="checkbox" class="checkbox"  id="reg-log">
+                            <label for="reg-log"><i class="bi bi-arrow-up-left"></i></label>
+                        </div>
+                        <div class="card-3d-wrap">
+                            <div class="card-3d-wrapper">
+                                <form class="card-front" method="POST" data-acao="login">
+                                    <div class="center-wrap">
+                                        <h4 class="heading">Acessar Painel</h4>
+                                        <div class="form-group">
+                                            <input type="email" permission_alter="1" not-null value="" class="form-style" id="user" name="email" placeholder="Seu E-mail" autocomplete="off">
+                                            <label for="user" class="input-icon"><i class="bi bi-at"></i></label>
+                                            <div class="icon-input-atention">
+                                                <i class="icones-aviso"><i class="bi bi-exclamation-triangle-fill"></i></i>
+                                                <div class="aviso-input"></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" permission_alter="1" not-null value="" class="form-style" id="password" name="password" placeholder="Sua Senha" autocomplete="off">
+                                            <label for="password" class="input-icon"><i class="bi bi-shield-lock-fill"></i></label>
+                                            <div class="show-password"><i class="bi bi-eye-fill"></i></div>
+                                            <div class="icon-input-atention">
+                                                <i class="icones-aviso"><i class="bi bi-exclamation-triangle-fill"></i></i>
+                                                <div class="aviso-input"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="box-lembre">
+                                            <div class="wrapper-lembre lembrar-user">
+                                                <input type="checkbox" name="lembrarConexaoCheckbox" id="lembrar-user">
+                                                
+                                                <label for="lembrar-user" class="caixinha-box-input">
+                                                    <div class="after-lembrete"></div>
+                                                </label>
+                                                <label for="lembrar-user">Manter conectado</label>
+                                                <input type="hidden" permission_alter="1" name="lembrarConexao">
+                                            </div><!-- Lembrar Usuário -->
+                                            <div class="wrapper-lembre lembrar-login">
+                                                <input type="checkbox" id="lembrar-login">
+                                                <label for="lembrar-login" class="caixinha-box-input wrapper-lembrar-label">
+                                                    <div class="after-lembrete"></div>
+                                                </label>
+                                                <label for="lembrar-login" class="wrapper-lembrar-label">Lembrar Login</label>
+                                            </div><!-- Lembrar Login -->
+                                        </div><!-- Box User -->
+                                        <button type="submit" disabled class="btn"  permission_alter="1" name="login-not">
+                                            <span>Entrar</span>
+                                        </button>
+                                        <p class="text-center"><a href="#" class="link">Esqueceu a Senha?</a></p>
+                                    </div>
+                                </form><!-- Logar -->
+
+                                <form class="card-back" method="POST" data-acao="register">
+                                    <div class="center-wrap">
+                                        <h4 class="heading">Faça Seu Registro</h4>
+                                        <div class="form-group">
+                                            <input type="text" not-null valid-name="nome" permission_alter="1" class="form-style" id="nome-reg" name="nome" placeholder="Seu Nome" autocomplete="off">
+                                            <label for="nome-reg" class="input-icon"><i class="bi bi-person"></i></label>
+                                            <div class="icon-input-atention">
+                                                <i class="icones-aviso"><i class="bi bi-exclamation-triangle-fill"></i></i>
+                                                <div class="aviso-input"></div>
+                                            </div>  
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" not-null valid-contato="email" permission_alter="1" id="email-reg" class="form-style" placeholder="Seu E-mail" autocomplete="off" name="email">
+                                            <label for="email-reg" class="input-icon"><i class="bi bi-at"></i></label>
+                                            <div class="icon-input-atention">
+                                                <i class="icones-aviso"><i class="bi bi-exclamation-triangle-fill"></i></i>
+                                                <div class="aviso-input"></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" not-null valid-contato="celular" mask_number="celular" permission_alter="1" id="contato-reg" class="form-style" placeholder="Contato" name="contato" autocomplete="off">
+                                            <label for="contato-reg" class="input-icon"><i class="bi bi-telephone-fill"></i></label>
+                                            <div class="icon-input-atention">
+                                                <i class="icones-aviso"><i class="bi bi-exclamation-triangle-fill"></i></i>
+                                                <div class="aviso-input"></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="display: none;">
+                                            <input type="hidden" name="key" permission_alter="1" value="">
+                                            <input type="hidden" name="cadastre-user-not" permission_alter="1" value="">
+                                        </div>
+                                        <button type="submit" disabled permission_alter="1" class="btn" name="cadastrar-not">
+                                            <span>Registrar</span>
+                                        </button>
+                                    </div>
+                                </form><!-- Registrar -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--===== Home End ======-->

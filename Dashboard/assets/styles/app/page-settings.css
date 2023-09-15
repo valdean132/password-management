@@ -1,0 +1,142 @@
+/*! Section Configurações !*/
+section.section-settings{
+    width: 100%;
+}
+section.section-settings header h4{
+    height: 45px;
+
+    font-size: var(--font-title-02);
+    font-weight: 300;
+    color: var(--color-white-two);
+
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+
+}
+
+section.section-settings main.main-settings{
+    width: 100%;
+
+    margin-top: 20px;
+
+    display: flex;
+
+    position: relative;
+}
+section.section-settings main.main-settings .section-main-settings{
+    min-width: 100%;
+    /* height: 100%; */
+
+    padding-bottom: 30px;
+
+    position: absolute;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    transform: scale(0);
+    -webkit-transform: scale(0);
+}
+section.section-settings main.main-settings .section-main-settings.active{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+}
+
+/*? Campo Categorias ?*/
+section.section-settings main.main-settings .section-main-settings .single-category{
+    width: 49%;
+
+    border: 1px solid var(--color-grey-p-2);
+    border-radius: 8px;
+
+    padding: 0 2% 1.5%;
+
+    background-color: var(--color-black-two);
+}
+section.section-settings main.main-settings .section-main-settings .single-category main{
+    margin-top: 10px;
+
+    height: 100%;
+}
+
+/*** Categorias cadastradas ***/
+section.section-settings main.main-settings .section-main-settings .single-category main .contain-category{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+section.section-settings main.main-settings .section-main-settings .single-category main .contain-category .uniq-category{
+    width: 30%;
+    height: 120px;
+    
+    margin-bottom: 18px;
+    padding: 0 15px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    background-color: var(--color-black-one);
+
+    border-radius: 8px;
+    border: 1px solid var(--alert-01-primary);
+}
+section.section-settings main.main-settings .section-main-settings .single-category main .contain-category .uniq-category:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+section.section-settings main.main-settings .section-main-settings .single-category main .contain-category .uniq-category .title-uniq-category h5{
+    width: 100%;
+
+    font-size: var(--font-text-normal);
+    font-weight: 600;
+    color: var(--color-white-two);
+    
+    text-align: left;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+section.section-settings main.main-settings .section-main-settings .single-category main .contain-category .uniq-category .info-uniq-category{
+    margin: 5px 0;
+
+    font-size: var(--font-subject-01);
+    color: var(--color-grey);
+    line-height: calc(var(--font-subject-01) + 2px);
+}
+section.section-settings main.main-settings .section-main-settings .single-category main .contain-category .uniq-category .info-uniq-category .value-uniq-category{
+    color: var(--color-white-one);
+    font-weight: 300;
+}
+section.section-settings main.main-settings .section-main-settings .single-category main .contain-category .uniq-category .info-uniq-category .date-uniq-category{
+    font-size: var(--font-subject-02);
+    font-weight: 200;
+}
+section.section-settings main.main-settings .section-main-settings .single-category main .contain-category .uniq-category .bnts-uniq-category{
+    width: 100%;
+}
+section.section-settings main.main-settings .section-main-settings .single-category main .contain-category .uniq-category .bnts-uniq-category .btn-uniq-cayegory{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 25px;
+    height: 25px;
+
+    font-size: var(--font-text-normal);
+    color: var(--alert-01-primary);
+}
+section.section-settings main.main-settings .section-main-settings .single-category main .contain-category .uniq-category .bnts-uniq-category .btn-uniq-cayegory:hover{
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+}
+section.section-settings main.main-settings .section-main-settings .single-category main .contain-category .uniq-category .bnts-uniq-category .btn-uniq-cayegory.edit-category{
+    color: var(--alert-02-attention);
+}

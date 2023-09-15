@@ -1,0 +1,348 @@
+<!-- === Start Section Settings === -->
+<section class="section section-settings" id="settings">
+    <header class="navegate-section">
+        <nav class="box-shadow-01">
+            <ul>
+                <li>
+                    <a href="" data-href_inside="category" class="active transition">Categorias</a>
+                </li>
+                <li>
+                    <a href="" data-href_inside="card" class="transition">Cartões</a>
+                </li>
+            </ul>
+        </nav>
+    </header><!-- Conteúdo principal da página settings -->
+    <main class="main-settings">
+        <section class="section-main-settings active transition" data-inside="category">
+            <div class="single-category register-category box-shadow-01">
+                <header>
+                    <h4>Cadastrar nova categoria</h4>
+                </header><!-- Header das Categorias -->
+                <main class="">
+                    <form data-form="category" method="post">
+                        <div class="form-box-single-inputs">
+                            <div class="box-form-uniq fw-100">
+                                <label for="category" class="user-select-none">Categoria: <span>*</span></label>
+                                <input 
+                                    type="text" 
+                                    id="category" 
+                                    placeholder="Informe o nome da Categoria" 
+                                    class="transition box-shadow-01"
+                                    name="category"
+                                    not-null
+                                    value=""
+                                    autocomplete="off"
+                                    required
+                                    permission_alter="1"
+                                >
+                                <div class="icon-input-atention hidden">
+                                    <i class="bi"></i>
+                                    <div class="aviso-input user-select-none"></div>
+                                </div>
+                            </div><!-- Campo de input -->
+
+                            <div class="box-form-uniq fw-50">
+                                <label for="type_category" class="user-select-none">Tipo: <span>*</span></label>
+                                <select 
+                                    id="type_category"
+                                    class="transition box-shadow-01"
+                                    name="type_category"
+                                    not-null
+                                    autocomplete="off"
+                                    data-placeholder="Selecione uma Opção"
+                                    required
+                                    permission_alter="1"
+                                >
+                                    <option value="" selected></option>
+                                    <option value="0" >Entrada</option>
+                                    <option value="1">Saída</option>
+                                </select><!-- Seleção -->
+                                <div class="icon-input-atention hidden">
+                                    <i class="bi"></i>
+                                    <div class="aviso-input user-select-none"></div>
+                                </div>
+                            </div><!-- Campo de input -->
+                            
+                            <div class="box-form-uniq fw-50">
+                                <label for="recurrence" class="user-select-none">Recorrência: <span>*</span></label>
+                                <select 
+                                    id="recurrence"
+                                    class="transition box-shadow-01"
+                                    name="recurrence"
+                                    not-null
+                                    autocomplete="off"
+                                    data-placeholder="Selecione uma Opção"
+                                    required
+                                    permission_alter="1"
+                                >
+                                    <option value="" selected></option>
+                                    <option value="0" >Sim</option>
+                                    <option value="1">Não</option>
+                                </select><!-- Seleção -->
+                                <div class="icon-input-atention hidden">
+                                    <i class="bi"></i>
+                                    <div class="aviso-input user-select-none"></div>
+                                </div>
+                            </div><!-- Campo de input -->
+
+                            <div class="box-form-uniq fw-50">
+                                <label for="form_payment" class="user-select-none">Forma de Pagamento: <span>*</span></label>
+                                <select 
+                                    id="form_payment"
+                                    class="transition box-shadow-01"
+                                    name="form_payment"
+                                    not-null
+                                    autocomplete="off"
+                                    data-placeholder="Selecione uma Opção"
+                                    required
+                                    permission_alter="1"
+                                >
+                                    <option value="" selected></option>
+                                    <option value="0" >Dinheiro</option>
+                                    <option value="1">Cartão de Débito</option>
+                                    <option value="2">Cartão de Crédito</option>
+                                    <option value="3">Boleto</option>
+                                    <option value="4">Pix</option>
+                                    <option value="5">Variado</option>
+                                </select><!-- Seleção -->
+                                <div class="icon-input-atention hidden">
+                                    <i class="bi"></i>
+                                    <div class="aviso-input user-select-none"></div>
+                                </div>
+                            </div><!-- Campo de input -->
+
+                            <div class="box-form-uniq fw-50">
+                                <label for="period" class="user-select-none">Período: </label>
+                                <input 
+                                    type="text" 
+                                    id="period" 
+                                    placeholder="Informe o periodo de pagamento" 
+                                    class="transition box-shadow-01"
+                                    name="period"
+                                    value=""
+                                    autocomplete="off"
+                                    permission_alter="1"
+                                >
+                                <div class="icon-input-atention hidden">
+                                    <i class="bi"></i>
+                                    <div class="aviso-input user-select-none"></div>
+                                </div>
+                            </div><!-- Campo de input -->
+
+                            <div class="box-form-uniq fw-50">
+                                <label for="value" class="user-select-none">Valor: </label>
+                                <input 
+                                    type="text" 
+                                    id="value" 
+                                    placeholder="Informe o Valor a pagar" 
+                                    class="transition box-shadow-01"
+                                    name="value"
+                                    not-null
+                                    value=""
+                                    autocomplete="off"
+                                    required
+                                    permission_alter="1"
+                                >
+                                <div class="icon-input-atention hidden">
+                                    <i class="bi"></i>
+                                    <div class="aviso-input user-select-none"></div>
+                                </div>
+                            </div><!-- Campo de input -->
+
+                            <div class="box-form-uniq fw-50">
+                                <label for="amount_paid" class="user-select-none">Quantia já Paga: </label>
+                                <input 
+                                    type="text" 
+                                    id="amount_paid" 
+                                    placeholder="Informe o Valor que já foi pago" 
+                                    class="transition box-shadow-01"
+                                    name="amount_paid"
+                                    autocomplete="off"
+                                    permission_alter="1"
+                                >
+                                <div class="icon-input-atention hidden">
+                                    <i class="bi"></i>
+                                    <div class="aviso-input user-select-none"></div>
+                                </div>
+                            </div><!-- Campo de input -->
+                        </div><!-- Campo de inputs -->
+
+                        <div class="btn-submit">
+                            <button type="submit" permission_alter="1" class="btn-01 cursor-pointer text-capitalize transition" name="alterar">
+                                <i class="bi bi-arrow-repeat"></i> <span>Cadastrar</span>
+                            </button>
+                        </div>
+                    </form><!-- Formulário -->
+                </main><!-- Main das Categorias -->
+            </div>
+            <div class="single-category views-categories box-shadow-01">
+                <header>
+                    <h4>Categorias Cadastradas</h4>
+                </header><!-- Header das Categorias -->
+                <main class="">
+                    <div class="contain-category">
+                        <div class="uniq-category box-shadow-01 transition">
+                            <div class="title-uniq-category">
+                                <h5 title="Compras do mês esse eu coloco a mais">Compras do mês esse eu coloco a mais</h5>
+                            </div><!-- Titulo da categoria -->
+                            <div class="main-uniq-category">
+                                <div class="info-uniq-category">
+                                    <p class="value-uniq-category user-select-none">R$ 4.000,00</p>
+                                    <p class="date-uniq-category user-select-none">01/06/2023</p>
+                                </div>
+                                <div class="bnts-uniq-category">
+                                    <a href="" class="btn-uniq-cayegory views-category transition" title="Visualizar categoria">
+                                        <i class="bi bi-eye"></i>
+                                    </a><!-- Botão para visualizar a categoria -->
+                                    <a href="" class="btn-uniq-cayegory edit-category transition" title="Editar categoria">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a><!-- Botão para editar a categoria -->
+                                </div>
+                            </div><!-- Corpo da categoria -->
+                        </div><!-- Container da categoria Unica -->
+
+                        <div class="uniq-category box-shadow-01 transition">
+                            <div class="title-uniq-category">
+                                <h5 title="Compras do mês esse eu coloco a mais">Compras do mês esse eu coloco a mais</h5>
+                            </div><!-- Titulo da categoria -->
+                            <div class="main-uniq-category">
+                                <div class="info-uniq-category">
+                                    <p class="value-uniq-category user-select-none">R$ 4.000,00</p>
+                                    <p class="date-uniq-category user-select-none">01/06/2023</p>
+                                </div>
+                                <div class="bnts-uniq-category">
+                                    <a href="" class="btn-uniq-cayegory views-category transition" title="Visualizar categoria">
+                                        <i class="bi bi-eye"></i>
+                                    </a><!-- Botão para visualizar a categoria -->
+                                    <a href="" class="btn-uniq-cayegory edit-category transition" title="Editar categoria">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a><!-- Botão para editar a categoria -->
+                                </div>
+                            </div><!-- Corpo da categoria -->
+                        </div><!-- Container da categoria Unica -->
+                        <div class="uniq-category box-shadow-01 transition">
+                            <div class="title-uniq-category">
+                                <h5 title="Compras do mês esse eu coloco a mais">Compras do mês esse eu coloco a mais</h5>
+                            </div><!-- Titulo da categoria -->
+                            <div class="main-uniq-category">
+                                <div class="info-uniq-category">
+                                    <p class="value-uniq-category user-select-none">R$ 4.000,00</p>
+                                    <p class="date-uniq-category user-select-none">01/06/2023</p>
+                                </div>
+                                <div class="bnts-uniq-category">
+                                    <a href="" class="btn-uniq-cayegory views-category transition" title="Visualizar categoria">
+                                        <i class="bi bi-eye"></i>
+                                    </a><!-- Botão para visualizar a categoria -->
+                                    <a href="" class="btn-uniq-cayegory edit-category transition" title="Editar categoria">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a><!-- Botão para editar a categoria -->
+                                </div>
+                            </div><!-- Corpo da categoria -->
+                        </div><!-- Container da categoria Unica -->
+                        <div class="uniq-category box-shadow-01 transition">
+                            <div class="title-uniq-category">
+                                <h5 title="Compras do mês esse eu coloco a mais">Compras do mês esse eu coloco a mais</h5>
+                            </div><!-- Titulo da categoria -->
+                            <div class="main-uniq-category">
+                                <div class="info-uniq-category">
+                                    <p class="value-uniq-category user-select-none">R$ 4.000,00</p>
+                                    <p class="date-uniq-category user-select-none">01/06/2023</p>
+                                </div>
+                                <div class="bnts-uniq-category">
+                                    <a href="" class="btn-uniq-cayegory views-category transition" title="Visualizar categoria">
+                                        <i class="bi bi-eye"></i>
+                                    </a><!-- Botão para visualizar a categoria -->
+                                    <a href="" class="btn-uniq-cayegory edit-category transition" title="Editar categoria">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a><!-- Botão para editar a categoria -->
+                                </div>
+                            </div><!-- Corpo da categoria -->
+                        </div><!-- Container da categoria Unica -->
+                        <div class="uniq-category box-shadow-01 transition">
+                            <div class="title-uniq-category">
+                                <h5 title="Compras do mês esse eu coloco a mais">Compras do mês esse eu coloco a mais</h5>
+                            </div><!-- Titulo da categoria -->
+                            <div class="main-uniq-category">
+                                <div class="info-uniq-category">
+                                    <p class="value-uniq-category user-select-none">R$ 4.000,00</p>
+                                    <p class="date-uniq-category user-select-none">01/06/2023</p>
+                                </div>
+                                <div class="bnts-uniq-category">
+                                    <a href="" class="btn-uniq-cayegory views-category transition" title="Visualizar categoria">
+                                        <i class="bi bi-eye"></i>
+                                    </a><!-- Botão para visualizar a categoria -->
+                                    <a href="" class="btn-uniq-cayegory edit-category transition" title="Editar categoria">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a><!-- Botão para editar a categoria -->
+                                </div>
+                            </div><!-- Corpo da categoria -->
+                        </div><!-- Container da categoria Unica -->
+                        <div class="uniq-category box-shadow-01 transition">
+                            <div class="title-uniq-category">
+                                <h5 title="Compras do mês esse eu coloco a mais">Compras do mês esse eu coloco a mais</h5>
+                            </div><!-- Titulo da categoria -->
+                            <div class="main-uniq-category">
+                                <div class="info-uniq-category">
+                                    <p class="value-uniq-category user-select-none">R$ 4.000,00</p>
+                                    <p class="date-uniq-category user-select-none">01/06/2023</p>
+                                </div>
+                                <div class="bnts-uniq-category">
+                                    <a href="" class="btn-uniq-cayegory views-category transition" title="Visualizar categoria">
+                                        <i class="bi bi-eye"></i>
+                                    </a><!-- Botão para visualizar a categoria -->
+                                    <a href="" class="btn-uniq-cayegory edit-category transition" title="Editar categoria">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a><!-- Botão para editar a categoria -->
+                                </div>
+                            </div><!-- Corpo da categoria -->
+                        </div><!-- Container da categoria Unica -->
+                        <div class="uniq-category box-shadow-01 transition">
+                            <div class="title-uniq-category">
+                                <h5 title="Compras do mês esse eu coloco a mais">Compras do mês esse eu coloco a mais</h5>
+                            </div><!-- Titulo da categoria -->
+                            <div class="main-uniq-category">
+                                <div class="info-uniq-category">
+                                    <p class="value-uniq-category user-select-none">R$ 4.000,00</p>
+                                    <p class="date-uniq-category user-select-none">01/06/2023</p>
+                                </div>
+                                <div class="bnts-uniq-category">
+                                    <a href="" class="btn-uniq-cayegory views-category transition" title="Visualizar categoria">
+                                        <i class="bi bi-eye"></i>
+                                    </a><!-- Botão para visualizar a categoria -->
+                                    <a href="" class="btn-uniq-cayegory edit-category transition" title="Editar categoria">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a><!-- Botão para editar a categoria -->
+                                </div>
+                            </div><!-- Corpo da categoria -->
+                        </div><!-- Container da categoria Unica -->
+                        <div class="uniq-category box-shadow-01 transition">
+                            <div class="title-uniq-category">
+                                <h5 title="Compras do mês esse eu coloco a mais">Compras do mês esse eu coloco a mais</h5>
+                            </div><!-- Titulo da categoria -->
+                            <div class="main-uniq-category">
+                                <div class="info-uniq-category">
+                                    <p class="value-uniq-category user-select-none">R$ 4.000,00</p>
+                                    <p class="date-uniq-category user-select-none">01/06/2023</p>
+                                </div>
+                                <div class="bnts-uniq-category">
+                                    <a href="" class="btn-uniq-cayegory views-category transition" title="Visualizar categoria">
+                                        <i class="bi bi-eye"></i>
+                                    </a><!-- Botão para visualizar a categoria -->
+                                    <a href="" class="btn-uniq-cayegory edit-category transition" title="Editar categoria">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a><!-- Botão para editar a categoria -->
+                                </div>
+                            </div><!-- Corpo da categoria -->
+                        </div><!-- Container da categoria Unica -->
+                        
+                    </div><!-- Container das categorias cadastradas -->
+                    <div>Aqui vai a barra de navegação</div>                 
+                </main><!-- Main das Categorias -->
+            </div>
+        </section>
+
+        <section class="section-main-settings transition border-red" data-inside="card"></section>
+    </main>
+   
+</section>
+<!-- === End Section Settings === -->
