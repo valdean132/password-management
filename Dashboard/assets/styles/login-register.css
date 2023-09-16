@@ -4,7 +4,7 @@ section.section-login-register{
 
     display: flex;
 
-    background-color: var(--color-black-two);
+    background-color: var(--color-02);
     
 }
 
@@ -18,7 +18,7 @@ section.section-login-register .bg-login-register{
     left: 0;
     z-index: -1; */
 
-    background-color: var(--color-black-two);
+    background-color: var(--color-02);
 
     display: flex;
     flex-direction: column;
@@ -28,13 +28,13 @@ section.section-login-register .bg-login-register{
 section.section-login-register .bg-login-register img{
     max-width: 50px;
 
-    animation: levitate 1.5s infinite;
+    /* animation: levitate 1.5s infinite; */
 }
 section.section-login-register .bg-login-register h3{
     font-size: 3rem;
     font-weight: 700;
 
-    background: linear-gradient(0deg, var(--color-blue-one) 5%, var(--color-green));
+    background: linear-gradient(0deg, var(--color-02) 5%, var(--color-06));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -43,7 +43,7 @@ section.section-login-register .bg-login-register h3:after{
 
     display: inline-block;
 
-    background: linear-gradient(10deg, var(--color-blue-one) 50%, var(--color-green));
+    background: linear-gradient(10deg, var(--color-02) 50%, var(--color-06));
 
     margin-left: 2px;
     
@@ -120,7 +120,7 @@ section.section-login-register .div-form-valid {
     transition: .5s;
 }
 
-section.section-login-register .box-alert {
+/* section.section-login-register .box-alert {
     width: 100%;
     height: 100%;
     border-radius: 5px;
@@ -129,11 +129,11 @@ section.section-login-register .box-alert {
     justify-content: center;
     align-items: center;
     box-shadow: 0px 0px 20px 0px rgb(20, 20, 20);
-}
+} */
 
-section.section-login-register .box-alert .material-symbols-rounded {
+/* section.section-login-register .box-alert .material-symbols-rounded {
     font-family: 'Material Icons';
-    color: var(--color-white-one);
+    color: var(--color-06);
     font-size: 40px;
     border-radius: 50%;
     display: flex;
@@ -149,14 +149,14 @@ section.section-login-register .box-alert .material-symbols-rounded {
 }
 
 section.section-login-register .box-alert p {
-    color: var(--color-white-one);
+    color: var(--color-06);
     font-size: 18px;
     margin: 0 5px;
     text-align: center;
 }
 
 section.section-login-register .box-alert p span {
-    color: var(--color-white-two);
+    color: var(--color-06);
     font-size: 14px;
 }
 
@@ -168,12 +168,12 @@ section.section-login-register .box-alert.sucesso {
 section.section-login-register .box-alert.error {
     background-color: #f75353;
     animation: shake 1s;
-}
+} */
 
 section.section-login-register .btn {
     height: 44px;
     padding: 0 30px;
-    background-color: var(--color-blue-two);
+    background-color: var(--color-01);
     border-radius: 4px;
     font-size: 13px;
     font-weight: 600;
@@ -181,7 +181,7 @@ section.section-login-register .btn {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    color: var(--color-black-one);
+    color: var(--color-06);
     letter-spacing: 1px;
     border: none;
     cursor: pointer;
@@ -191,8 +191,8 @@ section.section-login-register .btn {
     position: relative;
 }
 section.section-login-register .btn:hover {
-    background-color: var(--color-black-one);
-    color: var(--color-blue-two);
+    background-color: var(--color-02);
+    /* color: var(--color-03); */
     box-shadow: 0 8px 24px 0 rgba(138, 140, 146, 0.2);
 }
 
@@ -200,7 +200,7 @@ section.section-login-register .btn:disabled,
 section.section-login-register .btn:disabled:hover {
     background-color: #82879b;
 
-    color: var(--color-white-one);
+    color: var(--color-06);
     font-weight: 500;
 
     cursor: no-drop;
@@ -216,11 +216,11 @@ section.section-login-register .form {
 
 section.section-login-register .box-main h4 {
     font-weight: 600;
-    color: var(--color-white-one);
+    color: var(--color-06);
 }
 
 section.section-login-register .box-main h6 {
-    color: var(--color-white-one);
+    color: var(--color-06);
     margin-bottom: 30px;
 }
 
@@ -236,7 +236,7 @@ section.section-login-register .selection-register-login {
 
     box-shadow: 0px 0px 20px 0px rgb(20 20 20);
 
-    background: rgba(12, 15, 23, .7);
+    background: var(--color-02);
     backdrop-filter: blur(60px) saturate(180%);
     -webkit-backdrop-filter: blur(60px) saturate(180%);
 
@@ -259,7 +259,7 @@ section.section-login-register .checkbox:not(:checked)+label {
     width: 60px;
     height: 16px;
     border-radius: 8px;
-    background-color: var(--color-blue-two);
+    background-color: var(--color-03);
     padding: 0;
     margin: 10px auto;
     cursor: pointer;
@@ -279,12 +279,12 @@ section.section-login-register .checkbox:not(:checked)+label i {
 
     border-radius: 50%;
 
-    color: var(--color-blue-two);
+    color: var(--color-03);
     line-height: 36px;
     text-align: center;
     font-size: 24px;
 
-    background-color: var(--color-white-one);
+    background-color: var(--color-06);
     
     transition: all 0.5s ease;
 }
@@ -294,14 +294,14 @@ section.section-login-register .checkbox:checked+label i {
 }
 
 section.section-login-register .link {
-    color: var(--color-white-two);
+    color: var(--color-06);
     margin-top: 20px;
     display: block;
     transition: all .3s ease;
 }
 
 section.section-login-register .link:hover {
-    color: var(--color-blue-two);
+    color: var(--color-01);
 }
 
 section.section-login-register .card-3d-wrap {
@@ -385,7 +385,7 @@ section.section-login-register .form-style {
     line-height: 22px;
     letter-spacing: 0.5px;
     outline: none;
-    color: var(--color-white-two);
+    color: var(--color-06);
     background-color: #242323;
     border: none;
     box-shadow: var(--shadow);
@@ -407,7 +407,7 @@ section.section-login-register .input-icon {
     height: 48px;
     font-size: 24px;
     text-align: left;
-    color: var(--color-blue-two);
+    color: var(--color-06);
     transition: all 200ms linear;
     cursor: text;
 }
@@ -447,7 +447,7 @@ section.section-login-register .icon-input-atention .aviso-input {
     line-height: .9rem;
     font-size: .9rem;
     border-radius: 4px;
-    color: var(--color-white-one);
+    color: var(--color-06);
     font-weight: 300;
     padding: 5px;
 
@@ -509,7 +509,7 @@ section.section-login-register .show-password {
 
 section.section-login-register .show-password i {
     /* content: '\F33E'; */
-    color: var(--color-blue-two);
+    color: var(--color-06);
     font-weight: 300;
     font-size: 20px;
     transition: font-size .5s, content .5s;
@@ -535,7 +535,7 @@ section.section-login-register .box-lembre {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--color-white-one);
+    color: var(--color-06);
     font-weight: 300;
     margin-top: 20px;
 }
@@ -552,7 +552,7 @@ section.section-login-register .wrapper-lembre input {
 }
 
 section.section-login-register .wrapper-lembre label {
-    color: var(--color-white-two);
+    color: var(--color-06);
     cursor: pointer;
     font-weight: 400;
     text-align: left;
@@ -564,7 +564,7 @@ section.section-login-register .wrapper-lembre .caixinha-box-input {
     margin-right: 5px;
     border-radius: 6px;
     background-color: transparent;
-    border: 2px solid var(--color-white-one);
+    border: 2px solid var(--color-06);
 
     position: relative;
 }
@@ -576,8 +576,8 @@ section.section-login-register .after-lembrete {
     left: 80%;
     width: 8px;
     height: 25px;
-    border-right: 0px solid var(--color-blue-two);
-    border-bottom: 0px solid var(--color-blue-two);
+    border-right: 0px solid var(--color-01);
+    border-bottom: 0px solid var(--color-01);
     transform: translate(-80%, -80%);
     -webkit-transform: translate(-80%, -80%);
     transition: border-bottom-width .2s linear, border-right-width .2s linear, transform .2s linear;

@@ -140,8 +140,9 @@
                                 $resultConf = [
                                     'type' => 'error',
                                     'msg' => 'Parece que ocorreu um erro inesperado. ',
-                                    'span' => 'Tente novamente, se persistir clique nessa mensagem...',
-                                    'suport' => true
+                                    'span' => 'Tente novamente, se persistir clique em Suport...',
+                                    'suport' => true,
+                                    'msgAction' => 'Suport'
                                 ];
 
                                 Painel::deletar($_POST['nome_tabela-not'], 'id_user', $_POST['id_user']);
@@ -154,8 +155,9 @@
                             $resultConf = [
                                 'type' => 'error',
                                 'msg' => 'Parece que ocorreu um erro inesperado. ',
-                                'span' => 'Tente novamente, se persistir clique nessa mensagem...',
-                                'suport' => true
+                                'span' => 'Tente novamente, se persistir clique em Suport...',
+                                'suport' => true,
+                                'msgAction' => 'Suport'
                             ];
                             Painel::createAndDropDB($database, 'drop');
                             echo json_encode($result);
@@ -165,8 +167,9 @@
                         $result = [
                             'type' => 'error',
                             'msg' => 'Parece que ocorreu um erro inesperado. ',
-                            'span' => 'Tente novamente, se persistir clique nessa mensagem...',
-                            'suport' => true
+                            'span' => 'Tente novamente, se persistir clique em Suport...',
+                            'suport' => true,
+                            'msgAction' => 'Suport'
                         ];
                         echo json_encode($result);
                         die();

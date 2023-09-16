@@ -5,14 +5,12 @@
 :root {
     /*? ** Colors ** ?*/
     /*! Main !*/
-    --color-blue-one: #233dc7;
-    --color-blue-two: #1976f7;
-    --color-green: #138c40;
-    --color-grey: #4a5269;
-    --color-black-one: #0c0f17;
-    --color-black-two: #151b28;
-    --color-white-one: #f2f2fc;
-    --color-white-two: #fdf9ff;
+    --color-01: #3CB35A;
+    --color-02: #000000;
+    --color-03: #03012C;
+    --color-04: #635E79;
+    --color-05: #9690B0;
+    --color-06: #FFFFFF;
     
     /*! Color Opacity !*/
     --color-grey-p-2: rgba(74, 82, 105, .2);
@@ -60,7 +58,7 @@ html {
 }
 
 body {
-    background: var(--color-black-one);
+    background: var(--color-02);
     /* background-image: url('../images/background-main.png'); */
     background-repeat: no-repeat;
     background-size: 130%;
@@ -76,31 +74,6 @@ body {
     position: fixed;
     top: 0;
     z-index: 0;
-}
-#background-app .bloco{
-    width: 300px;
-    height: 300px;
-
-    border-radius: 50%;
-
-    position: absolute;
-
-    background-color: transparent;
-    box-shadow: 0 0 85px 35px var(--color-blue-one),
-                inset 0 0 400px 25px var(--color-blue-one);
-}
-
-#background-app .bloco-01{
-    top: -250px;
-    left: 115px;
-}
-#background-app .bloco-02{
-    right: -250px;
-    bottom: 135px;
-}
-#background-app .bloco-03{
-    left: 240px;
-    bottom: -250px;
 }
 
 /*! Informations !*/
@@ -142,14 +115,14 @@ body {
 ::-webkit-scrollbar-thumb {
     width: 100%;
 
-    background-color: var(--color-blue-one);
+    background-color: var(--color-01);
 
     border-radius: 8px;
 }
 
 * {
     scrollbar-width: thin;
-    scrollbar-color: var(--color-blue-one) transparent;
+    scrollbar-color: var(--color-01) transparent;
 }
 
 /*! Transição !*/
@@ -225,7 +198,7 @@ body {
     transform: scale(1);
     -webkit-transform: scale(1);
 
-    background-color: var(--color-black-two);
+    background-color: var(--color-02);
 
     display: flex;
     flex-direction: column;
@@ -245,7 +218,7 @@ body {
     font-size: 3rem;
     font-weight: 700;
 
-    background: linear-gradient(0deg, var(--color-blue-one) 5%, var(--color-green));
+    background: linear-gradient(0deg, var(--color-03) 5%, var(--color-01));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -254,7 +227,7 @@ body {
 
     display: inline-block;
 
-    background: linear-gradient(10deg, var(--color-blue-one) 50%, var(--color-green));
+    background: linear-gradient(10deg, var(--color-03) 50%, var(--color-01));
 
     margin-left: 2px;
     
@@ -305,7 +278,7 @@ body {
 }
 .btn-01,
 .btn-02{
-    color: var(--color-white-one);
+    color: var(--color-06);
 
     border: none;
 
@@ -313,7 +286,7 @@ body {
 
     white-space: nowrap;
 
-    background: var(--color-blue-one);
+    background: var(--color-01);
 }
 .btn-01:hover,
 .btn-02:hover{

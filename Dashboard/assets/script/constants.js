@@ -294,32 +294,42 @@ const separaData = data => {
 }
 
 /* Box para avisos e alertas */
-const boxAvisos = (typeAviso, msg, span, close, action = '') => { /* Type pode ser: success, attention ou error */
+const boxAvisos = (typeAviso, msg, span, close, action = '', msgAction = '') => { /* Type pode ser: success, attention ou error */
     // Variaveis locais
-    let background = '';
-    let contTime = (msg.split(' ').length)*1000;
-
+    let color = '';
     span = span != undefined || span != null ? span : '';
+    
+    let contTime = (msg.split(' ').length + span.split(' ').length)*1000;
+    // let contTime = 10000000;
+
+
+    let text = '';
+    if(span != ''){
+        text = `<p>${msg}</p> <span>${span}</span>`;
+    }else{
+        text = `<p>${msg}</p>`;
+    }
 
     if(typeAviso == 'error'){
-        background = '#EE4444';
+        color = '#EE4444';
         className = 'colorWhite';
         classIcon = 'exclamation-triangle-fill';
     }else if(typeAviso == 'success'){
-        background = '#00CC83';
+        color = '#00CC83';
         className = 'colorWhite';
         classIcon = 'check2-all';
     }else if(typeAviso == 'attention'){
-        background = '#faba39';
-        className = 'nothingIcon';
-        classIcon = '';
+        color = '#faba39';
+        className = 'colorWhite';
+        classIcon = 'info-circle';
     }
 
     Toastify({
-        text: `${msg} ${span}`,
+        text: text,
         duration: contTime,
         className: className,
         destination: action,
+        destinationMsg: msgAction,
         avatar: '<i class="bi bi-'+classIcon+'"></i>',
         // newWindow: true,
         close: close,
@@ -327,7 +337,7 @@ const boxAvisos = (typeAviso, msg, span, close, action = '') => { /* Type pode s
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
-          background: background,
+          color: color,
         }
     }).showToast();
 }

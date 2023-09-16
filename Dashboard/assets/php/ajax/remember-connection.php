@@ -11,6 +11,28 @@
             $info = $sql->fetch();
 
             if($info['status'] == 1){
+
+                $key_request = Painel::verificKey('tb_pwm_admin.keys', $info['key']);
+
+                if(count($key_request) < 1){
+                    $result = [
+                        'type' => 'error',
+                        'msg' => 'Sua Conta Está Desativada!!! ',
+                        'span' => 'Clique em Suport e contate o Administrador...',
+                        'suport' => true,
+                        'msgAction' => 'Suport'
+                    ];
+                    die(json_encode($result));
+                }
+
+
+                $updateRequest = [
+                    'id_user-not' => $key_request['id_user'],
+                    'request' => $key_request['request']+1,
+                    'nome_tabela-not' => 'tb_pwm_admin.keys'
+                ];
+                Painel::update(DATABASE, $updateRequest, 'id_user');
+
                 $update = [
                     'last_acess' => date('Y-m-d H:i:s'),
                     'id_user-not' => $info['id_user'],
@@ -47,8 +69,9 @@
                         'type' => 'error',
                         'login' => false,
                         'msg' => 'Parece que ocorreu um erro inesperado. ',
-                        'span' => 'Tente novamente, se persistir clique nessa mensagem...',
-                        'suport' => true
+                        'span' => 'Tente novamente, se persistir clique em Suport...',
+                        'suport' => true,
+                        'msgAction' => 'Suport'
                     ];
                     die(json_encode($result));
                 }
@@ -57,8 +80,9 @@
                     'type' => 'error',
                     'login' => false,
                     'msg' => 'Sua Conta Está Desativada!!! ',
-                    'span' => 'Clique aqui e contate um Administrador...',
-                    'suport' => true
+                    'span' => 'Clique em Suport e contate o Administrador...',
+                    'suport' => true,
+                    'msgAction' => 'Suport'
                 ]);
                 die();
             }

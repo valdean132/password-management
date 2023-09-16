@@ -33,7 +33,7 @@ main.container-calculator .calculator input{
     border: none;
     border-radius: 20px;
 
-    color: var(--color-white-one);
+    color: var(--color-06);
     font-size: 2.5rem;
     text-align: end;
 
@@ -61,7 +61,7 @@ main.container-calculator .calculator button{
 
     font-size: var(--font-text-normal);
     text-transform: uppercase;
-    color: var(--color-white-two);
+    color: var(--color-06);
 
     cursor: pointer;
 

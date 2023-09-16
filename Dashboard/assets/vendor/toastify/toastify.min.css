@@ -12,15 +12,15 @@
  * Copyright (C) 2018 Varun A P
  */
 .toastify {
-    padding: 12px 20px;
+    /* padding: 0 5px; */
     color: #151b28;
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
-    box-shadow: 0 3px 6px -1px rgba(0, 0, 0, .12), 0 10px 36px -4px rgba(77, 96, 232, .3);
-    background: -webkit-linear-gradient(315deg, #73a5ff, #5477f5);
-    background: linear-gradient(135deg, #73a5ff, #5477f5);
+    box-shadow: 0 3px 6px -1px rgba(0, 0, 0, .5);
+    /* background: -webkit-linear-gradient(315deg, #73a5ff, #5477f5); */
+    background: #635E79;
     position: fixed;
     opacity: 0;
     transition: all .4s cubic-bezier(.215, .61, .355, 1);
@@ -29,7 +29,25 @@
     text-decoration: none;
     max-width: 450px;
     z-index: 2147483647;
+    overflow: hidden;
     border-radius: 8px
+}
+.toastify:hover{
+    transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+}
+
+.toastify-progress{
+    width: 0;
+    height: 100%;
+
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    transition: all .4s linear;
+
+    background: rgba(45, 43, 53, 5.5);
 }
 
 .toastify.on {
@@ -37,12 +55,6 @@
 }
 .toastify.colorWhite{
     color: #fff;
-}
-.toast-close {
-    opacity: .5;
-    padding: 0 5px;
-    margin-left: 5px;
-    font-size: 1.5rem;
 }
 
 .toastify-right {
@@ -71,13 +83,16 @@
     width: 40px;
     height: 40px;
 
+    padding: 15px 0;
+    /* margin-left: 10px; */
+
     display: flex;
     justify-content: center;
     align-items: center;
 
     font-size: 1.5rem;
 
-    margin: -7px 5px -7px 0;
+    margin: -7px 5px -7px 5px;
     border-radius: 2px
 }
 
@@ -88,6 +103,83 @@
     right: 0;
     max-width: fit-content;
     max-width: -moz-fit-content
+}
+
+.toastify-msg{
+    padding: 5px 0;
+    margin-right: 20px;
+
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+}
+.toastify-msg p{
+    font-size: .9rem;
+    line-height: .9rem;
+    font-weight: 600;
+}
+.toastify-msg span{
+    font-size: .8rem;
+    line-height: .8rem;
+    font-weight: 300;
+    text-align: initial;
+    color: #ddd;
+}
+
+.toastify-btn{
+    /* padding: 15px 0; */
+    min-height: 45px;
+
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin-left: 10px;
+
+    border-left: 1px solid rgba(155, 155, 155, 0.2);
+}
+.toastify-btn > *{
+    padding: 10px;
+    min-height: 45px;
+
+    transition: all .5s cubic-bezier(.215, .61, .355, 1);
+}
+.toastify-btn > *:hover{
+    background-color: rgba(155, 155, 155, 0.2);
+}
+.toast-close {
+    /* The CSS properties `opacity`, `padding`, and `margin-left` are being applied to the class
+    `.toast-close`. */
+    /* opacity: .5;
+    padding: 0 5px;
+    margin-left: 5px; */
+    font-size: .9rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    width: 100%;
+    height: 100%;
+}
+.toastify-btn a{
+    width: 100%;
+    height: 100%;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-top: 1px solid rgba(155, 155, 155, 0.2);
+
+    font-size: .9rem;
+    color: #ddd;
 }
 
 @media only screen and (max-width:360px) {

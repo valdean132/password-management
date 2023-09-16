@@ -12,7 +12,7 @@ const loginRegister = () => {
             dataType:'json',
             async: true,
             beforeSend: function(){
-                boxAvisos('attention', msg, '', false);
+                boxAvisos('attention', msg.msg, msg.span, false);
 
                 infoTag.inputs.each(function(){
                     $(this).attr('disabled', true);
@@ -23,7 +23,7 @@ const loginRegister = () => {
                 inputAcao.find('span').html(iconLoad);
             },
             error: function(data){
-                boxAvisos('error', 'Ocorreu um Erro inesperado!!! ', 'Clique e contate o suporte', true, suport);
+                boxAvisos('error', 'Ocorreu um Erro inesperado!!! ', 'Clique em suporte caso o erro continue.', true, suport, 'Suport');
                 console.error(data.responseText);
 
                 inputAcao.attr('disabled', true);
@@ -36,7 +36,7 @@ const loginRegister = () => {
             },
             success: function(data){
                 if(page == 'login-user'){
-                    boxAvisos(data.type, data.msg, data.span, true, data.suport ? suport : '');
+                    boxAvisos(data.type, data.msg, data.span, true, data.suport ? suport : '', data.msgAction);
 
                     if(data.type == 'error'){ // Tratando mensagens de erros
                         if(data.inputError != undefined){ // Verificando se existe esse campo no retorno
@@ -138,7 +138,7 @@ const loginRegister = () => {
         let inputPassword = $('form[data-acao="login"] input[name="password"]');
         
     
-        let rememberUserStorege = localStorage.getItem('MFCLogin');
+        let rememberUserStorege = localStorage.getItem('PwMLogin');
         let rememberUserJson = JSON.parse(rememberUserStorege);
     
         // console.log(JSON.parse(rememberUserStorege))
@@ -187,7 +187,7 @@ const loginRegister = () => {
                 };
             }
     
-            updateLocalStorage('PWMLogin', rememberUser);
+            updateLocalStorage('PwMLogin', rememberUser);
                 
         }
         function removeUser(){
@@ -197,7 +197,7 @@ const loginRegister = () => {
                 checkedRemember: false
             };
     
-            updateLocalStorage('PWMLogin', rememberUser);
+            updateLocalStorage('PwMLogin', rememberUser);
         }
     
         /* ** */
@@ -329,7 +329,7 @@ const loginRegister = () => {
                 inputs: $('form[data-acao="login"] [permission_alter="1"]')
             }
 
-            ajaxConection('login-user', 'POST', infoTag, 'Enviando Dados... Aguarde!!!', $(this));
+            ajaxConection('login-user', 'POST', infoTag, {msg: 'Enviando Dados...', span: 'Aguarde!!!'}, $(this));
 
             return false;
         });
@@ -391,7 +391,7 @@ const loginRegister = () => {
                 inputs: inputs
             }
 
-            ajaxConection('create-user', 'POST', infoTag, 'Enviando Dados... Aguarde!!!', $(this));
+            ajaxConection('create-user', 'POST', infoTag, {msg: 'Enviando Dados...', span: 'Aguarde!!!'}, $(this));
 
             return false;
         });
