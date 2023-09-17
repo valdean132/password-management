@@ -38,10 +38,6 @@ const logado = (data) => { // Verificando se existe uma Sessão já logada
                         setTimeout(() => { // Escondendo container de load
                             $(document).ready(function(){
                                 $('[data-load="load-main"]').addClass('active');
-                
-                                setTimeout(() => {
-                                    $('[data-load="load-main"]').remove();
-                                }, 500);
                             });
                         }, 500);
 
@@ -54,11 +50,7 @@ const logado = (data) => { // Verificando se existe uma Sessão já logada
                     boxAvisos(data.type, data.msg, data.span, true, data.suport ? suport : '');
                 
                 let urlAtual = pegaPagina($(location).attr('href'));
-                if(!data.login_subconta){
-                    currentPage('main', urlAtual, true);
-                }else if(data.login_subconta){
-                    console.log('tela de login de sub conta');
-                }
+                currentPage('main', urlAtual);
             }
         }
     });
@@ -144,22 +136,24 @@ const currentPage = (page, url = null) => {
                 stylePages.attr('href', `${stylePages.attr('href').split('-')[0]}-${url}.css`);
 
                 // Alterando Tituloda página
-                titleMain('MFC - My Finance Controls', TITLE_PAGES[url]);
+                titleMain('PWM - Password Management', TITLE_PAGES[url]);
                 // console.log()
 
                 // Chamando funções dessa página
                 callFunctions(url);
+
+                setTimeout(() => { // Escondendo container de load
+                    $(document).ready(function(){
+                        $('[data-load="load-main"]').addClass('active');
+        
+                        setTimeout(() => {
+                            $('[data-load="load-main"]').remove();
+                            $('[data-load="load-pages"]').addClass('active');
+                        }, 500);
+                    });
+                }, 500);
             }
 
-            setTimeout(() => { // Escondendo container de load
-                $(document).ready(function(){
-                    $('[data-load="load-main"]').addClass('active');
-    
-                    setTimeout(() => {
-                        $('[data-load="load-main"]').remove();
-                    }, 500);
-                });
-            }, 500);
 
             addIncludPath('src');
             addIncludPath('href');

@@ -11,7 +11,6 @@ const callFunctions = (pages) => {
         menuPage(); // Função para o menu do usuário e principal
         animaDropdown(); // Chamada de Função para mostrar ou ocultar Dropdown
         modalMove(); // Chamando Função para arrastar o modal e setar sua posição na tela.
-        typingAnimation(); // Chamando função de digiação animada
         calculator(); // Chamamando função para fazer os devidos calculos;
 
         return false;

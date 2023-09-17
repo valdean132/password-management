@@ -8,6 +8,8 @@ const menuPage = () => { // Função para o evendo de clik dos menus dá página
 
         // Removendo a classe de todos os links
         $("[data-href_internal]").removeClass(active);
+
+        $('[data-load="load-pages"]').removeClass('active');
         
         currentPage('app/'+thisLinkName, thisLinkName);
     

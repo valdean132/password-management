@@ -1,0 +1,5 @@
+1 - Criar estilo para página principal
+    - Quando já tiver senhas salvas, mostrar essas senhas;
+    - Quando não tiver senha, mostrar uma tela para cadastrar as senhas;
+2 - Criar formulário para salvar essas senhas
+3 - Criar campo de usuário
