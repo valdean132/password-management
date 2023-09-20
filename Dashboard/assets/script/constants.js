@@ -3,13 +3,9 @@ const include_path = 'http://pwm.localhost/';
 const include_path_d = include_path+'assets/';
 const htmlBody = $('html, body');
 const CONTAINER_NEXT = $('#__next');
-const TARGET_PAGES = ['home', 'profile', 'manage-users', 'view-transactions', 'settings', 'dump'];
+const TARGET_PAGES = ['home', 'dump'];
 const TITLE_PAGES = {
     'home': 'Home',
-    'profile': 'Meu Perfil',
-    'manage-users': 'Gerenciar usuários',
-    'view-transactions': 'Transações',
-    'settings': 'Configurações',
     'dump': 'Lixeira',
     '404': '404 - Página Não encontrada',
 };
@@ -237,29 +233,29 @@ const qtdDay = (month, year) => {
 /* Convertendo meses numericos para escrito */
 const monthEscrito = month => {
     switch (month) {
-        case 01:
+        case '01':
             return 'Jan'; // Janeiro
-        case 02:
+        case '02':
             return 'Fev'; // Fevereiro
-        case 03:
+        case '03':
             return 'Mar'; // Março
-        case 04:
+        case '04':
             return 'Abr'; // Abril
-        case 05:
+        case '05':
             return 'Mai'; // Maio
-        case 06:
+        case '06':
             return 'Jun'; // Junho
-        case 07:
+        case '07':
             return 'Jul'; // Julho
-        case 08:
+        case '08':
             return 'Ago'; // Agosto
-        case 09:
+        case '09':
             return 'Set'; // Setembro
-        case 10:
+        case '10':
             return 'Out'; // Outubro
-        case 11:
+        case '11':
             return 'Nov'; // Novembro
-        case 12:
+        case '12':
             return 'Dez'; // Dezembro
         default:
             console.log('Mês Inválido');
@@ -269,19 +265,19 @@ const monthEscrito = month => {
 /* Convertendo meses numericos para escrito */
 const diaSemanaEscrita = semana => {
     switch (semana) {
-        case 01:
+        case '01':
             return 'Dom'; // Domingo
-        case 02:
+        case '02':
             return 'Seg'; // Segunda
-        case 03:
+        case '03':
             return 'Ter'; // Terça
-        case 04:
+        case '04':
             return 'Qua'; // Quarta
-        case 05:
+        case '05':
             return 'Qui'; // Quinta
-        case 06:
+        case '06':
             return 'Sex'; // Sexta
-        case 07:
+        case '07':
             return 'Sab'; // Sábado
         default:
             console.log('Semana Inválido');

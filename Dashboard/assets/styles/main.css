@@ -291,7 +291,7 @@ to center, the background to rgba(12, 15, 23, .5), the backdrop-filter to blur( 
     align-items: center;
 
     font-size: var(--font-title-01);
-    color: var(--color-grey);
+    color: var(--color-05);
 
     margin: 0 5px;
 
@@ -300,7 +300,7 @@ to center, the background to rgba(12, 15, 23, .5), the backdrop-filter to blur( 
     transition: .3s all ease, .1s color ease;
 }
 .sidebar-app footer.footer-siderbar-app a:hover{
-    background-color: var(--color-blue-one);
+    background-color: var(--color-01);
     border-color: transparent;
     color: var(--color-06);
 
@@ -609,8 +609,7 @@ to center, the background to rgba(12, 15, 23, .5), the backdrop-filter to blur( 
 /*? Estilizando o Mian do container Principal ?*/
 .container-main main.main-app{
     width: 100%;
-    min-height: calc(100% - 80px);
-    max-height: calc(100% - 80px);
+    height: calc(100% - 80px);
 
     position: relative;
 
@@ -618,6 +617,8 @@ to center, the background to rgba(12, 15, 23, .5), the backdrop-filter to blur( 
 }
 .container-main main.main-app section.section{
     width: 100%;
+
+    padding-top: 10px;
 }
 
 .container-main main.main-app section.section header.navegate-section{

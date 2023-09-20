@@ -136,7 +136,7 @@ const currentPage = (page, url = null) => {
                 stylePages.attr('href', `${stylePages.attr('href').split('-')[0]}-${url}.css`);
 
                 // Alterando Tituloda página
-                titleMain('PWM - Password Management', TITLE_PAGES[url]);
+                titleMain('PWM', TITLE_PAGES[url]);
                 // console.log()
 
                 // Chamando funções dessa página
