@@ -462,9 +462,9 @@ to center, the background to rgba(12, 15, 23, .5), the backdrop-filter to blur( 
     transform: scale(0);
     -webkit-transform: scale(0);
 
-    background: rgba(0, 0, 0, .2);
-    backdrop-filter: blur(30px) saturate(180%);
-    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    background: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
 }
 .container-main header.header-main-app nav.navegation-container-app li.show-dropdown ul.dropdown-menu-all{
     transform: scale(1);
@@ -613,12 +613,12 @@ to center, the background to rgba(12, 15, 23, .5), the backdrop-filter to blur( 
 
     position: relative;
 
+    overflow: hidden;
+
     padding: 0 4%;
 }
 .container-main main.main-app section.section{
     width: 100%;
-
-    padding-top: 10px;
 }
 
 .container-main main.main-app section.section header.navegate-section{

@@ -32,6 +32,11 @@ window.onload = function() {
     history.replaceState("", "", window.location.href);
 }
 
+/* Impedindo ação padrão do botão direito do mouse */
+$(document).on('contextmenu', function(e){
+    // e.preventDefault();
+});
+
 /* LocalStorage */
 const updateLocalStorage = (key, value) => {
     localStorage.setItem(key, JSON.stringify(value));

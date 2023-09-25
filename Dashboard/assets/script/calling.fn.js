@@ -12,6 +12,7 @@ const callFunctions = (pages) => {
         animaDropdown(); // Chamada de Função para mostrar ou ocultar Dropdown
         modalMove(); // Chamando Função para arrastar o modal e setar sua posição na tela.
         calculator(); // Chamamando função para fazer os devidos calculos;
+        titleButton(); // Mostrando informações do botão
 
         return false;
     }
@@ -19,7 +20,10 @@ const callFunctions = (pages) => {
         
         animaNumber(); // Chamada de Função para mascarar número e animar ele
         tagsInputs($('select'), false); // Chamando Função para as Tags de inputs options
+        viewOptions(); // Função para mostrar as opções de cada container de acesso
+        optionsViewTable();
 
+        
         return false;
     }
     if(pages == 'settings'){

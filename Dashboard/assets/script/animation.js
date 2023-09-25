@@ -96,6 +96,110 @@ const animaNumber = () => { /** Ele anima os números no elemento com o atributo
     });
 }
 
+const viewOptions = () => { /* Função para mostrar as opções ao clicar no botão */
+    var active = 'active';
+
+    function viewsActionOptions(thisContainer, thisOptions){
+        var offset = thisOptions.offset();
+        var thisTop = offset.top;
+        var thisLeft = offset.left;
+
+        let nagevation = $('[data-optionNavegate]');
+
+        if(!thisOptions.hasClass(active)){
+            $('[data-options]').removeClass(active);
+            $('.single-access').removeClass(active);
+            nagevation.removeClass(active);
+            
+            setTimeout(()=>{
+                nagevation.css({
+                    top: `${thisTop + 15}px`,
+                    left: `${thisLeft - 248}px`,
+                });
+                setTimeout(() => {
+                    thisOptions.addClass(active);
+                    thisContainer.addClass(active);
+                    nagevation.addClass(active);
+                }, 100);
+            }, 100);
+        }else{
+            $('[data-options]').removeClass(active);
+            $('.single-access').removeClass(active);
+            nagevation.removeClass(active);
+        }
+
+        return false;
+    }
+
+    /* Eventos */
+    $(document).on('contextmenu', '.single-access', function(e){ /* Com o botão direito do mouse */
+        viewsActionOptions($(this), $(this).find('[data-options]'));
+    });
+    $(document).on('click', '[data-options]', function(){ /* Com botão esquerdo */
+        viewsActionOptions($(this).parent().parent('.single-access'), $(this));
+    });
+    $(document).on('click', function(){
+        $('[data-options]').removeClass(active);
+        $('.single-access').removeClass(active);
+        $('[data-optionNavegate]').removeClass(active);
+    });
+
+}
+
+const titleButton = () => { /* Função para mostrar as informações do botão */
+    var active = 'active'
+    var beforeInfo = $('.before-info-btn');
+    var inside = false;
+    $(document)
+        .on('mouseenter', '[data-title]', function(e){
+            inside = true;
+            var titleMsg = $(this).data('title');
+
+            var mouseX = e.originalEvent.clientX;
+            var mouseY = e.originalEvent.clientY;
+
+            setTimeout(()=>{
+                beforeInfo.css({
+                    top: (mouseY+10)+'px',
+                    left: (mouseX+10)+'px'
+                });
+                beforeInfo.find('span').text(titleMsg);
+    
+                setTimeout(()=>{
+                    if(inside)
+                        beforeInfo.addClass(active);
+
+                }, 500);
+            }, 300);
+
+        })
+        .on('mouseleave', '[data-title]', function(){
+            inside = false;
+            beforeInfo.removeClass(active); 
+        });
+}
+
+const optionsViewTable = () => {
+    $(document).on('click', '[data-optionsTable]', function(){
+
+        var thisOption = $(this).attr('data-optionsTable');
+        var containTable = $('.wrapper-result-access');
+        var active = 'active';
+
+        console.log(thisOption)
+
+        containTable.removeClass('list');
+        containTable.removeClass('folder');
+        $('[data-optionsTable]').removeClass(active);
+
+        containTable.addClass(thisOption);
+        $(this).addClass(active);
+
+
+        return false;
+    });
+}
+
 /**
  It's a function that loops through all elements with the class "typing" and adds each letter of
     the text one by one.

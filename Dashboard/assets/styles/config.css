@@ -35,6 +35,15 @@
     --font-subject-01: 0.875rem;
     --font-subject-02: 0.75rem;
 }
+:root body.dark{
+    /*? ** Colors ** ?*/
+    /*! Main !*/
+    --color-06: #000000;
+    --color-05: #03012C;
+    --color-04: #635E79;
+    --color-03: #9690B0;
+    --color-02: #FFFFFF;
+}
 
 /*? Marcação ?*/
 .border-red {
@@ -48,7 +57,9 @@ html {
     height: 100%;
 
     font-size: 1rem;
-    color: var(--alert-03-error);
+    /* color: var(--alert-03-error); */
+
+    border-color: var(--color-grey-p-2);
 
     -webkit-tap-highlight-color: transparent;
 
@@ -312,4 +323,32 @@ body {
 .btn-02:hover {
     transform: scale(1.03);
     -webkit-transform: scale(1.03);
+}
+
+/*! Info Tag !*/
+.before-info-btn{
+    position: fixed;
+    z-index: 2;
+
+    width: auto;
+    height: auto;
+
+    pointer-events: none;
+
+    transform: scale(0);
+    -webkit-transform: scale(0);
+
+    background-color: var(--color-01);
+
+    font-size: var(--font-subject-02);
+    white-space: nowrap;
+    color: var(--color-06);
+
+    padding: 5px 10px;
+
+    border-radius: 8px;
+}
+.before-info-btn.active{
+    transform: scale(1);
+    -webkit-transform: scale(1);
 }
