@@ -17,6 +17,7 @@
 4 - Criar campo de Configurações
     - Gerais:
         Escolha de temas
+	Modo (dark ou light)
         Visualização de pasta
         Recuperação de conta
         Endereço de e-mail
