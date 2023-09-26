@@ -26,7 +26,7 @@ CREATE TABLE `tb_pwm_admin.user` ( -- Tabela de Usuários
     `key` VARCHAR(36) NOT NULL,
     `create` DATETIME NOT NULL,
     `database` VARCHAR(50) NOT NULL,
-    `last_acess` DATETIME NOT NULL
+    `last_access` DATETIME NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `tb_pwm_admin.keys` ( -- Tabela para quardar as Chaves de acesso e sua quantidade de requisições
@@ -59,7 +59,7 @@ CREATE TABLE `tb_pwm_user.access`(
     `id` INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     `access_uniq` VARCHAR(13) NOT NULL,
     `login` VARCHAR(150) NOT NULL,
-    `pssword` VARCHAR(150) NOT NULL,
+    `password` VARCHAR(150) NOT NULL,
     `create` DATETIME NOT NULL,
     `date_alter` DATETIME NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -67,7 +67,7 @@ CREATE TABLE `tb_pwm_user.dump_access`(
     `id` INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     `access_uniq` VARCHAR(13) NOT NULL,
     `login` VARCHAR(150) NOT NULL,
-    `pssword` VARCHAR(150) NOT NULL,
+    `password` VARCHAR(150) NOT NULL,
     `create` DATETIME NOT NULL,
     `date_alter` DATETIME NOT NULL,
     `date_dump` DATETIME NOT NULL
@@ -83,3 +83,18 @@ CREATE TABLE `tb_pwm_user.dump_main` (
     `date_alter` DATETIME NOT NULL,
     `date_dump` DATETIME NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `tb_pwm_user.recent_activities` (
+    `id` INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `uniq_id` VARCHAR(13) NOT NULL,
+    `platform` VARCHAR(20) NOT NULL,
+    `last_login` DATETIME NOT NULL,
+    `local` VARCHAR(20) NOT NULL,
+    `ip` VARCHAR(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `tb_pwm_user.settings` (
+    `id` INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `color` VARCHAR(7) NOT NULL,
+    `theme` VARCHAR(5) NOT NULL,
+    `views_table` VARCHAR(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `tb_pwm_user.settings` VALUES ( NULL, '#3CB35A', 'dark', 'list' );

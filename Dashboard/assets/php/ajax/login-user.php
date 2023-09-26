@@ -3,6 +3,11 @@
     if(isset($_POST['login-not'])){
         $email = $_POST['email'];
         $password = md5($_POST['password']);
+        // $ipGeo = Painel::getClientIpGeo(); // Ativar essa função quando estiver online
+        $ipGeo = [
+            'ip' => '192.168.15.1',
+            'country' => 'Brasil'
+        ];
 
         if($email === '' && $password === ''){
             $resultConf = [
@@ -42,11 +47,19 @@
                         Painel::update(DATABASE, $updateRequest, 'id_user');
 
                         $update = [
-                            'last_acess' => date('Y-m-d H:i:s'),
+                            'last_access' => date('Y-m-d H:i:s'),
                             'id_user-not' => $info['id_user'],
                             'nome_tabela-not' => 'tb_pwm_admin.user'
                         ];
-                        if(!Painel::update(DATABASE, $update, 'id_user')){
+                        $register_activities = [
+                            'uniq_id' => uniqid(),
+                            'platform' => $_POST['platform'],
+                            'last_login' => $update['last_access'],
+                            'local' => $ipGeo['country'],
+                            'ip' => $ipGeo['ip'],
+                            'nome_tabela-not' => 'tb_pwm_user.recent_activities'
+                        ];
+                        if(!Painel::update(DATABASE, $update, 'id_user') && Painel::insert($info['database'], $register_activities)){
                             $_SESSION['login'] = true;
                             $_SESSION['email'] = $email;
                             $_SESSION['password'] = $password;
@@ -58,12 +71,13 @@
                             $_SESSION['nome_tabela'] = 'tb_pwm_admin.user';
                             $_SESSION['key'] = $info['key'];
                             $_SESSION['database'] = $info['database'];
-                            $_SESSION['last_acess'] = date('Y-m-d H:i:s');
+                            $_SESSION['last_access'] = date('Y-m-d H:i:s');
         
                             if($_POST['lembrarConexao'] == 'on'){
                                 setcookie('lembrarConexao', true, time()+(12), '/');
                                 setcookie('email', $email, time()+(12), '/');
                                 setcookie('password', $password, time()+(12), '/');
+                                setcookie('platform', $_POST['platform'], time()+(12), '/');
                             }
     
                             $result = [

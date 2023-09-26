@@ -24,6 +24,40 @@
             return $retorno;
         }
 
+        // Pegando Ip
+        public static function getClientIpGeo(){
+            $ipaddress = '';
+            if (isset($_SERVER['HTTP_CLIENT_IP']))
+                $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+            else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+                $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+            else if(isset($_SERVER['HTTP_X_FORWARDED']))
+                $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+            else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
+                $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+            else if(isset($_SERVER['HTTP_FORWARDED']))
+                $ipaddress = $_SERVER['HTTP_FORWARDED'];
+            else if(isset($_SERVER['REMOTE_ADDR']))
+                $ipaddress = $_SERVER['REMOTE_ADDR'];
+            else
+                $ipaddress = 'UNKNOWN';
+            
+
+            $api_url = "https://ipinfo.io/{$ipaddress}/country";
+
+            $response = file_get_contents($api_url);
+
+            if(!$response)
+                $country = trim($response);
+            else
+                $country = 'Não Encontrado';
+
+            return [
+                'ip' => $ipaddress,
+                'country' => $country
+            ];;
+        }
+
         // Separando url
         public static function separaUrl($url){
             if($url == INCLUDE_PATH){

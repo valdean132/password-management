@@ -7,22 +7,24 @@ const animaDropdown = () => { /** Quando o usuário clicar no botão, se o menu 
 
     /* Chamando ação após clicar. */
     btnDropdown.click(function(){
-        let containerDropdown = $(`[data-dropdown="${$(this).data('link')}"]`);
+        var thisLink = $(this).data('link');
+
+        let containerDropdown = $(`[data-dropdown="${thisLink}"]`);
 
         if(!containerDropdown.hasClass(showDropdown)){ // Caso classe não existe adicionar
             containerDropdown.addClass(showDropdown);
 
             $('a[data-link]').removeClass('active'); // Removendo Classe de todos os links que sejam de modal
 
-            if($(this).data('link') == 'add-transaction' || $(this).data('link') == 'calculator'){ // Adicionando classe do link do modal
+            if(thisLink == 'new-register' || thisLink == 'settings'){ // Adicionando classe do link do modal
                 $(this).addClass('active');
             }
 
         }else{ // Caso não exista, remover
             containerDropdown.removeClass(showDropdown);
 
-            if($(this).data('link') == 'add-transaction' || $(this).data('link') == 'calculator'){ // Removendo Classe active do link do modal
-                $('a[data-link="'+$(this).data('link')+'"]').removeClass('active');
+            if(thisLink == 'new-register' || thisLink == 'settings'){ // Removendo Classe active do link do modal
+                $('a[data-link="'+thisLink+'"]').removeClass('active');
             }
         }
 
@@ -43,11 +45,6 @@ const modalMove = () => {
     btnArrasta.each(function(){ // Percorrento Array para pegar o modal certo
         // Variaveis Locais
         let sectionMove = $(this).parent().parent('section.popup-move');
-
-        sectionMove.css({ // Setando posição inicial
-            left: $("body").width() / 3,
-            top: 0
-        });
 
         // Chamando Evento para arrastar
         sectionMove.draggable({
@@ -185,8 +182,6 @@ const optionsViewTable = () => {
         var thisOption = $(this).attr('data-optionsTable');
         var containTable = $('.wrapper-result-access');
         var active = 'active';
-
-        console.log(thisOption)
 
         containTable.removeClass('list');
         containTable.removeClass('folder');

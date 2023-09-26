@@ -77,7 +77,7 @@
                         $_POST['status'] = 1;
                         $_POST['create'] = date('Y-m-d H:i:s');
                         $_POST['database'] = $database;
-                        $_POST['last_acess'] = date('Y-m-d H:i:s');
+                        $_POST['last_access'] = date('Y-m-d H:i:s');
                         $_POST['nome_tabela-not'] = 'tb_pwm_admin.user';
     
                         if(Painel::insert(DATABASE, $_POST)){

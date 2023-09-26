@@ -13,50 +13,25 @@
             <div class="area-move" data-move="false">
                 <img src="assets/images/area-move.svg" alt="move">
             </div><!-- Btn para arastar o popup -->
-            <button class="btn-close transition" data-link="new-register"><i class="bi bi-x-lg"></i></button>
+            <button class="btn-close transition" data-link="new-register" data-title="Fechar"><i class="bi bi-x-lg"></i></button>
         </header><!-- Header do  -->
         <main class="main-popup-move">
             <header class="header-mian-popup-move">
-                <h3>Adicionar Nova Transação</h3>
+                <h3>Adicionar Novo Registro</h3>
             </header><!-- Header do conteúdo principal do popup -->
         </main><!-- Conteúdo principal do Popup -->
     </section><!-- Sessão Modal Flutuante -->
-    <section class="section-calculator popup-move" style="width: 325px;" data-dropdown="calculator">
+    <section class="section-settings popup-move" data-dropdown="settings">
         <header class="header-popup">
             <div class="area-move" data-move="false">
                 <img src="assets/images/area-move.svg" alt="move">
             </div><!-- Btn para arastar o popup -->
-            <button class="btn-close transition" data-link="calculator"><i class="bi bi-x-lg"></i></button>
+            <button class="btn-close transition" data-link="settings" data-title="Fechar"><i class="bi bi-x-lg"></i></button>
         </header><!-- Header do  -->
         <main class="main-popup-move">
             <header class="header-mian-popup-move">
-                <h3>Calculadora</h3>
+                <h3>Configurações</h3>
             </header><!-- Header do conteúdo principal do popup -->
-            <main class="container-calculator">
-                <div class="calculator">
-                    <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="0" id="outputscreen">
-        
-                    <button class="transition" data-calc_action="Clear" data-keyprass="Escape">C</button>
-                    <button class="transition" data-calc_action="del" data-keyprass="Backspace">DEL</button>
-                    <button class="transition" data-calc_display="%">%</button>
-                    <button class="transition" data-calc_display="/">/</button>
-                    <button class="transition" data-calc_display="7">7</button>
-                    <button class="transition" data-calc_display="8">8</button>
-                    <button class="transition" data-calc_display="9">9</button>
-                    <button class="transition" data-calc_display="*">x</button>
-                    <button class="transition" data-calc_display="4">4</button>
-                    <button class="transition" data-calc_display="5">5</button>
-                    <button class="transition" data-calc_display="6">6</button>
-                    <button class="transition" data-calc_display="-">-</button>
-                    <button class="transition" data-calc_display="1">1</button>
-                    <button class="transition" data-calc_display="2">2</button>
-                    <button class="transition" data-calc_display="3">3</button>
-                    <button class="transition" data-calc_display="+">+</button>
-                    <button class="transition" data-calc_display=".">,</button>
-                    <button class="transition" data-calc_display="0">0</button>
-                    <button class="transition equal" data-calc_action="Calculate" data-keyprass="Enter">=</button>
-                </div><!-- Calculadora -->
-            </main><!-- Main do conteúdo principal -->
         </main><!-- Conteúdo principal do Popup -->
     </section><!-- Sessão Modal Flutuante -->
 </div><!-- Container Popupus -->
@@ -79,7 +54,7 @@
                     </a>
                 </li><!-- Link Home -->
                 <li>
-                    <a href="#" data-link="new-register" class="link-nav-app link-nav-02 transition">
+                    <a href="new-register" data-link="new-register" class="link-nav-app link-nav-02 transition">
                         <i class="bi bi-journal-plus transition"></i>
                         <div class="before-info transition"><span class="pointer-events-none">Criar Novo Registro</span></div>
                     </a>
@@ -93,7 +68,7 @@
             </ul>
         </nav><!-- Navegação da Barra lateral -->
         <footer class="footer-siderbar-app">
-            <a href="#" data-loggout="conta" class="exit-app wh100 transition">
+            <a href="loggout" data-loggout="conta" class="exit-app wh100 transition">
                 <i class="bi bi-box-arrow-right transition"></i>
             </a><!-- Botão para Sair do Sistema -->
         </footer><!-- Footer da Barra lateral -->
@@ -103,66 +78,8 @@
             <h2 id="title_main"></h2><!-- Titulo da Página -->
             <nav class="navegation-container-app">
                 <ul class="user-select-none">
-                    <li class="" data-dropdown="notification">
-                        <a href="#" data-link="notification" class="dropdown dropdown-01 transition">
-                            <i class="bi bi-bell transition"></i>
-                            <div class="info-number-qtd box-shadow-01 transition">
-                                <span class="pointer-events-none">5</span>
-                            </div>
-                        </a>
-                        <ul class="dropdown-menu-all box-shadow-01 transition">
-                            <li class="dropdown-header">
-                                <p>Você possui 4 novas notificações</p>
-                                <a href="#" class="transition box-shadow-01">Visualizar tudo</a>
-                            </li><!-- Header -->
-                            <div class="scrollbar-y">
-                                <!--* Notificações aparentes *-->
-                                <li class="notification-item">
-                                    <a href="" class="transition">
-                                        <i class="bi bi-exclamation-circle attention-color"></i>
-                                        <div class="info-notification">
-                                            <h3>Lorem Ipsum</h3>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                            <span>30 min. ago</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-item">
-                                    <a href="" class="transition">
-                                        <i class="bi bi-check-circle error-color"></i>
-                                        <div class="info-notification">
-                                            <h3>Lorem Ipsum</h3>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                            <span>30 min. ago</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-item">
-                                    <a href="" class="transition">
-                                        <i class="bi bi-info-circle success-color"></i>
-                                        <div class="info-notification">
-                                            <h3>Lorem Ipsum</h3>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                            <span>30 min. ago</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-item">
-                                    <a href="" class="transition">
-                                        <i class="bi bi-info-circle primary-color"></i>
-                                        <div class="info-notification">
-                                            <h3>Lorem Ipsum</h3>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                            <span>30 min. ago</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <!-- *** -->
-                            </div>
-                        </ul><!-- Campo de informação das notificações -->
-                    </li><!-- Campo de notificações -->
                     <li class="" data-dropdown="menu-profile">
-                        <a href="#" data-link="menu-profile" class="dropdown tag-perfil transition">
+                        <a href="menu-profile" data-link="menu-profile" class="dropdown tag-perfil transition">
                             <span>
                                 <img src="assets/uploads/5ff9effd138b4.jpg" alt="Foto de Perfil">
                             </span>
@@ -173,13 +90,13 @@
                             <div class="scrollbar-y">
                                 <!--* Mneu Profile aparentes *-->
                                 <li class="menu-profile-app">
-                                    <a data-href_internal="profile" href="profile" class="transition">
+                                    <a data-link="profile" href="profile" class="transition">
                                         <i class="bi bi-person"></i>
                                         <span>Meu Perfil</span>
                                     </a>
                                 </li>
                                 <li class="menu-profile-app">
-                                    <a data-href_internal="settings" href="settings" class="transition">
+                                    <a data-link="settings" href="settings" class="transition">
                                         <i class="bi bi-gear"></i>
                                         <span>Configurações</span>
                                     </a>

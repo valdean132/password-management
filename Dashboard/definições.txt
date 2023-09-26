@@ -3,3 +3,23 @@
     - Quando não tiver senha, mostrar uma tela para cadastrar as senhas;
 2 - Criar formulário para salvar essas senhas
 3 - Criar campo de usuário
+    Imagem do usuário
+    Dados Pessoais:
+        Nome
+        E-mail
+        Telefone
+    Senha:
+        Atualizar senha
+    Atividades recentes
+        Mostrar os acessos com ip, local, e ultimo logon
+    Desativar Conta
+        Um botão para desativar a conta e excluir ela.
+4 - Criar campo de Configurações
+    - Gerais:
+        Escolha de temas
+        Visualização de pasta
+        Recuperação de conta
+        Endereço de e-mail
+    - Atalho:
+        Todos os atalhos demostrados no App
+

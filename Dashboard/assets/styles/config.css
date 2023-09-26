@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 
 /*? Configuração de Váriaveis ?*/
-:root {
+:root body.dark{
     /*? ** Colors ** ?*/
     /*! Main !*/
     --color-01: #3CB35A;
@@ -35,14 +35,38 @@
     --font-subject-01: 0.875rem;
     --font-subject-02: 0.75rem;
 }
-:root body.dark{
+:root body.light{
     /*? ** Colors ** ?*/
     /*! Main !*/
-    --color-06: #000000;
-    --color-05: #03012C;
+    --color-01: #3CB35A;
+    --color-02: #000000;
+    --color-03: #03012C;
     --color-04: #635E79;
-    --color-03: #9690B0;
-    --color-02: #FFFFFF;
+    --color-05: #9690B0;
+    --color-06: #FFFFFF;
+
+    /*! Color Opacity !*/
+    --color-grey-p-2: rgba(74, 82, 105, .2);
+
+    /*! Alert !*/
+    --alert-01-primary: #24B6F7;
+    --alert-02-attention: #faba39;
+    --alert-03-error: #EE4444;
+    --alert-04-success: #00CC83;
+
+    /*? ** Font ** ?*/
+    font-size: 100%;
+
+    /*! Size Fonts !*/
+    --font-emphasis: 1.75rem;
+
+    --font-title-01: 1.5rem;
+    --font-title-02: 1.125rem;
+
+    --font-text-normal: 1rem;
+
+    --font-subject-01: 0.875rem;
+    --font-subject-02: 0.75rem;
 }
 
 /*? Marcação ?*/
@@ -142,6 +166,11 @@ body {
 * {
     scrollbar-width: thin;
     scrollbar-color: var(--color-01) transparent;
+}
+
+/*! Display None !*/
+.display-none{
+    display: none !important;
 }
 
 /*! Transição !*/
@@ -328,7 +357,7 @@ body {
 /*! Info Tag !*/
 .before-info-btn{
     position: fixed;
-    z-index: 2;
+    z-index: 20;
 
     width: auto;
     height: auto;
