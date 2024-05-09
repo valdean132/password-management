@@ -53,7 +53,7 @@ CREATE TABLE `tb_pwm_user.passwords` (
     `access_uniq` TEXT NOT NULL,
     `access_token` VARCHAR(4) NOT NULL,
     `create` DATETIME NOT NULL,
-    `date_alter` DATETIME NOT NULL,
+    `date_alter` DATETIME NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 CREATE TABLE `tb_pwm_user.access`(
     `id` INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -61,7 +61,7 @@ CREATE TABLE `tb_pwm_user.access`(
     `login` VARCHAR(150) NOT NULL,
     `password` VARCHAR(150) NOT NULL,
     `create` DATETIME NOT NULL,
-    `date_alter` DATETIME NOT NULL,
+    `date_alter` DATETIME NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 CREATE TABLE `tb_pwm_user.dump_access`(
     `id` INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,

@@ -176,7 +176,7 @@ const titleButton = () => { /* Função para mostrar as informações do botão 
         });
 }
 
-const optionsViewTable = () => {
+const optionsViewTable = () => { /* Função para mostrar opções de visualização da tabela */
     $(document).on('click', '[data-optionsTable]', function(){
 
         var thisOption = $(this).attr('data-optionsTable');

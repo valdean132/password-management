@@ -4,7 +4,7 @@
     height: 100%;
 }
 section.popup-move{
-    max-width: 500px;
+    max-width: 700px;
     width: 100%;
     min-width: 250px;
     height: auto;
@@ -91,4 +91,61 @@ section.popup-move main.main-popup-move header h3{
 
     display: flex;
     align-items: center;
+}
+
+section.popup-move main.main-popup-move main{
+    width: 100%;
+
+    display: flex;
+}
+
+/* Menu Popup */
+section.popup-move main.main-popup-move main nav.menu-popup{
+    width: 30%;
+
+    padding-bottom: 150px;
+}
+
+section.popup-move main.main-popup-move main nav.menu-popup ul,
+section.popup-move main.main-popup-move main nav.menu-popup li{
+    width: 100%;
+}
+section.popup-move main.main-popup-move main nav.menu-popup li a{
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding: 10px;
+
+    border-radius: 8px;
+}
+section.popup-move main.main-popup-move main nav.menu-popup li a i{
+    width: 36px;
+    height: 36px;
+
+    font-size: 1.2rem;
+    color: var(--color-06);
+
+    background-color: transparent;
+    
+    border: 1px solid var(--color-04);
+
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section.popup-move main.main-popup-move main nav.menu-popup li a.active i{
+    border-color: var(--color-06);
+}
+section.popup-move main.main-popup-move main nav.menu-popup li a span{
+    font-size: 1.1rem;
+    color: var(--color-06);
+
+    margin-left: 10px;
+}
+section.popup-move main.main-popup-move main nav.menu-popup li a.active{
+    background-color: var(--color-01);
 }
